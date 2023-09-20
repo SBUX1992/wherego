@@ -1,0 +1,398 @@
+2023-09-20 16:52:28.043  INFO 8332 --- [restartedMain] com.wherego.WheregoApplication           : Starting WheregoApplication using Java 17.0.7 on DESKTOP-8N3GG4O with PID 8332 (C:\workspace\spring\wherego\wherego\bin\main started by GGG in C:\workspace\spring\wherego\wherego)
+2023-09-20 16:52:28.044  INFO 8332 --- [restartedMain] com.wherego.WheregoApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-09-20 16:52:28.074  INFO 8332 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-09-20 16:52:28.074  INFO 8332 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-09-20 16:52:28.448  INFO 8332 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-20 16:52:28.457  INFO 8332 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2023-09-20 16:52:28.543  WARN 8332 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.wherego]' package. Please check your configuration.
+2023-09-20 16:52:28.844  INFO 8332 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-20 16:52:28.850  INFO 8332 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-20 16:52:28.850  INFO 8332 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.79]
+2023-09-20 16:52:28.899  INFO 8332 --- [restartedMain] o.a.c.c.C.[.[localhost].[/wherego]       : Initializing Spring embedded WebApplicationContext
+2023-09-20 16:52:28.899  INFO 8332 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 824 ms
+2023-09-20 16:52:29.037  INFO 8332 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-20 16:52:29.084  INFO 8332 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-09-20 16:52:29.195  INFO 8332 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-09-20 16:52:29.270  INFO 8332 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-20 16:52:29.474  INFO 8332 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-20 16:52:29.486  INFO 8332 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2023-09-20 16:52:29.690  INFO 8332 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-20 16:52:29.697  INFO 8332 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-20 16:52:29.725  WARN 8332 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-09-20 16:52:30.000  WARN 8332 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 76ce9405-0180-429d-bdab-4b1e42f7fa12
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-09-20 16:52:30.081  INFO 8332 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4993bc50, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@206bcb65, org.springframework.security.web.context.SecurityContextPersistenceFilter@2b0206b5, org.springframework.security.web.header.HeaderWriterFilter@7ca48d6e, org.springframework.security.web.csrf.CsrfFilter@40ace227, org.springframework.security.web.authentication.logout.LogoutFilter@5ebcefdd, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@50aa82c5, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@99d0352, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@577dacd7, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@186e3ff8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@697f651d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3441ec3d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@753337a4, org.springframework.security.web.session.SessionManagementFilter@11adf645, org.springframework.security.web.access.ExceptionTranslationFilter@7e9abda3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6358367f]
+2023-09-20 16:52:30.104  INFO 8332 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-09-20 16:52:30.130  INFO 8332 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/wherego'
+2023-09-20 16:52:30.137  INFO 8332 --- [restartedMain] com.wherego.WheregoApplication           : Started WheregoApplication in 2.337 seconds (JVM running for 2.826)
+2023-09-20 16:52:43.353  INFO 8332 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[localhost].[/wherego]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-09-20 16:52:43.354  INFO 8332 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-09-20 16:52:43.355  INFO 8332 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-09-20 16:52:59.960  INFO 8332 --- [RMI TCP Connection(4)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-09-20 16:52:59.965  INFO 8332 --- [RMI TCP Connection(4)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-09-20 16:52:59.966  INFO 8332 --- [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[.[localhost].[/wherego]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-09-20 16:52:59.978  INFO 8332 --- [RMI TCP Connection(4)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-20 16:52:59.980  INFO 8332 --- [RMI TCP Connection(4)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-20 16:52:59.985  INFO 8332 --- [RMI TCP Connection(4)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-20 16:53:01.319  INFO 11852 --- [restartedMain] com.wherego.WheregoApplication           : Starting WheregoApplication using Java 17.0.7 on DESKTOP-8N3GG4O with PID 11852 (C:\workspace\spring\wherego\wherego\bin\main started by GGG in C:\workspace\spring\wherego\wherego)
+2023-09-20 16:53:01.320  INFO 11852 --- [restartedMain] com.wherego.WheregoApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-09-20 16:53:01.350  INFO 11852 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-09-20 16:53:01.351  INFO 11852 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-09-20 16:53:01.723  INFO 11852 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-20 16:53:01.733  INFO 11852 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2023-09-20 16:53:01.820  WARN 11852 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.wherego]' package. Please check your configuration.
+2023-09-20 16:53:02.119  INFO 11852 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-20 16:53:02.125  INFO 11852 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-20 16:53:02.126  INFO 11852 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.79]
+2023-09-20 16:53:02.175  INFO 11852 --- [restartedMain] o.a.c.c.C.[.[localhost].[/wherego]       : Initializing Spring embedded WebApplicationContext
+2023-09-20 16:53:02.175  INFO 11852 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 824 ms
+2023-09-20 16:53:02.314  INFO 11852 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-20 16:53:02.344  INFO 11852 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-09-20 16:53:02.450  INFO 11852 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-09-20 16:53:02.512  INFO 11852 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-20 16:53:02.708  INFO 11852 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-20 16:53:02.717  INFO 11852 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2023-09-20 16:53:02.887  INFO 11852 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-20 16:53:02.894  INFO 11852 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-20 16:53:02.922  WARN 11852 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-09-20 16:53:03.175  WARN 11852 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 9f406320-e0d0-4410-8397-e7f4af073bc9
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-09-20 16:53:03.248  INFO 11852 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4807da75, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@28a298c0, org.springframework.security.web.context.SecurityContextPersistenceFilter@9676458, org.springframework.security.web.header.HeaderWriterFilter@45790acd, org.springframework.security.web.csrf.CsrfFilter@7ca48d6e, org.springframework.security.web.authentication.logout.LogoutFilter@162d948a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@262bdd14, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@30bb11f, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@12c7b847, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4274563b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7044afdc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@70e410da, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7d8eb288, org.springframework.security.web.session.SessionManagementFilter@147e4437, org.springframework.security.web.access.ExceptionTranslationFilter@77f23534, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2372938]
+2023-09-20 16:53:03.277  INFO 11852 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-09-20 16:53:03.302  INFO 11852 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/wherego'
+2023-09-20 16:53:03.310  INFO 11852 --- [restartedMain] com.wherego.WheregoApplication           : Started WheregoApplication in 2.237 seconds (JVM running for 2.736)
+2023-09-20 16:54:00.313  INFO 11852 --- [http-nio-8080-exec-6] o.a.c.c.C.[.[localhost].[/wherego]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-09-20 16:54:00.314  INFO 11852 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-09-20 16:54:00.315  INFO 11852 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-09-20 16:54:32.056  INFO 11852 --- [RMI TCP Connection(5)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-09-20 16:54:32.062  INFO 11852 --- [RMI TCP Connection(5)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-09-20 16:54:32.063  INFO 11852 --- [RMI TCP Connection(5)-127.0.0.1] o.a.c.c.C.[.[localhost].[/wherego]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-09-20 16:54:32.072  INFO 11852 --- [RMI TCP Connection(5)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-20 16:54:32.074  INFO 11852 --- [RMI TCP Connection(5)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-20 16:54:32.079  INFO 11852 --- [RMI TCP Connection(5)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-20 16:54:39.916  INFO 3304 --- [restartedMain] com.wherego.WheregoApplication           : Starting WheregoApplication using Java 17.0.7 on DESKTOP-8N3GG4O with PID 3304 (C:\workspace\spring\wherego\wherego\bin\main started by GGG in C:\workspace\spring\wherego\wherego)
+2023-09-20 16:54:39.917  INFO 3304 --- [restartedMain] com.wherego.WheregoApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-09-20 16:54:39.948  INFO 3304 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-09-20 16:54:39.948  INFO 3304 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-09-20 16:54:40.317  INFO 3304 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-20 16:54:40.328  INFO 3304 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2023-09-20 16:54:40.416  WARN 3304 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.wherego]' package. Please check your configuration.
+2023-09-20 16:54:40.728  INFO 3304 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-20 16:54:40.734  INFO 3304 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-20 16:54:40.735  INFO 3304 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.79]
+2023-09-20 16:54:40.786  INFO 3304 --- [restartedMain] o.a.c.c.C.[.[localhost].[/wherego]       : Initializing Spring embedded WebApplicationContext
+2023-09-20 16:54:40.787  INFO 3304 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 838 ms
+2023-09-20 16:54:40.933  INFO 3304 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-20 16:54:40.962  INFO 3304 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-09-20 16:54:41.068  INFO 3304 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-09-20 16:54:41.129  INFO 3304 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-20 16:54:41.321  INFO 3304 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-20 16:54:41.330  INFO 3304 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2023-09-20 16:54:41.496  INFO 3304 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-20 16:54:41.504  INFO 3304 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-20 16:54:41.534  WARN 3304 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-09-20 16:54:41.796  WARN 3304 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 3bbc3727-9ddd-4ccc-a376-5c0e29c7de07
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-09-20 16:54:41.867  INFO 3304 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1e1fb142, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@53357d16, org.springframework.security.web.context.SecurityContextPersistenceFilter@1c77f3c3, org.springframework.security.web.header.HeaderWriterFilter@2dad9118, org.springframework.security.web.csrf.CsrfFilter@1daf8efd, org.springframework.security.web.authentication.logout.LogoutFilter@7fda732d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@136ffdac, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@14a98fe3, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@421a054d, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5fe240af, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@44766a79, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@78f51318, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@45cb5de9, org.springframework.security.web.session.SessionManagementFilter@13f2bf2e, org.springframework.security.web.access.ExceptionTranslationFilter@9daac70, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@378a7188]
+2023-09-20 16:54:41.891  INFO 3304 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-09-20 16:54:41.917  INFO 3304 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/wherego'
+2023-09-20 16:54:41.924  INFO 3304 --- [restartedMain] com.wherego.WheregoApplication           : Started WheregoApplication in 2.261 seconds (JVM running for 2.762)
+2023-09-20 16:54:44.899  INFO 3304 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/wherego]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-09-20 16:54:44.900  INFO 3304 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-09-20 16:54:44.901  INFO 3304 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-09-20 16:55:29.809  INFO 3304 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-09-20 16:55:29.815  INFO 3304 --- [Thread-5] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-09-20 16:55:29.815  INFO 3304 --- [Thread-5] o.a.c.c.C.[.[localhost].[/wherego]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-09-20 16:55:29.822  INFO 3304 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-20 16:55:29.824  INFO 3304 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-20 16:55:29.829  INFO 3304 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-20 16:55:29.878  INFO 3304 --- [restartedMain] com.wherego.WheregoApplication           : Starting WheregoApplication using Java 17.0.7 on DESKTOP-8N3GG4O with PID 3304 (C:\workspace\spring\wherego\wherego\bin\main started by GGG in C:\workspace\spring\wherego\wherego)
+2023-09-20 16:55:29.878  INFO 3304 --- [restartedMain] com.wherego.WheregoApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-09-20 16:55:29.980  INFO 3304 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-20 16:55:29.982  INFO 3304 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
+2023-09-20 16:55:30.006  WARN 3304 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.wherego]' package. Please check your configuration.
+2023-09-20 16:55:30.036  INFO 3304 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-20 16:55:30.037  INFO 3304 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-20 16:55:30.037  INFO 3304 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.79]
+2023-09-20 16:55:30.050  INFO 3304 --- [restartedMain] o.a.c.c.C.[.[localhost].[/wherego]       : Initializing Spring embedded WebApplicationContext
+2023-09-20 16:55:30.050  INFO 3304 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 171 ms
+2023-09-20 16:55:30.076  INFO 3304 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-20 16:55:30.082  INFO 3304 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2023-09-20 16:55:30.180  INFO 3304 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2023-09-20 16:55:30.180  INFO 3304 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2023-09-20 16:55:30.220  INFO 3304 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-20 16:55:30.220  INFO 3304 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-20 16:55:30.231  WARN 3304 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-09-20 16:55:30.296  WARN 3304 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 9466e96d-2fdf-44af-ac2c-ea338b445f16
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-09-20 16:55:30.302  INFO 3304 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@a0c411a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6a9f50d6, org.springframework.security.web.context.SecurityContextPersistenceFilter@1ad7a07a, org.springframework.security.web.header.HeaderWriterFilter@148518eb, org.springframework.security.web.csrf.CsrfFilter@4152b349, org.springframework.security.web.authentication.logout.LogoutFilter@6850bb3f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@19eff5fd, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@381bb8ce, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@cb90065, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@218aa454, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@16ec2469, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2a92241f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7865ada2, org.springframework.security.web.session.SessionManagementFilter@4e4b8a01, org.springframework.security.web.access.ExceptionTranslationFilter@2ff46869, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@46c83fe]
+2023-09-20 16:55:30.308  INFO 3304 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-09-20 16:55:30.314  INFO 3304 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/wherego'
+2023-09-20 16:55:30.317  INFO 3304 --- [restartedMain] com.wherego.WheregoApplication           : Started WheregoApplication in 0.458 seconds (JVM running for 51.155)
+2023-09-20 16:55:30.319  INFO 3304 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-09-20 16:55:34.788  INFO 3304 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-09-20 16:55:34.792  INFO 3304 --- [Thread-7] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-09-20 16:55:34.795  INFO 3304 --- [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-20 16:55:34.796  INFO 3304 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2023-09-20 16:55:34.797  INFO 3304 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2023-09-20 16:55:34.842  INFO 3304 --- [restartedMain] com.wherego.WheregoApplication           : Starting WheregoApplication using Java 17.0.7 on DESKTOP-8N3GG4O with PID 3304 (C:\workspace\spring\wherego\wherego\bin\main started by GGG in C:\workspace\spring\wherego\wherego)
+2023-09-20 16:55:34.842  INFO 3304 --- [restartedMain] com.wherego.WheregoApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-09-20 16:55:34.936  INFO 3304 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-20 16:55:34.938  INFO 3304 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
+2023-09-20 16:55:34.960  WARN 3304 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.wherego]' package. Please check your configuration.
+2023-09-20 16:55:34.989  INFO 3304 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-20 16:55:34.989  INFO 3304 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-20 16:55:34.989  INFO 3304 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.79]
+2023-09-20 16:55:35.002  INFO 3304 --- [restartedMain] o.a.c.c.C.[.[localhost].[/wherego]       : Initializing Spring embedded WebApplicationContext
+2023-09-20 16:55:35.002  INFO 3304 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 159 ms
+2023-09-20 16:55:35.024  INFO 3304 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-20 16:55:35.030  INFO 3304 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2023-09-20 16:55:35.340  INFO 3304 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2023-09-20 16:55:35.340  INFO 3304 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2023-09-20 16:55:35.377  INFO 3304 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-20 16:55:35.377  INFO 3304 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-20 16:55:35.386  WARN 3304 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-09-20 16:55:35.440  WARN 3304 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: fd2ddfc5-feba-484f-bfa5-29954a2c1379
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-09-20 16:55:35.445  INFO 3304 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6aae5bcd, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@10894561, org.springframework.security.web.context.SecurityContextPersistenceFilter@5b24b47e, org.springframework.security.web.header.HeaderWriterFilter@18a04c2d, org.springframework.security.web.csrf.CsrfFilter@5e1041d2, org.springframework.security.web.authentication.logout.LogoutFilter@a42bbd7, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@19735b13, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@9deedc8, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@13212fa0, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1375e284, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@278b5278, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3dd0a380, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2ffc8e82, org.springframework.security.web.session.SessionManagementFilter@7e67b81, org.springframework.security.web.access.ExceptionTranslationFilter@76a14e4c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1dece627]
+2023-09-20 16:55:35.450  INFO 3304 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-09-20 16:55:35.456  INFO 3304 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/wherego'
+2023-09-20 16:55:35.459  INFO 3304 --- [restartedMain] com.wherego.WheregoApplication           : Started WheregoApplication in 0.635 seconds (JVM running for 56.297)
+2023-09-20 16:55:35.460  INFO 3304 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-09-20 16:55:39.184  INFO 3304 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/wherego]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-09-20 16:55:39.185  INFO 3304 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-09-20 16:55:39.186  INFO 3304 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-09-20 16:55:55.064  INFO 3304 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-09-20 16:55:55.068  INFO 3304 --- [Thread-11] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-09-20 16:55:55.068  INFO 3304 --- [Thread-11] o.a.c.c.C.[.[localhost].[/wherego]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-09-20 16:55:55.071  INFO 3304 --- [Thread-11] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-20 16:55:55.072  INFO 3304 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2023-09-20 16:55:55.073  INFO 3304 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2023-09-20 16:55:55.115  INFO 3304 --- [restartedMain] com.wherego.WheregoApplication           : Starting WheregoApplication using Java 17.0.7 on DESKTOP-8N3GG4O with PID 3304 (C:\workspace\spring\wherego\wherego\bin\main started by GGG in C:\workspace\spring\wherego\wherego)
+2023-09-20 16:55:55.116  INFO 3304 --- [restartedMain] com.wherego.WheregoApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-09-20 16:55:55.208  INFO 3304 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-20 16:55:55.209  INFO 3304 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
+2023-09-20 16:55:55.230  WARN 3304 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.wherego]' package. Please check your configuration.
+2023-09-20 16:55:55.256  INFO 3304 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-20 16:55:55.257  INFO 3304 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-20 16:55:55.257  INFO 3304 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.79]
+2023-09-20 16:55:55.269  INFO 3304 --- [restartedMain] o.a.c.c.C.[.[localhost].[/wherego]       : Initializing Spring embedded WebApplicationContext
+2023-09-20 16:55:55.269  INFO 3304 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 152 ms
+2023-09-20 16:55:55.294  INFO 3304 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-20 16:55:55.297  INFO 3304 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2023-09-20 16:55:55.392  INFO 3304 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2023-09-20 16:55:55.392  INFO 3304 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2023-09-20 16:55:55.429  INFO 3304 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-20 16:55:55.429  INFO 3304 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-20 16:55:55.441  WARN 3304 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-09-20 16:55:55.496  WARN 3304 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: c82a994e-3b60-4f25-b250-8adc12e5b073
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-09-20 16:55:55.502  INFO 3304 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@68d3a3ec, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5fb7aa8f, org.springframework.security.web.context.SecurityContextPersistenceFilter@588c228c, org.springframework.security.web.header.HeaderWriterFilter@70bdb14c, org.springframework.security.web.csrf.CsrfFilter@2cb5dfbe, org.springframework.security.web.authentication.logout.LogoutFilter@2e4cd019, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@798ffea7, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@4aaa6fcf, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@594b1d18, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@31f3bed2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3f5c58d4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2276b9a2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@75622dcd, org.springframework.security.web.session.SessionManagementFilter@5ac64e45, org.springframework.security.web.access.ExceptionTranslationFilter@7a43be8f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@466e37be]
+2023-09-20 16:55:55.506  INFO 3304 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-09-20 16:55:55.513  INFO 3304 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/wherego'
+2023-09-20 16:55:55.516  INFO 3304 --- [restartedMain] com.wherego.WheregoApplication           : Started WheregoApplication in 0.417 seconds (JVM running for 76.353)
+2023-09-20 16:55:55.516  INFO 3304 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-09-20 16:56:06.823  INFO 3304 --- [http-nio-8080-exec-3] o.a.c.c.C.[.[localhost].[/wherego]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-09-20 16:56:06.824  INFO 3304 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-09-20 16:56:06.825  INFO 3304 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-09-20 16:57:48.127  INFO 3304 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 3 class path changes (1 addition, 1 deletion, 1 modification)
+2023-09-20 16:57:48.132  INFO 3304 --- [Thread-15] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-09-20 16:57:48.132  INFO 3304 --- [Thread-15] o.a.c.c.C.[.[localhost].[/wherego]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-09-20 16:57:48.135  INFO 3304 --- [Thread-15] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-20 16:57:48.136  INFO 3304 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2023-09-20 16:57:48.137  INFO 3304 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2023-09-20 16:57:48.189  INFO 3304 --- [restartedMain] com.wherego.WheregoApplication           : Starting WheregoApplication using Java 17.0.7 on DESKTOP-8N3GG4O with PID 3304 (C:\workspace\spring\wherego\wherego\bin\main started by GGG in C:\workspace\spring\wherego\wherego)
+2023-09-20 16:57:48.189  INFO 3304 --- [restartedMain] com.wherego.WheregoApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-09-20 16:57:48.287  INFO 3304 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-20 16:57:48.288  INFO 3304 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
+2023-09-20 16:57:48.311  WARN 3304 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.wherego]' package. Please check your configuration.
+2023-09-20 16:57:48.339  INFO 3304 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-20 16:57:48.340  INFO 3304 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-20 16:57:48.340  INFO 3304 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.79]
+2023-09-20 16:57:48.351  INFO 3304 --- [restartedMain] o.a.c.c.C.[.[localhost].[/wherego]       : Initializing Spring embedded WebApplicationContext
+2023-09-20 16:57:48.351  INFO 3304 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 159 ms
+2023-09-20 16:57:48.377  INFO 3304 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-20 16:57:48.382  INFO 3304 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2023-09-20 16:57:48.480  INFO 3304 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2023-09-20 16:57:48.480  INFO 3304 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2023-09-20 16:57:48.516  INFO 3304 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-20 16:57:48.516  INFO 3304 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-20 16:57:48.525  WARN 3304 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-09-20 16:57:48.545  INFO 3304 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-09-20 16:57:48.579  WARN 3304 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 2f2d82a6-8d9e-4323-92ce-3c3829cb6b7d
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-09-20 16:57:48.584  INFO 3304 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1809ee3e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@559d6575, org.springframework.security.web.context.SecurityContextPersistenceFilter@76edccb0, org.springframework.security.web.header.HeaderWriterFilter@10fc4054, org.springframework.security.web.csrf.CsrfFilter@7778162d, org.springframework.security.web.authentication.logout.LogoutFilter@104a859, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@413e4666, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@518dc6b6, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@662314d6, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@603efa62, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@79d630f9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@bda3177, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@71d90f9a, org.springframework.security.web.session.SessionManagementFilter@411373c1, org.springframework.security.web.access.ExceptionTranslationFilter@1902d6d2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6195998b]
+2023-09-20 16:57:48.588  INFO 3304 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-09-20 16:57:48.595  INFO 3304 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/wherego'
+2023-09-20 16:57:48.598  INFO 3304 --- [restartedMain] com.wherego.WheregoApplication           : Started WheregoApplication in 0.429 seconds (JVM running for 189.436)
+2023-09-20 16:57:48.599  INFO 3304 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-09-20 16:57:54.049  INFO 3304 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-09-20 16:57:54.054  INFO 3304 --- [Thread-19] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-09-20 16:57:54.057  INFO 3304 --- [Thread-19] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-20 16:57:54.057  INFO 3304 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2023-09-20 16:57:54.059  INFO 3304 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2023-09-20 16:57:54.106  INFO 3304 --- [restartedMain] com.wherego.WheregoApplication           : Starting WheregoApplication using Java 17.0.7 on DESKTOP-8N3GG4O with PID 3304 (C:\workspace\spring\wherego\wherego\bin\main started by GGG in C:\workspace\spring\wherego\wherego)
+2023-09-20 16:57:54.106  INFO 3304 --- [restartedMain] com.wherego.WheregoApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-09-20 16:57:54.199  INFO 3304 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-20 16:57:54.201  INFO 3304 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
+2023-09-20 16:57:54.222  WARN 3304 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.wherego]' package. Please check your configuration.
+2023-09-20 16:57:54.250  INFO 3304 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-20 16:57:54.251  INFO 3304 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-20 16:57:54.251  INFO 3304 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.79]
+2023-09-20 16:57:54.262  INFO 3304 --- [restartedMain] o.a.c.c.C.[.[localhost].[/wherego]       : Initializing Spring embedded WebApplicationContext
+2023-09-20 16:57:54.262  INFO 3304 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 154 ms
+2023-09-20 16:57:54.286  INFO 3304 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-20 16:57:54.289  INFO 3304 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2023-09-20 16:57:54.388  INFO 3304 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2023-09-20 16:57:54.388  INFO 3304 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2023-09-20 16:57:54.428  INFO 3304 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-20 16:57:54.428  INFO 3304 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-20 16:57:54.437  WARN 3304 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-09-20 16:57:54.457  INFO 3304 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-09-20 16:57:54.492  WARN 3304 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: b1f40868-5452-4b71-b100-1a0337b2d8e1
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-09-20 16:57:54.497  INFO 3304 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@849118a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@42172c23, org.springframework.security.web.context.SecurityContextPersistenceFilter@3f304c36, org.springframework.security.web.header.HeaderWriterFilter@7fe93f7d, org.springframework.security.web.csrf.CsrfFilter@17905b8, org.springframework.security.web.authentication.logout.LogoutFilter@3f50d48e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@724fb5b3, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@21185304, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@4dfafbff, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@11dcb52a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@f958247, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@39b1561f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@397b728f, org.springframework.security.web.session.SessionManagementFilter@762dd38e, org.springframework.security.web.access.ExceptionTranslationFilter@c37844b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6dd4e808]
+2023-09-20 16:57:54.502  INFO 3304 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-09-20 16:57:54.508  INFO 3304 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/wherego'
+2023-09-20 16:57:54.511  INFO 3304 --- [restartedMain] com.wherego.WheregoApplication           : Started WheregoApplication in 0.423 seconds (JVM running for 195.348)
+2023-09-20 16:57:54.512  INFO 3304 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-09-20 16:58:14.087  INFO 3304 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (1 addition, 1 deletion, 0 modifications)
+2023-09-20 16:58:14.091  INFO 3304 --- [Thread-23] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-09-20 16:58:14.093  INFO 3304 --- [Thread-23] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-20 16:58:14.094  INFO 3304 --- [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2023-09-20 16:58:14.095  INFO 3304 --- [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2023-09-20 16:58:14.145  INFO 3304 --- [restartedMain] com.wherego.WheregoApplication           : Starting WheregoApplication using Java 17.0.7 on DESKTOP-8N3GG4O with PID 3304 (C:\workspace\spring\wherego\wherego\bin\main started by GGG in C:\workspace\spring\wherego\wherego)
+2023-09-20 16:58:14.146  INFO 3304 --- [restartedMain] com.wherego.WheregoApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-09-20 16:58:14.255  INFO 3304 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-20 16:58:14.256  INFO 3304 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
+2023-09-20 16:58:14.278  WARN 3304 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.wherego]' package. Please check your configuration.
+2023-09-20 16:58:14.305  INFO 3304 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-20 16:58:14.305  INFO 3304 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-20 16:58:14.305  INFO 3304 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.79]
+2023-09-20 16:58:14.317  INFO 3304 --- [restartedMain] o.a.c.c.C.[.[localhost].[/wherego]       : Initializing Spring embedded WebApplicationContext
+2023-09-20 16:58:14.317  INFO 3304 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 170 ms
+2023-09-20 16:58:14.341  INFO 3304 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-20 16:58:14.344  INFO 3304 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2023-09-20 16:58:14.437  INFO 3304 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2023-09-20 16:58:14.437  INFO 3304 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2023-09-20 16:58:14.474  INFO 3304 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-20 16:58:14.474  INFO 3304 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-20 16:58:14.483  WARN 3304 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-09-20 16:58:14.503  INFO 3304 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-09-20 16:58:14.537  WARN 3304 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 3ccd048a-561d-4a05-9175-c8849beb2972
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-09-20 16:58:14.542  INFO 3304 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@707f1a5f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@11c45ced, org.springframework.security.web.context.SecurityContextPersistenceFilter@2131c6fc, org.springframework.security.web.header.HeaderWriterFilter@a7dd7f5, org.springframework.security.web.csrf.CsrfFilter@6a8717ab, org.springframework.security.web.authentication.logout.LogoutFilter@5158649, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@540d44cd, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@f24a0bf, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@2f515934, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4fcf5d3f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@550e1677, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@31a8a15c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1a42cf44, org.springframework.security.web.session.SessionManagementFilter@73d9ad63, org.springframework.security.web.access.ExceptionTranslationFilter@64320f32, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3e8bea2f]
+2023-09-20 16:58:14.547  INFO 3304 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-09-20 16:58:14.553  INFO 3304 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/wherego'
+2023-09-20 16:58:14.556  INFO 3304 --- [restartedMain] com.wherego.WheregoApplication           : Started WheregoApplication in 0.428 seconds (JVM running for 215.393)
+2023-09-20 16:58:14.557  INFO 3304 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-09-20 16:58:42.242  INFO 3304 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-09-20 16:58:42.246  INFO 3304 --- [Thread-27] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-09-20 16:58:42.248  INFO 3304 --- [Thread-27] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-20 16:58:42.249  INFO 3304 --- [Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2023-09-20 16:58:42.250  INFO 3304 --- [Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+2023-09-20 16:58:42.303  INFO 3304 --- [restartedMain] com.wherego.WheregoApplication           : Starting WheregoApplication using Java 17.0.7 on DESKTOP-8N3GG4O with PID 3304 (C:\workspace\spring\wherego\wherego\bin\main started by GGG in C:\workspace\spring\wherego\wherego)
+2023-09-20 16:58:42.303  INFO 3304 --- [restartedMain] com.wherego.WheregoApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-09-20 16:58:42.395  INFO 3304 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-20 16:58:42.396  INFO 3304 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
+2023-09-20 16:58:42.419  WARN 3304 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.wherego]' package. Please check your configuration.
+2023-09-20 16:58:42.445  INFO 3304 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-20 16:58:42.445  INFO 3304 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-20 16:58:42.446  INFO 3304 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.79]
+2023-09-20 16:58:42.457  INFO 3304 --- [restartedMain] o.a.c.c.C.[.[localhost].[/wherego]       : Initializing Spring embedded WebApplicationContext
+2023-09-20 16:58:42.457  INFO 3304 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 153 ms
+2023-09-20 16:58:42.480  INFO 3304 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-20 16:58:42.483  INFO 3304 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Starting...
+2023-09-20 16:58:42.579  INFO 3304 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Start completed.
+2023-09-20 16:58:42.579  INFO 3304 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2023-09-20 16:58:42.616  INFO 3304 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-20 16:58:42.616  INFO 3304 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-20 16:58:42.625  WARN 3304 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-09-20 16:58:42.645  INFO 3304 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-09-20 16:58:42.679  WARN 3304 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 14820b0d-94c2-40c6-b215-77d37cd60147
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-09-20 16:58:42.684  INFO 3304 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4afb7aa6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@12d0822d, org.springframework.security.web.context.SecurityContextPersistenceFilter@610ef522, org.springframework.security.web.header.HeaderWriterFilter@6e65b1ff, org.springframework.security.web.csrf.CsrfFilter@5cf244e8, org.springframework.security.web.authentication.logout.LogoutFilter@774c131a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7091dc11, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@46d7fb1b, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@6c5fb532, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1d6040a4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3649d35, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@40cd3eef, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7325bd7d, org.springframework.security.web.session.SessionManagementFilter@2f95313c, org.springframework.security.web.access.ExceptionTranslationFilter@17eeacca, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5561a246]
+2023-09-20 16:58:42.688  INFO 3304 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-09-20 16:58:42.695  INFO 3304 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/wherego'
+2023-09-20 16:58:42.698  INFO 3304 --- [restartedMain] com.wherego.WheregoApplication           : Started WheregoApplication in 0.411 seconds (JVM running for 243.535)
+2023-09-20 16:58:42.698  INFO 3304 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-09-20 16:58:59.178  INFO 3304 --- [RMI TCP Connection(8)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-09-20 16:58:59.182  INFO 3304 --- [RMI TCP Connection(8)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-09-20 16:58:59.185  INFO 3304 --- [RMI TCP Connection(8)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-20 16:58:59.185  INFO 3304 --- [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...
+2023-09-20 16:58:59.186  INFO 3304 --- [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.
+2023-09-20 16:59:02.091  INFO 12436 --- [restartedMain] com.wherego.WheregoApplication           : Starting WheregoApplication using Java 17.0.7 on DESKTOP-8N3GG4O with PID 12436 (C:\workspace\spring\wherego\wherego\bin\main started by GGG in C:\workspace\spring\wherego\wherego)
+2023-09-20 16:59:02.092  INFO 12436 --- [restartedMain] com.wherego.WheregoApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-09-20 16:59:02.124  INFO 12436 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-09-20 16:59:02.124  INFO 12436 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-09-20 16:59:02.491  INFO 12436 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-20 16:59:02.501  INFO 12436 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2023-09-20 16:59:02.586  WARN 12436 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.wherego]' package. Please check your configuration.
+2023-09-20 16:59:02.882  INFO 12436 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-20 16:59:02.888  INFO 12436 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-20 16:59:02.888  INFO 12436 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.79]
+2023-09-20 16:59:02.938  INFO 12436 --- [restartedMain] o.a.c.c.C.[.[localhost].[/wherego]       : Initializing Spring embedded WebApplicationContext
+2023-09-20 16:59:02.939  INFO 12436 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 815 ms
+2023-09-20 16:59:03.076  INFO 12436 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-20 16:59:03.105  INFO 12436 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-09-20 16:59:03.210  INFO 12436 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-09-20 16:59:03.272  INFO 12436 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-20 16:59:03.480  INFO 12436 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-20 16:59:03.488  INFO 12436 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2023-09-20 16:59:03.663  INFO 12436 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-20 16:59:03.669  INFO 12436 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-20 16:59:03.697  WARN 12436 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-09-20 16:59:03.787  INFO 12436 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-09-20 16:59:03.991  WARN 12436 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: e04a1c9d-72ba-4dce-859d-8e86aadd1a98
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-09-20 16:59:04.065  INFO 12436 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@53357d16, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@421a054d, org.springframework.security.web.context.SecurityContextPersistenceFilter@1a7a24ac, org.springframework.security.web.header.HeaderWriterFilter@4f173390, org.springframework.security.web.csrf.CsrfFilter@2cc6ffd7, org.springframework.security.web.authentication.logout.LogoutFilter@1f94756c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3e1e4665, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@5cbfd5d1, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@45cb5de9, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5b9944f1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@78f51318, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5b3f1e2e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@263d61b3, org.springframework.security.web.session.SessionManagementFilter@2b6ea795, org.springframework.security.web.access.ExceptionTranslationFilter@239376eb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@525c6c28]
+2023-09-20 16:59:04.091  INFO 12436 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-09-20 16:59:04.120  INFO 12436 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/wherego'
+2023-09-20 16:59:04.127  INFO 12436 --- [restartedMain] com.wherego.WheregoApplication           : Started WheregoApplication in 2.278 seconds (JVM running for 2.757)
+2023-09-20 16:59:20.846  INFO 12436 --- [http-nio-8080-exec-4] o.a.c.c.C.[.[localhost].[/wherego]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-09-20 16:59:20.846  INFO 12436 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-09-20 16:59:20.847  INFO 12436 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
