@@ -20,9 +20,9 @@
 				<table class="main_serch_table">
 					<tr>
 						<td class="td1" onclick="toggleCategory('호텔')">Hotel</td>
-						<td class="td1" onclick="toggleCategory('모텔')">모텔</td>
-						<td class="td1" onclick="toggleCategory('펜션')">펜션</td>
-						<td class="td1" onclick="toggleCategory('리조트')">리조트</td>
+						<td class="td1" onclick="toggleCategory('모텔')">Motel</td>
+						<td class="td1" onclick="toggleCategory('펜션')">Pension</td>
+						<td class="td1" onclick="toggleCategory('리조트')">Resort</td>
 					</tr>
 				</table>
 
