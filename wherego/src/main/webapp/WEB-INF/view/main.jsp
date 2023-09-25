@@ -22,7 +22,7 @@
 						<td class="td1" onclick="toggleCategory('호텔')">Hotel</td>
 						<td class="td1" onclick="toggleCategory('모텔')">Motel</td>
 						<td class="td1" onclick="toggleCategory('펜션')">Pension</td>
-						<td class="td1" onclick="toggleCategory('리조트')">Resort</td>
+						<td class="td1" onclick="toggleCategory('리조트')">Resort1</td>
 					</tr>
 				</table>
 
