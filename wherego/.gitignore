@@ -35,11 +35,6 @@ out/
 
 ### VS Code ###
 .vscode/
-<<<<<<< HEAD
-*.log
-*.txt
-=======
 
 application.properties
 *.log
->>>>>>> 314e12a12f3d7340efe4c87a0c1bfa38e0f2be96

@@ -1,4 +1,4 @@
-package com.wherego;
+package com.tencoding.wherego;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
