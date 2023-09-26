@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.tencoding.wherego.repository.interfaces.MemberRepository">
+
+	<insert id="insert">
+		INSERT INTO member (
+		mem_id,
+		mem_password,
+		mem_nickname,
+		mem_name,
+		mem_email,
+		mem_phone,
+		mem_addr1,
+		mem_addr2)
+		VALUES (
+		#{id},
+		#{password},
+		#{nickname},
+		#{name},
+		#{email},
+		#{phone},
+		#{addr1},
+		#{addr2})
+	</insert>
+
+
+</mapper>
