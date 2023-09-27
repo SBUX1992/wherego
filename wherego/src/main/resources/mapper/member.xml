@@ -25,5 +25,11 @@
 		#{addr2})
 	</insert>
 
+	<select id="findByIdAndPassword"
+		resultType="com.tencoding.wherego.repository.model.Member">
+		SELECT *
+		FROM member
+		WHERE mem_id = #{id} AND mem_password = #{password}
+	</select>
 
 </mapper>
