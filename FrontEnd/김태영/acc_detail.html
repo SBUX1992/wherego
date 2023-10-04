@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Review Write Page</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="./css/review.css" />
+    
+    <!-- js -->
+    <link rel="stylesheet" href="./js/review.js" />
+    <link rel="stylesheet" href="./js/datepicker.js" />
+
+    <!-- bootstrap 4.6v -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- 슬라이드 -->
+    <script 
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" 
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" 
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" />
+
+    <!-- 달력 -->
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	  <link rel="stylesheet" href="/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='//code.jquery.com/jquery-1.8.3.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker3.min.css">
+    <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.min.js"></script>
+    <script src="/js/bootstrap-datepicker.kr.js" charset="UTF-8"></script>
+
+    <script type='text/javascript'>
+      $(function(){
+          $('div.input-daterange').datepicker({
+              calendarWeeks: false,
+              todayHighlight: true,
+              autoclose: true,
+              format: "yyyy/mm/dd",
+              language: "kr"
+          });
+      });
+      ;(function($){
+        $.fn.datepicker.dates['kr'] = {
+          days: ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일", "일요일"],
+          daysShort: ["일", "월", "화", "수", "목", "금", "토", "일"],
+          daysMin: ["일", "월", "화", "수", "목", "금", "토", "일"],
+          months: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+          monthsShort: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"]
+        };
+      }(jQuery));
+
+      $("div.input-daterange").each(function(){
+          var $inputs = $(this).find('input');
+          $inputs.datepicker();
+          if ($inputs.length >= 2) {
+              var $from = $inputs.eq(0);
+              var $to   = $inputs.eq(1);
+              $from.on('changeDate', function (e) {
+                  var d = new Date(e.date.valueOf());
+                  $to.datepicker('setStartDate', d); // 종료일은 시작일보다 빠를 수 없다.
+              });
+              $to.on('changeDate', function (e) {
+                  var d = new Date(e.date.valueOf());
+                  $from.datepicker('setEndDate', d); // 시작일은 종료일보다 늦을 수 없다.
+              });
+          }
+      });
+
+      function count(type)  {
+        // 결과를 표시할 element
+        const resultElement = document.getElementById('result');
+        
+        // 현재 화면에 표시된 값
+        let number = resultElement.innerText;
+        
+        // 더하기/빼기
+        if(type === 'plus') {
+          number = parseInt(number) - 1;
+          if(number < 0) {
+            number = 0;
+          }
+        }else if(type === 'minus')  {
+          number = parseInt(number) + 1;
+        }
+        
+        // 결과 출력
+        resultElement.innerText = number;
+      }
+
+    </script>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="main" >
+        <div class="acc_product">
+          <p class="acc_category">일본 > 도쿄, 지바 > 일본 | 도쿄 디즈니 리조트 티켓 | Tokyo Diseny Resort</p>
+          <div class="acc_number">
+            <p>상품번호</p>
+            <p>#32488</p>
+          </div>
+        </div>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="./img/lotte_signiel.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="./img/lotte_signiel.2.jpg" class="d-block w-100" alt="두번째 이미지">
+            </div>
+            <div class="carousel-item">
+              <img src="./img/lotte_signiel.3.jpg" class="d-block w-100" alt="세번째 이미지">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        <div class="acc_main">
+          <div class="acc_name">일본 | 도쿄 디즈니 리조트 티켓 | Tokyo Diseny Resort</div>
+          <div class="acc_info">
+            <div class="acc_location">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pin-map" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8l3-4z"/>
+                <path fill-rule="evenodd" d="M8 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z"/>
+              </svg>
+              <div>일본 - 도쿄, 지바</div>
+            </div>
+            <div class="acc_res">
+              <div class="acc_price">KRW 45,000</div>
+              <button type="button" class="btn btn-info">예약하기</button>
+            </div>
+          </div>
+        </div>
+        <div class="acc_detail">
+          <div class="acc_div">
+            <div class="acc_guide">
+              <p>예약 일자 선택</p>
+            </div>
+            <div class="acc_select">
+              <div class="input-group input-daterange">
+                <input type="text" class="form-control" value="Check in">
+                <div class="input-group-addon">to</div>
+                <input type="text" class="form-control" value="Check out">
+                <div class="input-group-addon">인원 수</div>
+              </div>
+              <div class="acc_select_button">
+                <button type="button" class="btn btn-info" onclick="count('plus')">-</button>
+                <div id="result" class="acc_number_people">0</div>
+                <button type="button" class="btn btn-info" onclick="count('minus')">+</button>
+              </div>
+            </div>
+          </div>
+          <div class="acc_div">
+            <div class="acc_guide">서비스 정보</div>
+            <div>조식 / 무료 주차 / 무료 인터넷 / 24시간 프런트 운용</div>
+          </div>
+          <div class="acc_div">
+            <div class="acc_guide">호텔 정보</div>
+            <div>
+              이 호텔은 하네다 공항에서 차로 23분, 나리타 공항에서 차로 44분 거리에 있으며 주변의 관광 명소를 손쉽게 둘러보실 수 있는 편리한 입지 조건을 자랑합니다. 빅사이트와 오다이바가 차로 15분, 시부야와 도쿄돔이 차로 25분 거리에 있으며 신주쿠가 차로 30분 거리에 자리해 있습니다. 이 호텔은 편리한 위치를 자랑하여 도쿄에 방문하는 분들께 좋은 선택이 될 것입니다. 뿐만 아니라 룸서비스, 수영장, 환전도 갖춰져 있습니다. 이 호텔에는 705개의 객실이 있으며 모든 객실에는 편리한 숙박을 위한 모든 시설이 마련되어 있습니다. 구내에는 식사를 하고 싶은 분들이 이용하시기 좋은 레스토랑이 있습니다.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+  </body>
+</html>
