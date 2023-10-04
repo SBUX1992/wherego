@@ -66,7 +66,7 @@
 	</div>
 	<h2>⚡️ 원하는 숙소를 클릭해보세요!</h2>
 	<div class="select_section">
-		<li class="hotel"><span>호텔</span></li>
+		<li class="hotel"><span>호텔111</span></li>
 		<li class="motel"><span>모텔</span></li>
 		<li class="pension"><span>펜션</span></li>
 		<li class="resort"><span>리조트</span></li>
