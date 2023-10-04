@@ -28,12 +28,14 @@ p {
   justify-content: space-between;
   margin-top: 10px;
 }
-.acc_number{ 
-  display: flex;
+.acc_category {
+  font-size: 15px;
+  font-weight: 700;
 }
-
-.acc_image {
-  
+.acc_number p {
+  margin-right: 6px;
+  font-size: 10px;
+  font-weight: 600;
 }
 
 .acc_main {
@@ -41,12 +43,15 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-bottom: 30px;
 }
 .acc_name {
   padding-top: 10px;
+  font-size: 20px;
+  font-weight: 700;
 }
 .acc_info {
-  padding-top: 5px;
+  margin-top: 10px;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -55,9 +60,9 @@ p {
 .acc_location {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  align-items: center;
 }
-.acc_location h6{
+.acc_location div{
   margin-left: 10px;
 }
 .acc_res {
@@ -67,8 +72,36 @@ p {
 }
 .acc_price {
   margin-right: 15px;
+  font-size: 15px;
+  font-weight: 700;
 }
 
 .acc_detail {
-  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+}
+.acc_select {
+  display: flex;
+  flex-direction: row;
+}
+.acc_select_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-left: 5px;
+}
+.acc_number_people {
+  font-size: 15px;
+  font-weight: 700;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.acc_div {
+  margin-bottom: 15px;
+}
+.acc_guide {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
