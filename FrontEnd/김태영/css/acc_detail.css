@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+p {
+  display: inline;
+}
+
+.main {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.acc_product {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.acc_category {
+  font-size: 15px;
+  font-weight: 700;
+}
+.acc_number p {
+  margin-right: 6px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.acc_main {
+  padding-top: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.acc_name {
+  padding-top: 10px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.acc_info {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.acc_location {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.acc_location div{
+  margin-left: 10px;
+}
+.acc_res {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.acc_price {
+  margin-right: 15px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.acc_detail {
+  display: flex;
+  flex-direction: column;
+}
+.acc_select {
+  display: flex;
+  flex-direction: row;
+}
+.acc_select_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-left: 5px;
+}
+.acc_number_people {
+  font-size: 15px;
+  font-weight: 700;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.acc_div {
+  margin-bottom: 15px;
+}
+.acc_guide {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}

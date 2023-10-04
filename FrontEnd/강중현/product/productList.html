@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>상품 리스트</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../css/product/list.css" />
+    <!-- js -->
+    <link rel="stylesheet" href="../js/product/list.js" />
+
+    <!-- bootstrap 4.6v -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      main {
+        flex: 1;
+        width: 100%;
+        max-width: 1060px;
+        border: 1px solid red;
+        margin: 0 auto 120px;
+        display: block;
+      }
+      .mainContainer {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+      .searchContainer {
+        font-family: inherit;
+      }
+      .filter_area {
+        position: relative;
+      }
+
+      .asideFilter {
+        position: sticky;
+        top: 0px;
+      }
+      .filterCss {
+        display: flex;
+        flex-direction: column;
+      }
+      .priceTitle {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 0px;
+        margin-bottom: 5px;
+      }
+      .priceH4 {
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 120%;
+      }
+      .priceP {
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 120%;
+        margin-top: 2px;
+        color: #848c94;
+      }
+      .chartFilter {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 138%;
+        display: flex;
+        padding: 8px 0px;
+        margin-bottom: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="listPage">
+        <div class="mainContainer">
+          <div class="searchContainer">
+            <h3>검색</h3>
+          </div>
+          <div class="itemList">
+            <div aria-label="필터 영역" class="filter_area">
+              <!-- aside 시작 -->
+              <aside class="asideFilter">
+                <div class="filterCss">
+                  <div class="priceTitle">
+                    <h4 class="priceH4">가격</h4>
+                    <p class="priceP">1박 기준 요금</p>
+                  </div>
+                  <div class="filterCss">
+                    <div class="filterCss">
+                      <span class="chartFilter">
+                        <div>0원</div>
+                        <div>-</div>
+                        <div>500,000원+</div>
+                      </span>
+                      <span>1박 기준 요금</span>
+                    </div>
+                    <div></div>
+                    <div>
+                      <span>0원</span>
+                      <span>500,000원</span>
+                    </div>
+                  </div>
+                </div>
+                <hr />
+                <div class="filterCss">
+                  <div>
+                    <h4>정렬</h4>
+                  </div>
+                  <div>
+                    <label for="추천순">
+                      <div>
+                        <div>
+                          <input id="추천순" type="radio" name="checkbox" />
+                        </div>
+                      </div>
+                      <div>
+                        <span>추천순</span>
+                      </div>
+                    </label>
+                    <label for="낮은 가격순">
+                      <div>
+                        <div>
+                          <input
+                            id="낮은 가격순"
+                            type="radio"
+                            name="checkbox"
+                          />
+                        </div>
+                      </div>
+                      <div>
+                        <span>낮은 가격순</span>
+                      </div>
+                    </label>
+                    <label for="높은 가격순">
+                      <div>
+                        <div>
+                          <input
+                            id="높은 가격순"
+                            type="radio"
+                            name="checkbox"
+                          />
+                        </div>
+                      </div>
+                      <div>
+                        <span>높은 가격순</span>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                <hr />
+                <button>
+                  <div>
+                    <span>필터 초기화</span>
+                  </div>
+                </button>
+              </aside>
+              <!-- aside 끝 -->
+            </div>
+            <!-- section 시작 -->
+            <section></section>
+            <!-- section 끝 -->
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
