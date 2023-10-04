@@ -15,7 +15,10 @@
 <body>
 	<div class="container" style="width: 600px;">
 		<h2>회원가입</h2>
+
 		<form action="/wherego/member/sign-up" method="post">
+
+
 			<div class="form-group">
 				<label for="mem_id">ID :</label> <input type="text" class="form-control" id="mem_id" placeholder="Enter id" name="id" style="width: 500px">
 			</div>
@@ -38,7 +41,9 @@
 				<label for="mem_phone">전화번호 :</label> <input type="text" class="form-control" id="mem_phone" placeholder="Enter phone number" name="phone" style="width: 500px">
 			</div>
 			<div class="form-group">
+
 				<label for="mem_addr1">도로명 주소 :</label> <input type="text" class="form-control" id="mem_addr1" placeholder="Enter address" name="addr1" style="width: 450px">
+
 			</div>
 			<div class="form-group">
 				<label for="mem_addr2">나머지 주소 :</label> <input type="text" class="form-control" id="mem_addr2" placeholder="나머지 주소" name="addr2" style="width: 500px">
