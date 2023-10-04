@@ -26,10 +26,6 @@ dependencies {
 	implementation 'javax.servlet:jstl'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
-
-//	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-
-
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.3.1'
 	compileOnly 'org.projectlombok:lombok'
@@ -39,13 +35,7 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:2.3.1'
 	testImplementation 'org.springframework.security:spring-security-test'
-
-
-		implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
-      implementation 'javax.servlet:jstl'
-=======
 	
->>>>>>> b5ecfff4a7193a2dfd487f39d8fbda8aa74be084
 }
 
 tasks.named('test') {

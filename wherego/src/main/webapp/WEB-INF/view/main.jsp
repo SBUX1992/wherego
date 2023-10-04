@@ -29,7 +29,7 @@
 
 				<table class="main_serch_table">
 					<tr>
-						<td class="td1" onclick="toggleCategory('호텔')">호텔1111</td>
+						<td class="td1" onclick="toggleCategory('호텔')">호텔</td>
 						<td class="td1" onclick="toggleCategory('모텔')">모텔</td>
 						<td class="td1" onclick="toggleCategory('펜션')">펜션</td>
 						<td class="td1" onclick="toggleCategory('리조트')">리조트</td>
@@ -121,6 +121,19 @@ const swiper = new Swiper('.swiper', {
     el: '.swiper-scrollbar',
   },
 });
+
+//스크롤 이벤트 핸들러 함수
+window.addEventListener('scroll', function () {
+  // 현재 스크롤 위치 가져오기
+  var scrollY = window.scrollY || document.documentElement.scrollTop;
+
+  // 원하는 스크롤 위치 (예: 500px)에 도달하면 원하는 작업 수행
+  if (scrollY >= 500) {
+    // 여기에 원하는 작업을 추가합니다.
+    // 예를 들어, 다른 요소를 숨기거나 보이게 하거나 다른 스타일을 적용할 수 있습니다.
+  }
+});
+
 </script>
 </body>
 </html>
