@@ -29,7 +29,25 @@ public class MemberService {
 		if (memberEntity == null || memberEntity.getMemId().equals(logInFormDto.getId()) == false) {
 			System.out.println("계정이 없음");
 		}
-		
+
 		return memberEntity;
+	}
+	
+	public Member kakaoLogIn(LogInFormDto logInFormDto) {
+		Member memberEntity = memberRepository.findById(logInFormDto.getId()); // sql 쿼리문 던져봄
+		// TODO 유효성검사
+		if (memberEntity == null || memberEntity.getMemId().equals(logInFormDto.getId()) == false) {
+			System.out.println("계정이 없음");
+		}
+
+		return memberEntity;
+	}
+	
+	@Transactional
+	public void kakaoSignUp(SignUpFormDto signUpFormDto) {
+		// TODO 비밀번호 해시처리, 가입실패시 익셉션처리(유효성)
+		int result = memberRepository.insert(signUpFormDto);
+
+		System.out.println(result);
 	}
 }

@@ -10,12 +10,16 @@ import com.tencoding.wherego.repository.model.Member;
 public interface MemberRepository {
 	// 회원가입
 	public int insert(SignUpFormDto signUpFormDto);
+
 	// 로그인
 	public Member findByIdAndPassword(LogInFormDto logInFormDto);
+
+	// 아이디로 계정확인
+	public Member findById(String id);
 	// 회원정보 수정
-	
+
 	// 아이디 찾기
-	
+
 	// 비밀번호 찾기
-	
+
 }
