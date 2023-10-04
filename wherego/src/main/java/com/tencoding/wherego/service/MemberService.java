@@ -4,10 +4,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+<<<<<<< HEAD
+import com.tencoding.wherego.dto.SignUpFormDto;
+import com.tencoding.wherego.repository.interfaces.MemberRepository;
+=======
 import com.tencoding.wherego.dto.LogInFormDto;
 import com.tencoding.wherego.dto.SignUpFormDto;
 import com.tencoding.wherego.repository.interfaces.MemberRepository;
 import com.tencoding.wherego.repository.model.Member;
+>>>>>>> 63b9ac653e59da5b7450053eb9313bc18e0187ac
 
 @Service
 public class MemberService {
@@ -17,6 +22,13 @@ public class MemberService {
 
 	@Transactional
 	public void signUp(SignUpFormDto signUpFormDto) {
+<<<<<<< HEAD
+		// TODO 비밀번호 해시처리, 가입실패시 익셉션처리
+		int result = memberRepository.insert(signUpFormDto);
+		
+		System.out.println(result);
+	}
+=======
 		// TODO 비밀번호 해시처리, 가입실패시 익셉션처리(유효성)
 		int result = memberRepository.insert(signUpFormDto);
 
@@ -32,4 +44,5 @@ public class MemberService {
 		
 		return memberEntity;
 	}
+>>>>>>> 63b9ac653e59da5b7450053eb9313bc18e0187ac
 }
