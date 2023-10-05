@@ -1,15 +1,5 @@
 package com.tencoding.wherego.controller;
 
-<<<<<<< HEAD
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.tencoding.wherego.dto.SignUpFormDto;
-import com.tencoding.wherego.service.MemberService;
-=======
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,32 +22,25 @@ import com.tencoding.wherego.dto.SignUpFormDto;
 import com.tencoding.wherego.repository.model.Member;
 import com.tencoding.wherego.service.MemberService;
 import com.tencoding.wherego.utils.Define;
->>>>>>> 63b9ac653e59da5b7450053eb9313bc18e0187ac
 
 @Controller
 @RequestMapping("/member")
 public class MemberController {
-<<<<<<< HEAD
 	
 	@Autowired
 	private MemberService memberService;
 	
-=======
 
-	@Autowired
-	private MemberService memberService;
+	
 	@Autowired
 	private HttpSession session;
 
->>>>>>> 63b9ac653e59da5b7450053eb9313bc18e0187ac
 	@GetMapping("/login")
 	public String login() {
 		return "member/login";
 	}
 
-<<<<<<< HEAD
 	@GetMapping("/sign_up")
-=======
 	@PostMapping("/login")
 	@ResponseBody // 메인페이지가 생기면 교체
 	public Member loginProc(LogInFormDto logInFormDto) {
@@ -73,7 +56,6 @@ public class MemberController {
 	}
 
 	@GetMapping("/sign-up")
->>>>>>> 63b9ac653e59da5b7450053eb9313bc18e0187ac
 	public String signUp() {
 		return "member/signUp";
 	}
@@ -81,19 +63,12 @@ public class MemberController {
 	@PostMapping("/sign_up")
 	public String signUpProc(SignUpFormDto signUpFormDto) {
 		// TODO : 유효성검사
-<<<<<<< HEAD
 		
 		memberService.signUp(signUpFormDto);
 		
 		return "redirect:/member/login";
 	}
 
-=======
-
-		memberService.signUp(signUpFormDto);
-
-		return "redirect:/member/login";
-	}
 
 	@GetMapping("/kakao/callback")
 	@ResponseBody // 이녀셕은 data 반환 명시
@@ -126,5 +101,4 @@ public class MemberController {
 //		return "member/search";
 //	}
 
->>>>>>> 63b9ac653e59da5b7450053eb9313bc18e0187ac
 }
