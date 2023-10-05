@@ -17,172 +17,503 @@
       integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
       crossorigin="anonymous"
     />
-    <script
-      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-      crossorigin="anonymous"
-    ></script>
+
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+
     <style>
-      main {
-        flex: 1;
-        width: 100%;
-        max-width: 1060px;
-        border: 1px solid red;
-        margin: 0 auto 120px;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      ul,
+      ol {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+        cursor: pointer;
+      }
+      body {
+        background-color: #f5f5f5;
+        color: #333;
+        font-weight: 400;
+        margin: 0 auto;
+      }
+      section {
         display: block;
       }
-      .mainContainer {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-      }
-      .searchContainer {
-        font-family: inherit;
-      }
-      .filter_area {
-        position: relative;
+      div {
+        display: block;
       }
 
-      .asideFilter {
-        position: sticky;
-        top: 0px;
+      .wrapper {
       }
-      .filterCss {
+      .productContainer {
+        margin-top: 25px;
+      }
+      .container {
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+        width: 1170px;
+      }
+      .row {
+        margin-right: -15px;
+        margin-left: -15px;
+      }
+      .productFilter {
+        width: 25%;
+      }
+      .col-md-9 {
+        width: 75%;
+      }
+      .col-md-9 > div > h4 {
+        display: inline-block;
+        font-weight: 400;
+        color: #333;
+        margin: 4px 0;
+      }
+      .sortList {
+        margin: 0 5px;
+        color: #aaa;
+      }
+      .col-md-9 > div > span > a {
+        color: #666;
+        font-weight: 700;
+      }
+      .productList {
+      }
+
+      .card {
+        width: 30%;
+        position: relative;
+        display: inline-block;
+        margin: 10px;
+      }
+      .card-img-top {
+        width: 100%;
+        height: 100%;
+      }
+
+      .card-body {
+        padding: 10px;
+      }
+      .card-text {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        display: block;
+      }
+      .card-service {
         display: flex;
-        flex-direction: column;
       }
-      .priceTitle {
-        display: flex;
-        flex-direction: column;
-        padding: 10px 0px;
-        margin-bottom: 5px;
+      .service {
+        white-space: nowrap;
+        font-size: 12px;
+        line-height: 1.67;
+        color: #36a1fa;
+        padding: 0 8px 2px;
+        border-radius: 2px;
+        background-color: #649ef41a;
+        margin: 0 4px 0 0;
       }
-      .priceH4 {
-        font-size: 15px;
-        font-weight: 600;
-        line-height: 120%;
-      }
-      .priceP {
-        font-size: 13px;
-        font-weight: 500;
-        line-height: 120%;
-        margin-top: 2px;
-        color: #848c94;
-      }
-      .chartText {
+      .card-price {
         font-size: 16px;
-        font-weight: 600;
-        line-height: 138%;
-        display: flex;
-        padding: 8px 0px;
-        margin-bottom: 4px;
+        color: #666;
+        line-height: 16px;
+        font-weight: 700;
+        padding: 10px;
       }
-      .chartSubText {
-        font-size: 13px;
-        font-weight: 600;
-        line-height: 138%;
-        color: #848c94;
+      .productPrice {
+        flex-direction: column;
+      }
+
+      /* Swiper */
+      .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        background-position: center;
+        background-size: cover;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
       }
     </style>
   </head>
   <body>
-    <main>
-      <div class="listPage">
-        <div class="mainContainer">
-          <div class="searchContainer">
-            <h3>검색</h3>
-          </div>
-          <div class="itemList">
-            <div aria-label="필터 영역" class="filter_area">
-              <!-- aside 시작 -->
-              <aside class="asideFilter">
-                <div class="filterCss">
-                  <div class="priceTitle">
-                    <h4 class="priceH4">가격</h4>
-                    <p class="priceP">1박 기준 요금</p>
-                  </div>
-                  <div class="filterCss">
-                    <div class="filterCss">
-                      <span class="chartText">
-                        <div>0원</div>
-                        <div>-</div>
-                        <div>500,000원+</div>
-                      </span>
-                      <span class="chartSubText">1박 기준 요금</span>
-                    </div>
-                    <div>컨트롤 바</div>
-                    <div>
-                      <span>0원</span>
-                      <span>500,000원</span>
-                    </div>
-                  </div>
-                </div>
-                <hr />
-                <div class="filterCss">
-                  <div>
-                    <h4>정렬</h4>
-                  </div>
-                  <div>
-                    <label for="추천순">
-                      <div>
-                        <div>
-                          <input id="추천순" type="radio" name="checkbox" />
-                        </div>
-                      </div>
-                      <div>
-                        <span>추천순</span>
-                      </div>
-                    </label>
-                    <label for="낮은 가격순">
-                      <div>
-                        <div>
-                          <input
-                            id="낮은 가격순"
-                            type="radio"
-                            name="checkbox"
-                          />
-                        </div>
-                      </div>
-                      <div>
-                        <span>낮은 가격순</span>
-                      </div>
-                    </label>
-                    <label for="높은 가격순">
-                      <div>
-                        <div>
-                          <input
-                            id="높은 가격순"
-                            type="radio"
-                            name="checkbox"
-                          />
-                        </div>
-                      </div>
-                      <div>
-                        <span>높은 가격순</span>
-                      </div>
-                    </label>
-                  </div>
-                </div>
-                <hr />
-                <button>
-                  <div>
-                    <span>필터 초기화</span>
-                  </div>
-                </button>
-              </aside>
-              <!-- aside 끝 -->
+    <section class="wrapper">
+      <div class="container productContainer">
+        <div class="row">
+          <aside class="productFilter"></aside>
+          <main class="col-md-9">
+            <!-- sort start -->
+            <div>
+              <h4>정렬 순서 :</h4>
+              <span>
+                <span class="sortList">|</span>
+                <a href="#"><i>인기상품순</i></a>
+              </span>
+              <span>
+                <span class="sortList">|</span>
+                <a href="#"><i>평점순</i></a>
+              </span>
+              <span>
+                <span class="sortList">|</span>
+                <a href="#"><i>낮은가격순</i></a>
+              </span>
+              <span>
+                <span class="sortList">|</span>
+                <a href="#"><i class="fa">높은가격순</i></a>
+              </span>
             </div>
-            <!-- section 시작 -->
-            <section></section>
-            <!-- section 끝 -->
-          </div>
+            <!-- sort end -->
+            <!-- productList start -->
+            <div class="productList">
+              <div class="card">
+                <!-- Swiper -->
+                <div class="swiper mySwiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="/img/product/apple.png" class="card-img-top" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="/img/product/lotte_signiel.png"
+                        class="card-img-top"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="/img/product/sample.png" class="card-img-top" />
+                    </div>
+                  </div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-pagination"></div>
+                </div>
+                <!-- Swiper end -->
+                <a href="#">
+                  <div class="card-body">
+                    <div>
+                      <span class="card-text"
+                        >[서울/서울구] 서울 앰배서더 호텔</span
+                      >
+                    </div>
+                    <div class="card-service">
+                      <span title="무료 취소 가능" class="service"
+                        >무료 취소 가능</span
+                      >
+                    </div>
+                    <div>
+                      <span>
+                        <span>⭐</span>
+                        <span>4.7</span>
+                        <span>(1023)</span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="card-price">
+                    <span class="productPrice">544,500원/박</span>
+                  </div>
+                </a>
+              </div>
+              <div class="card">
+                <!-- Swiper -->
+                <div class="swiper mySwiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="/img/product/apple.png" class="card-img-top" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="/img/product/lotte_signiel.png"
+                        class="card-img-top"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="/img/product/sample.png" class="card-img-top" />
+                    </div>
+                  </div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-pagination"></div>
+                </div>
+                <!-- Swiper end -->
+                <a href="#">
+                  <div class="card-body">
+                    <div>
+                      <span class="card-text"
+                        >[서울/서울구] 서울 앰배서더 호텔</span
+                      >
+                    </div>
+                    <div class="card-service">
+                      <span title="무료 취소 가능" class="service"
+                        >무료 취소 가능</span
+                      >
+                    </div>
+                    <div>
+                      <span>
+                        <span>⭐</span>
+                        <span>4.7</span>
+                        <span>(1023)</span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="card-price">
+                    <span class="productPrice">544,500원/박</span>
+                  </div>
+                </a>
+              </div>
+              <div class="card">
+                <!-- Swiper -->
+                <div class="swiper mySwiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="/img/product/apple.png" class="card-img-top" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="/img/product/lotte_signiel.png"
+                        class="card-img-top"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="/img/product/sample.png" class="card-img-top" />
+                    </div>
+                  </div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-pagination"></div>
+                </div>
+                <!-- Swiper end -->
+                <a href="#">
+                  <div class="card-body">
+                    <div>
+                      <span class="card-text"
+                        >[서울/서울구] 서울 앰배서더 호텔</span
+                      >
+                    </div>
+                    <div class="card-service">
+                      <span title="무료 취소 가능" class="service"
+                        >무료 취소 가능</span
+                      >
+                    </div>
+                    <div>
+                      <span>
+                        <span>⭐</span>
+                        <span>4.7</span>
+                        <span>(1023)</span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="card-price">
+                    <span class="productPrice">544,500원/박</span>
+                  </div>
+                </a>
+              </div>
+              <div class="card">
+                <!-- Swiper -->
+                <div class="swiper mySwiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="/img/product/apple.png" class="card-img-top" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="/img/product/lotte_signiel.png"
+                        class="card-img-top"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="/img/product/sample.png" class="card-img-top" />
+                    </div>
+                  </div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-pagination"></div>
+                </div>
+                <!-- Swiper end -->
+                <a href="#">
+                  <div class="card-body">
+                    <div>
+                      <span class="card-text"
+                        >[서울/서울구] 서울 앰배서더 호텔</span
+                      >
+                    </div>
+                    <div class="card-service">
+                      <span title="무료 취소 가능" class="service"
+                        >무료 취소 가능</span
+                      >
+                    </div>
+                    <div>
+                      <span>
+                        <span>⭐</span>
+                        <span>4.7</span>
+                        <span>(1023)</span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="card-price">
+                    <span class="productPrice">544,500원/박</span>
+                  </div>
+                </a>
+              </div>
+              <div class="card">
+                <!-- Swiper -->
+                <div class="swiper mySwiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="/img/product/apple.png" class="card-img-top" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="/img/product/lotte_signiel.png"
+                        class="card-img-top"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="/img/product/sample.png" class="card-img-top" />
+                    </div>
+                  </div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-pagination"></div>
+                </div>
+                <!-- Swiper end -->
+                <a href="#">
+                  <div class="card-body">
+                    <div>
+                      <span class="card-text"
+                        >[서울/서울구] 서울 앰배서더 호텔</span
+                      >
+                    </div>
+                    <div class="card-service">
+                      <span title="무료 취소 가능" class="service"
+                        >무료 취소 가능</span
+                      >
+                    </div>
+                    <div>
+                      <span>
+                        <span>⭐</span>
+                        <span>4.7</span>
+                        <span>(1023)</span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="card-price">
+                    <span class="productPrice">544,500원/박</span>
+                  </div>
+                </a>
+              </div>
+              <div class="card">
+                <!-- Swiper -->
+                <div class="swiper mySwiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="/img/product/apple.png" class="card-img-top" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="/img/product/lotte_signiel.png"
+                        class="card-img-top"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="/img/product/sample.png" class="card-img-top" />
+                    </div>
+                  </div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-pagination"></div>
+                </div>
+                <!-- Swiper end -->
+                <a href="#">
+                  <div class="card-body">
+                    <div>
+                      <span class="card-text"
+                        >[서울/서울구] 서울 앰배서더 호텔</span
+                      >
+                    </div>
+                    <div class="card-service">
+                      <span title="무료 취소 가능" class="service"
+                        >무료 취소 가능</span
+                      >
+                    </div>
+                    <div>
+                      <span>
+                        <span>⭐</span>
+                        <span>4.7</span>
+                        <span>(1023)</span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="card-price">
+                    <span class="productPrice">544,500원/박</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- productList end -->
+            <!-- pagination start -->
+            <nav aria-label="Page navigation example">
+              <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                  <a class="page-link">이전</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#">다음</a>
+                </li>
+              </ul>
+            </nav>
+            <!-- pagination end -->
+
+            <!-- bootstrap JS -->
+            <script
+              src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+              integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+              crossorigin="anonymous"
+            ></script>
+            <script
+              src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+              integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+              crossorigin="anonymous"
+            ></script>
+
+            <!-- Swiper JS -->
+            <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+            <!-- Initialize Swiper -->
+            <script>
+              var swiper = new Swiper(".mySwiper", {
+                spaceBetween: 30,
+                effect: "fade",
+                navigation: {
+                  nextEl: ".swiper-button-next",
+                  prevEl: ".swiper-button-prev",
+                },
+                pagination: {
+                  el: ".swiper-pagination",
+                  clickable: true,
+                },
+              });
+            </script>
+          </main>
         </div>
       </div>
-    </main>
+    </section>
   </body>
 </html>
