@@ -25,7 +25,6 @@
 		#{addr2})
 	</insert>
 
-<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 	<select id="findByIdAndPassword"
@@ -35,13 +34,36 @@
 		WHERE mem_id = #{id} AND mem_password = #{password}
 	</select>
 >>>>>>> 63b9ac653e59da5b7450053eb9313bc18e0187ac
-=======
-	<select id="getMemberList" resultType="com.tencoding.wherego.dto.MemberListDto">
-		Select mem_id,mem_nickname,mem_name,mem_email,mem_phone,mem_addr1,mem_addr2
-		from member order by mem_id asc;
-		
-	</select>
 
->>>>>>> Stashed changes
+	<select id="findById"
+		resultType="com.tencoding.wherego.repository.model.Member">
+		SELECT *
+		FROM member
+		WHERE mem_id = #{id}
+	</select>
+	
+	<insert id="kakaoInsert">
+		INSERT INTO member (
+		mem_id,
+		mem_password,
+		mem_nickname,
+		mem_name,
+		mem_email,
+		mem_provider,
+		mem_phone,
+		mem_addr1,
+		mem_addr2)
+		VALUES (
+		#{id},
+		#{password},
+		#{nickname},
+		#{name},
+		#{email},
+		2,
+		#{phone},
+		#{addr1},
+		#{addr2})
+	</insert>
+
 
 </mapper>
