@@ -29,11 +29,11 @@ public class MemberService {
 		System.out.println(result);
 	}
 
-		// TODO 비밀번호 해시처리, 가입실패시 익셉션처리(유효성)
-		int result = memberRepository.insert(signUpFormDto);
-
-		System.out.println(result);
-	}
+//		// TODO 비밀번호 해시처리, 가입실패시 익셉션처리(유효성)
+//		int result = memberRepository.insert(signUpFormDto);
+//
+//		System.out.println(result);
+//	}
 
 	public Member logIn(LogInFormDto logInFormDto) {
 		Member memberEntity = memberRepository.findByIdAndPassword(logInFormDto);
