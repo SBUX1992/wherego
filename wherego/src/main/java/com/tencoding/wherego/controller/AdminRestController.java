@@ -26,8 +26,6 @@ public class AdminRestController {
 	@Autowired
 	private TagRepository tagRepository;
 	
-	@Autowired
-	private MemberRepository memberRepository;
 
 	@GetMapping("/popUpPage")
 	public String popUpPage() {
@@ -79,16 +77,13 @@ public class AdminRestController {
     	//return memberRepository.getMemberList();
     	List<MemberListDto> mld = new ArrayList<>();
     	Timestamp timestamp = Timestamp.valueOf("2023-10-04 15:30:00");
-    	for (int i = 0; i < 10; i++) {
+    	for (int i = 0; i < 102; i++) {
 			MemberListDto dto = MemberListDto.builder().
 					memUserNo(i).
 					memId("" + i).
 					memNickname("" + i).
 					memName("name" + i).
 					memEmail("" + i).
-					memPerLevel(i).
-					memProvider(i).
-					memPoint(i).
 					memPhone("" + i).
 					memAddr1("" + i).
 					memAddr2("" + i).
@@ -99,6 +94,7 @@ public class AdminRestController {
     	return mld;
     }
 	
+    
 	//@GetMapping("/findAllMembers") memberRepository.findAll();
 	
 	

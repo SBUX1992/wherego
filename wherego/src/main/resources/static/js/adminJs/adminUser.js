@@ -5,13 +5,17 @@ $(document).ready(function() {
 function loadUserDetails() {
 	let detailsWrapper = new Ele($('#UserDetailOuterWrapper'), 'memberDetailsWrapper');
 	detailsWrapper.appendTag('');
-	detailsWrapper.tagCss('90%', '100%', 'antiquewhite', 'block');
+	detailsWrapper.tagCss('100%', '100%', 'whitesmoke', 'block');
 	$('#memberDetailsWrapper').css('margin', 'auto');
 	$.get('admin/getMemberList', function(memberList) {
 		let memberDetailHeader = new Ele($('#memberDetailsWrapper'), 'memberDetailHeader');
 		memberDetailHeader.appendTag('');
-		memberDetailHeader.tagCss('100%', '5%', 'grey', 'flex');
-		let keys = ['idx', '아이디', '닉네임', '이메일', '레벨', 'prv', '포인트', 'phone', '주소', '주소2', '가입일'];
+		memberDetailHeader.tagCss('100%', '5%', 'white', 'flex');
+		$('#memberDetailHeader').css('margin-top','2%');
+		$('#memberDetailHeader').css('margin-bottom','2%');
+		$('#memberDetailHeader').css('padding-top','1%');
+		$('#memberDetailHeader').css('border-radius','3px');
+		let keys = ['idx', '아이디', '닉네임', '이름', '이메일', 'phone', '주소', '주소2', '가입일'];
 		keys.forEach((e, idx) => {
 			let memeberDetailKeys = new Ele($('#memberDetailHeader'), 'memberDetailKeys' + e);
 			memeberDetailKeys.appendTag('keys');
@@ -24,15 +28,21 @@ function loadUserDetails() {
 
 
 function displayData(memberList) {
-	console.log(memberList);
+	//console.log(memberList);
 	$('#memberDetailsWrapper').append($('<div id = "listBody">'));
+	$('#listBody').css('width', '100%');
+	$('#listBody').css('height', '80%');
+	$('#listBody').css('background-color', 'whitesmoke');
 	$('#memberDetailsWrapper').append($('<div id = "paginationDiv">'));
 	var $pagination = $('#paginationDiv');
+	$('#paginationDiv').css('display', 'flex');
+	$('#paginationDiv').css('width', 'auto');
+	$('#paginationDiv').css('justify-content', 'center');
 	var currentPage = 1; // 현재 페이지 변수를 초기화합니다.
 	// ajax get을 통해 실제 표시할 자료 수 / 전체 페이지 수 를 높은확률로 math.ceil 해야될듯?
 	var defaultOpts = {
-		totalPages: Math.ceil(memberList.length / 5), // 전체 페이지 수 (실제 데이터에 따라 조정해야 합니다.)
-		visiblePages: 5, // 표시할 페이지 수
+		totalPages: Math.ceil(memberList.length / 10), // 전체 페이지 수 (실제 데이터에 따라 조정해야 합니다.)
+		visiblePages: 10, // 표시할 페이지 수
 		onPageClick: function(event, page) {
 			// 페이지를 클릭할 때 호출되는 콜백 함수
 			// 여기에서 해당 페이지에 대한 데이터를 가져오거나 표시하는 로직을 추가합니다.
@@ -53,15 +63,49 @@ function displayData(memberList) {
 		// 현재 페이지에 해당하는 데이터를 가져와서 출력합니다.
 		var startIndex = (page - 1) * defaultOpts.visiblePages;
 		var endIndex = startIndex + defaultOpts.visiblePages;
+		//console.log(Object.values(data[0]));
 		for (var i = startIndex; i < endIndex; i++) {
 			if (i < data.length) {
 				console.log('if실행됨');
-				$('#listBody').append('<div>' + data[i].memName + '</div>');
+				let detailWrapper = new Ele($('#listBody'), 'detailWrapper' + data[i].memUserNo);
+				detailWrapper.appendTag('detailWrapper');
+				detailWrapper.tagCss('100%', '7%', 'white', 'flex');
+				$('#detailWrapper' + data[i].memUserNo).css('border','1px groove black');
+				$('#detailWrapper' + data[i].memUserNo).css('border-radius','3px');
+				$('#detailWrapper' + data[i].memUserNo).css('border-collapse','collapse');
+				$('#detailWrapper' + data[i].memUserNo).css('margin-bottom','2%');
+				$('#detailWrapper' + data[i].memUserNo).css('padding-top','1%');
+				/**
+				 *  js 객체를 돌리는 법
+				 */
+				for (let key in data[i]) {
+					if (data[i].hasOwnProperty(key)) {
+						let value = data[i][key];
+						console.log(key + ': ' + value);
+						let details = new Ele($('#detailWrapper' + data[i].memUserNo), 'detail' + key + i);
+						details.appendTag('memberDetails');
+						
+						
+						//$('#detail' + key + i).css('padding')
+						if(key == 'memRdate'){
+							value = new Date(value).toLocaleDateString("en-US", { year: "numeric", month: "2-digit", day: "2-digit" });
+						}
+						details.makeHtml(value);
+					}
+					
+				}
+				let delButton = new Ele($('#detailWrapper' + data[i].memUserNo),'memberDelButton');	
+				delButton.appendTag('memberDetails');
 			}
 		}
-	}
 
-};
+	};
+
+}
+
+
+
+
 // user 객체에는 memUserNo, memId, memPassword, memNickname, memName, memEmail,
 // memPerLevel, memProvider, memPoint, memPhone, memAddr1/2 , Timestamp memRdate 가 있음.
 
@@ -112,3 +156,12 @@ function displayData(memberList) {
 	}
 });
 */
+
+
+
+
+
+
+
+
+
