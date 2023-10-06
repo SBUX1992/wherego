@@ -1,0 +1,108 @@
+body {
+  margin: auto;
+  width: 800px;
+  height: 1000px;
+}
+
+#companyProfileWrapper {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  background-color: whitesmoke;
+}
+
+#companyProfileImg {
+  width: 40%;
+  height: 96%;
+  background-image: url('../../img/accomodation/NoImg.png');
+  background-size: cover; /* 배경 이미지를 div에 맞게 늘리기 */
+  background-position: center; /* 배경 이미지를 가운데 정렬 */
+  border : 5px dotted black;
+  cursor : pointer;
+}
+
+#companyProfileDetails {
+  padding-left : 2%;
+  width: 55%;
+}
+
+#tagWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#acc_option {
+  width: 85%;
+  white-space: nowrap; /* 텍스트가 가로로 줄 바꿈되지 않음 */
+  overflow: hidden; /* 넘치는 텍스트 숨김 */
+  text-overflow: ellipsis; /* 넘치는 텍스트에 "..." 추가 */
+}
+
+.details-- {
+  margin-top: 2%;
+}
+
+.managers-- {
+  display: flex;
+  justify-content: space-between;
+  width: 99.7%;
+  height: 4%;
+  cursor: pointer;
+  background-color: antiquewhite;
+  margin-top: 1%;
+  border: 1px solid black;
+  border-radius: 1%;
+}
+
+.expandableDiv-- {
+  height : 0;
+  overflow: hidden;
+  transition: height 0.5s ease-in-out;
+}
+
+.expandableDiv--[data-clicked="false"] {
+  height: 0;
+}
+
+.expandableDiv--[data-clicked="true"] {
+  background-color: whitesmoke;
+  height: 500px;
+}
+
+#profileManager1{
+  margin-top : 3%;
+}
+
+#deleteBtn{
+  cursor : pointer;
+}
+
+/*----------------------------------*/
+
+
+.datas--[data-clicked="true"]{
+  border : 1px solid black;
+}
+
+.myDatas--[data-clicked="true"]{
+  border : 1px solid black;
+}
+
+/* 
+acc_number
+acc_name
+acc_type
+acc_address
+acc_lot
+acc_price
+acc_option   상세보기 누르면 태그 편집 켜버려
+acc_grade
+acc_count
+
+
+
+indicateClicked 써가지고 data-clicked 만들어준 다음에 클릭될 시 true 로 바뀌니까
+그걸 css 에서 표시해줄 방법을 찾고, true 일 경우 max-height 를 늘려줘야된다.
+false 일 경우 max-height 가 0이고, true 일 경우 500 이고, 해당 클래스는 transition max height 저거 써야됨.
+*/

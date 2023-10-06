@@ -11,7 +11,11 @@
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- css -->
+<<<<<<< HEAD
     <link rel="stylesheet" href="/css/acc_detail.css" />
+=======
+    <link rel="stylesheet" href="/css/accomodation/acc_detail.css" />
+>>>>>>> 149bcca9edfe83eb6806981477130e3c6316649d
     
     <!-- js -->
 
@@ -121,6 +125,7 @@
           </div>
         </div>
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+<<<<<<< HEAD
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img src="img/lotte_signiel.jpg" class="d-block w-100" alt="...">
@@ -131,6 +136,17 @@
             <div class="carousel-item">
               <img src="img/lotte_signiel.3.jpg" class="d-block w-100" alt="세번째 이미지">
             </div>
+=======
+          <div id="imgCard" class="carousel-inner">
+          	<div class="carousel-item active">
+	            <img src="${mainImage}" class="d-block w-100" alt="...">
+	        </div>
+          	<c:forEach var="imgUrlList" items="${imageList }">
+	            <div class="carousel-item">
+	              <img src="${imgUrlList}" class="d-block w-100" alt="...">
+	            </div>
+          	</c:forEach>
+>>>>>>> 149bcca9edfe83eb6806981477130e3c6316649d
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
