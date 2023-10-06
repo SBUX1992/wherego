@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,15 +32,35 @@
 
   <div class="collapse navbar-collapse" id="navbarsExample06">
     <ul class="navbar-nav mr-auto">
+    
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <c:choose>
+					<c:when test="${sessionScope.mem_id eq null }">
+						<a href="login">로그인</a>
+					</c:when>
+					<c:otherwise>
+						<c:choose>
+							<c:when test="${sessionScope.access_Token eq null }">
+								<a class="nav-link " href="/logout">로그아웃</a>
+							</c:when>
+							<c:otherwise>
+								<a class="nav-link " href="/kakaologout">로그아웃</a>
+							</c:otherwise>
+						</c:choose>
+					</c:otherwise>
+				</c:choose>
+
       </li>
+      
       <li class="nav-item">
         <a class="nav-link" href="#">Link</a>
       </li>
+      
       <li class="nav-item">
         <a class="nav-link disabled" href="#">Disabled</a>
       </li>
+      
+      
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="dropdown06" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
         <div class="dropdown-menu" aria-labelledby="dropdown06">

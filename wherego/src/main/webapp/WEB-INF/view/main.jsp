@@ -18,7 +18,7 @@
 </style>
 <script src="js/wherego_main_js.js"></script>
 </head>
-<body>
+<body style="overflow-y: scroll; margin: 0 70px;">
 	<header>
 		<%@include file="../view/header.jsp"%>
 	</header>
@@ -64,7 +64,7 @@
 			</div>
 		</div>
 	</div>
-	<h2>⚡️ 원하는 숙소를 클릭해보세요!</h2>
+	<h2 style="margin-top: 50px; margin-bottom: 30px;">⚡️ 원하는 숙소를 클릭해보세요!</h2>
 	<div class="select_section">
 		<li class="hotel"><span>호텔111</span></li>
 		<li class="motel"><span>모텔</span></li>
@@ -73,23 +73,28 @@
 
 	</div>
 
-	<h2>💖 평점 높은 숙소 추천!</h2>
+	<h2 style="margin-top: 50px; margin-bottom: 30px;">💖 평점 높은 숙소 추천!</h2>
 
-	<div class="swiper" style="width: 100%; height: 300px;">
+	<div class="swiper" >
 		<!-- Additional required wrapper -->
 		<div class="swiper-wrapper">
 			<!-- Slides -->
-			<div class="swiper-slide">Slide 1</div>
-			<div class="swiper-slide">Slide 2</div>
-			<div class="swiper-slide">Slide 3</div>
-			<div class="swiper-slide">Slide 4</div>
+			<div class="swiper-slide" style="background-image:url( 'img/main/m_hotel.jpg' ); background-size: cover;" >canda호텔</div>
+			<div class="swiper-slide" style="background-image:url( 'img/main/m_hotel.jpg' ); background-size: cover;" ></div>
+			<div class="swiper-slide" style="background-image:url( 'img/main/m_hotel.jpg' ); background-size: cover;" ></div>
+			<div class="swiper-slide" style="background-image:url( 'img/main/m_hotel.jpg' ); background-size: cover;" ></div>
+			<div class="swiper-slide" style="background-image:url( 'img/main/m_hotel.jpg' ); background-size: cover;" ></div>
+			<div class="swiper-slide" style="background-image:url( 'img/main/m_hotel.jpg' ); background-size: cover;" ></div>
+		
 		</div>
-		<!-- If we need pagination -->
+		<!-- If we need pagination 
 		<div class="swiper-pagination"></div>
+-->
 
 		<!-- If we need navigation buttons -->
 		<div class="swiper-button-prev"></div>
 		<div class="swiper-button-next"></div>
+
 
 		<!-- If we need scrollbar -->
 		<div class="swiper-scrollbar"></div>
@@ -122,21 +127,9 @@ const swiper = new Swiper('.swiper', {
   },
 });
 
-//스크롤 이벤트 핸들러 함수
-window.addEventListener('scroll', function () {
-  // 현재 스크롤 위치 가져오기
-  var scrollY = window.scrollY || document.documentElement.scrollTop;
-
-  // 원하는 스크롤 위치 (예: 500px)에 도달하면 원하는 작업 수행
-  if (scrollY >= 500) {
-    // 여기에 원하는 작업을 추가합니다.
-    // 예를 들어, 다른 요소를 숨기거나 보이게 하거나 다른 스타일을 적용할 수 있습니다.
-  }
-});
-
 </script>
-</body>
-</html>
-<footer>
+<footer style="margin-top:50px;">
 	<%@include file="../view/footer.jsp"%>
 </footer>
+</body>
+</html>

@@ -13,6 +13,7 @@
 
 <body>
 	<div class="container" style="width: 600px;">
+
 		<h2 style="text-align: center;">로그인</h2>
 		<form action="/wherego/member/login" method="post">
 			<div class="form-group">
@@ -37,6 +38,7 @@
 					src="${pageContext.request.contextPath}/img/kakao_login_medium.png" alt="" style="margin: 0 auto;"> </a> <a
 					style="display: inline-block; width: 192px; height: 45px; border: #000 1px solid; box-sizing: border-box; margin-left: 16px">소셜로그인 하나 더 예정</a>
 			</div>
+
 		</form>
 	</div>
 </body>

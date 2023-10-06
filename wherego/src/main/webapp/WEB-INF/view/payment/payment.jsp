@@ -1,49 +1,33 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
+<!-- 포트원 결제 -->
+    <script src="https://cdn.iamport.kr/v1/iamport.js"></script>
+    <!-- jQuery -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+    <!-- iamport.payment.js -->
+    <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+
+   <!-- 포트원 결제 -->
+<script type="text/javascript" src="js/payment/payment_js.js"></script>
+
 <meta charset="UTF-8">
-<title>지불방법 </title>
+<title>아임포트</title>
 </head>
-<style>
-	 .withdraw{
-            border-top-left-radius: 5px;
-            border-bottom-left-radius: 5px;
-            border-bottom-right-radius: 5px;
-            border-top-right-radius: 5px;
-            border: 1px solid #FFCC80;
-            background-color: rgba(0,0,0,0);
-            color: #FFCC80;
-            padding: 5px;
-            text-align: center;
-			display :inline-block;
-        }
-        .withdraw:hover{
-            color:white;
-            background-color: #FFCC80;
-        }		
-</style>
+
 <body>
 	<header>
-			<%@include file="../header.jsp"%>
-		</header>
-			<table border="1">	
-				<tr>
-					<td><label><input type="radio" name="a_payment" value="카카오페이">카카오페이
-						</label> <label><input type="radio" name="a_payment" value="무통장입금">무통장입금</label></td>
-				</tr>
-			</table>
-			<br>
-			<div class="a">
-				<button id="pay" class="withdraw">신청하기</button>
-			</div>
+		<%@include file="../header.jsp"%>
+	</header>
+
+			<div class="card-body bg-white mt-0 shadow">
+		  <button onclick="requestPay()" class="btn btn-lg btn-block  btn-custom" >결제하기</button>
+		</div>
+		
+		
 </body>
 </html>
-
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type='text/javascript'>
-</script>

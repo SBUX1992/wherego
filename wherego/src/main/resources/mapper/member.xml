@@ -29,7 +29,56 @@
 		resultType="com.tencoding.wherego.repository.model.Member">
 		SELECT *
 		FROM member
-		WHERE mem_id = #{id} AND mem_password = #{password}
+		WHERE mem_id = #{id} AND mem_password =
+		#{password}
 	</select>
+
+	<select id="findById"
+		resultType="com.tencoding.wherego.repository.model.Member">
+		SELECT *
+		FROM member
+		WHERE mem_id = #{id}
+	</select>
+
+	<insert id="kakaoInsert">
+		INSERT INTO member (
+		mem_id,
+		mem_password,
+		mem_nickname,
+		mem_name,
+		mem_email,
+		mem_provider,
+		mem_phone,
+		mem_addr1,
+		mem_addr2)
+		VALUES (
+		#{id},
+		#{password},
+		#{nickname},
+		#{name},
+		#{email},
+		2,
+		#{phone},
+		#{addr1},
+		#{addr2})
+	</insert>
+
+	<!--아이디 중복 검사 -->
+	<select id="idChk" resultType="String" parameterType="String">
+		select mem_id
+		from member
+		where mem_id = #{id}
+	</select>
+
+	<!--닉네임 중복 검사 -->
+	<select id="nickChk" resultType="String" parameterType="String">
+		select mem_nickname
+		from member
+		where mem_nickname = #{nickname}
+	</select>
+
+
+
+
 
 </mapper>
