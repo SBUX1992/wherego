@@ -34,6 +34,7 @@ public class MemberController {
 
 	@Autowired
 	private MemberService memberService;
+
 	@Autowired
 	private HttpSession session;
 
@@ -45,6 +46,19 @@ public class MemberController {
 
 	// 일반 로그인 처리
 	@PostMapping("/login")
+<<<<<<< HEAD
+//	@ResponseBody // 메인페이지가 생기면 교체
+	public String loginProc(LogInFormDto logInFormDto) {
+		// TODO : 유효성검사
+
+		Member principal = memberService.logIn(logInFormDto);
+		principal.setMemPassword(null);
+
+		session.setAttribute(Define.PRINCIPAL, principal);
+
+//		return principal;
+		return "redirect:main";
+=======
 	public String loginProc(LogInFormDto logInFormDto) {
 
 		if (logInFormDto.getId().isEmpty() || logInFormDto.getId() == null) {
@@ -65,6 +79,7 @@ public class MemberController {
 
 //		return "redirect:main"; 메인이 생기면 그쪽으로
 		return "redirect:login";
+>>>>>>> 149bcca9edfe83eb6806981477130e3c6316649d
 	}
 
 	// 회원가입 페이지 진입
@@ -73,7 +88,10 @@ public class MemberController {
 		return "member/signUp";
 	}
 
+<<<<<<< HEAD
+=======
 	// 일반 회원가입 처리
+>>>>>>> 149bcca9edfe83eb6806981477130e3c6316649d
 	@PostMapping("/sign-up")
 	public String signUpProc(SignUpFormDto signUpFormDto) {
 
@@ -111,6 +129,10 @@ public class MemberController {
 	}
 
 	@GetMapping("/kakao/callback")
+<<<<<<< HEAD
+//	@ResponseBody // 이녀셕은 data 반환 명시
+=======
+>>>>>>> 149bcca9edfe83eb6806981477130e3c6316649d
 	public String kakaoCallback(@RequestParam String code, Model model) {
 		// code = 인가 코드
 		HttpHeaders headers = new HttpHeaders();
@@ -145,6 +167,21 @@ public class MemberController {
 		// ============================== 사용자 정보 받기 =============================
 
 		LogInFormDto logInFormDto = new LogInFormDto();
+<<<<<<< HEAD
+		String id = kakaoProfileDto.getKakaoAccount().getEmail() + "_" + kakaoProfileDto.getId();
+		logInFormDto.setId(id);
+
+		Member principal = memberService.kakaoLogIn(logInFormDto); // 아이디로 가입되어있는지 확인
+		kakaoProfileDto.getKakaoAccount().getEmail();
+
+		
+		if (principal != null) {//로그인 정보가 있다면 세션에 정보 등록
+			
+			principal.setMemPassword(null);
+			session.setAttribute(Define.PRINCIPAL, principal);
+			System.out.println();
+			return "redirect:main";
+=======
 		String id = kakaoProfileDto.getKakaoAccount().getEmail() + "_" + kakaoProfileDto.getId(); // 테이블에 등록하기 위한 id
 		logInFormDto.setId(id);
 
@@ -161,6 +198,7 @@ public class MemberController {
 
 //			return "redirect:main"; 메인이 생기면 그쪽으로
 			return "redirect:login";
+>>>>>>> 149bcca9edfe83eb6806981477130e3c6316649d
 			
 		} else { // 로그인 정보가 없다면 회원가입 페이지로
 			model.addAttribute("id", id);
@@ -171,6 +209,14 @@ public class MemberController {
 
 	}
 
+<<<<<<< HEAD
+	@PostMapping("/kakao-sign-up")
+	public String kakaoSignUpProc(SignUpFormDto signUpFormDto) {
+		// TODO : 유효성검사
+
+		memberService.kakaoSignUp(signUpFormDto);
+	
+=======
 	// 카카오 회원가입 처리
 	@PostMapping("/kakao-sign-up")
 	public String kakaoSignUpProc(SignUpFormDto signUpFormDto) {
@@ -181,11 +227,15 @@ public class MemberController {
 			throw new CustomRestfulException("회원가입에 실패했습니다.", HttpStatus.BAD_REQUEST);
 		}
 
+>>>>>>> 149bcca9edfe83eb6806981477130e3c6316649d
 		return "redirect:/member/login";
 	}
 
 	// 아이디 중복 체크
+<<<<<<< HEAD
+=======
 	// 조회결과가 null이면(중복이 없다면) 1을 반환
+>>>>>>> 149bcca9edfe83eb6806981477130e3c6316649d
 	@RequestMapping("idChk")
 	public @ResponseBody int idChk(@RequestParam("mem_id") String mem_id) {
 		System.out.println(memberService.idChk(mem_id));
@@ -197,8 +247,12 @@ public class MemberController {
 	}
 
 	// 닉네임 중복 체크
+<<<<<<< HEAD
+	@RequestMapping("nickChk")
+=======
 	// 조회결과가 null이면(중복이 없다면) 1을 반환
 	@RequestMapping({"nickChk", "kakao/nickChk"})
+>>>>>>> 149bcca9edfe83eb6806981477130e3c6316649d
 	public @ResponseBody int nickChk(@RequestParam("mem_nickname") String mem_nickname) {
 		if (memberService.nickChk(mem_nickname) == null) {
 			return 1;
@@ -206,10 +260,18 @@ public class MemberController {
 			return 0;
 		}
 	}
+<<<<<<< HEAD
+	
+	@GetMapping("/main")
+	public String main() {
+		return "main";
+	}
+=======
 
 //	// 임시메인컨트롤러
 //	@GetMapping("/main")
 //	public String main() {
 //		return "main";
 //	}
+>>>>>>> 149bcca9edfe83eb6806981477130e3c6316649d
 }

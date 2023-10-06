@@ -1,0 +1,295 @@
+/*************위치 영역************************/
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+/*
+ h2 {
+  margin-top: 100px;
+  margin-bottom: 100px;
+
+}
+*/
+/*******************table 영역*******************************/
+.main-container {
+    width: 100%;
+    height: 600px;
+    background-image: url('../img/view_images.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-content {
+    text-align: center;
+    color: black;
+    font-size: 24px;
+}
+
+.main_table_area {
+    border-spacing: 15px;
+    background-color: white;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+
+
+}
+
+.main_serch_table {
+
+    width: 100%;
+    height: 60px;
+    font-size: larger;
+
+}
+
+.main_serch_table2 {
+    width: 100%;
+    height: 90px;
+    border-top: 1px solid black;
+    font-size: large;
+
+}
+
+.main_serch_table2 td {
+    border-spacing: 15px;
+    padding: 10px;
+}
+
+.btn_main_search_button {
+    padding: 10px 20px;
+    background-color: orange;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn_main_search_button:hover {
+    background-color: darkorange;
+}
+
+.td1:hover {
+    color: darkorange;
+}
+
+.td1.selected {
+    color: darkorange;
+}
+
+/************************숙소유형**************************/
+.select_section {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
+    text-align: center;
+    padding-top: 20px;
+
+
+}
+li {
+    list-style: none;
+    margin-right: 10%;
+    position: relative;
+    text-align: center;
+
+}
+
+/************************호텔**************************/
+.hotel {
+    width: 250px;
+    height: 150px;
+    background-image: url('../img/hotel.jpg');
+   font-size: x-large;
+   color: white;
+   text-align: center; /*텍스트 중앙에 배치*/
+   background-position: center; /* 이미지를 가운데 정렬 */
+   background-size: cover; /* 이미지를 화면에 맞게 조절 */
+
+}
+.hotel span{
+    position: absolute;
+    top: 50%; /* 상단에서 절반의 위치로 이동 */
+    left: 50%; /* 좌측에서 절반의 위치로 이동 */
+    transform: translate(-50%, -50%); /* 가운데 정렬을 위한 위치 조정 */
+    font-size: x-large; /* 텍스트 크기 설정 */
+    color: white; /* 텍스트 색상 설정 */
+    vertical-align:middle;
+}
+.hotel::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* 투명한 진한 회색 배경 색상 설정 */
+    opacity: 0.5; /* 초기에 투명하게 설정 */
+    transition: opacity 0.3s ease; /* 부드러운 투명도 전환을 위한 트랜지션 설정 */
+}
+
+ /*호텔 이미지 위에 마우스 호버 시 투명도 조절*/ 
+.hotel:hover::before {
+    opacity: 1; /* 호버 시 투명도를 1로 설정하여 레이어를 나타내기*/ 
+}
+/************************모텔**************************/
+.motel {
+    width: 250px;
+    height: 150px;
+    background-image: url('../img/motel.jpg');
+}
+.motel span{
+    position: absolute;
+    top: 50%; /* 상단에서 절반의 위치로 이동 */
+    left: 50%; /* 좌측에서 절반의 위치로 이동 */
+    transform: translate(-50%, -50%); /* 가운데 정렬을 위한 위치 조정 */
+    font-size: x-large; /* 텍스트 크기 설정 */
+    color: white; /* 텍스트 색상 설정 */
+    vertical-align:middle;
+}
+.motel::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* 투명한 진한 회색 배경 색상 설정 */
+    opacity: 0.5; /* 초기에 투명하게 설정 */
+    transition: opacity 0.3s ease; /* 부드러운 투명도 전환을 위한 트랜지션 설정 */
+}
+
+ /*호텔 이미지 위에 마우스 호버 시 투명도 조절*/ 
+.motel:hover::before {
+    opacity: 1; /* 호버 시 투명도를 1로 설정하여 레이어를 나타내기*/ 
+}
+/************************펜션**************************/
+.pension {
+    width: 250px;
+    height: 150px;
+    background-image: url('../img/pension.jpg');
+}
+.pension span{
+    position: absolute;
+    top: 50%; /* 상단에서 절반의 위치로 이동 */
+    left: 50%; /* 좌측에서 절반의 위치로 이동 */
+    transform: translate(-50%, -50%); /* 가운데 정렬을 위한 위치 조정 */
+    font-size: x-large; /* 텍스트 크기 설정 */
+    color: white; /* 텍스트 색상 설정 */
+    vertical-align:middle;
+}
+.pension::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* 투명한 진한 회색 배경 색상 설정 */
+    opacity: 0.5; /* 초기에 투명하게 설정 */
+    transition: opacity 0.3s ease; /* 부드러운 투명도 전환을 위한 트랜지션 설정 */
+}
+
+ /*호텔 이미지 위에 마우스 호버 시 투명도 조절*/ 
+.pension:hover::before {
+    opacity: 1; /* 호버 시 투명도를 1로 설정하여 레이어를 나타내기*/ 
+}
+/************************리조트**************************/
+.resort {
+    width: 250px;
+    height: 150px;
+    background-image: url('../img/resort.jpg');
+}
+.resort span{
+    position: absolute;
+    top: 50%; /* 상단에서 절반의 위치로 이동 */
+    left: 50%; /* 좌측에서 절반의 위치로 이동 */
+    transform: translate(-50%, -50%); /* 가운데 정렬을 위한 위치 조정 */
+    font-size: x-large; /* 텍스트 크기 설정 */
+    color: white; /* 텍스트 색상 설정 */
+    vertical-align:middle;
+}
+.resort::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* 투명한 진한 회색 배경 색상 설정 */
+    opacity: 0.5; /* 초기에 투명하게 설정 */
+    transition: opacity 0.3s ease; /* 부드러운 투명도 전환을 위한 트랜지션 설정 */
+}
+
+ /*호텔 이미지 위에 마우스 호버 시 투명도 조절*/ 
+.resort:hover::before {
+    opacity: 1; /* 호버 시 투명도를 1로 설정하여 레이어를 나타내기*/ 
+}
+/*******************************Swiper css***********************************/
+
+/* Swiper 슬라이드용 CSS */
+.swiper-slide {
+  width: 25%; /* 각 슬라이드의 너비를 25%로 설정하여 4개의 슬라이드를 동시에 표시합니다 */
+  height:50%;
+  box-sizing: border-box; /* 패딩과 테두리를 너비에 포함시킵니다 */
+  padding: 10px; /* 필요한대로 패딩을 조정하세요 */
+  
+}
+
+/* Swiper 컨테이너용 CSS */
+.swiper {
+ 
+  width: 100%; /* 컨테이너의 너비를 100%로 설정합니다 */
+  height: 40%;
+  overflow: hidden; /* 가로 스크롤을 방지하기 위해 오버플로우를 숨깁니다 */
+
+
+}
+.swiper-button-prev {
+    background-color: transparent; /* 배경색을 투명으로 설정 */
+    color: rgb(255, 255, 255); /* 텍스트 색상을 원하는 색상으로 설정 (예: 검은색) */
+  }
+  
+  .swiper-button-next{
+	    background-color: transparent; /* 배경색을 투명으로 설정 */
+    color: rgb(255, 255, 255); /* 텍스트 색상을 원하는 색상으로 설정 (예: 검은색) */
+  }
+
+.swiper-slide{
+	
+	width: 100px;
+	height: 200px;
+	margin-right: 40px;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
