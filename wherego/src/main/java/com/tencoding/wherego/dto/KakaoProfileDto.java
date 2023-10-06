@@ -3,11 +3,6 @@ package com.tencoding.wherego.dto;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-<<<<<<< HEAD
-=======
-import com.fasterxml.jackson.databind.PropertyNamingStrategies;
-import com.fasterxml.jackson.databind.annotation.JsonNaming;
->>>>>>> 149bcca9edfe83eb6806981477130e3c6316649d
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
