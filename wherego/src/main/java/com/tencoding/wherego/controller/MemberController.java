@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,6 +23,7 @@ import com.tencoding.wherego.dto.KakaoProfileDto;
 import com.tencoding.wherego.dto.LogInFormDto;
 import com.tencoding.wherego.dto.OAuthTokenDto;
 import com.tencoding.wherego.dto.SignUpFormDto;
+import com.tencoding.wherego.handler.exception.CustomRestfulException;
 import com.tencoding.wherego.repository.model.Member;
 import com.tencoding.wherego.service.MemberService;
 import com.tencoding.wherego.utils.Define;
@@ -29,52 +31,86 @@ import com.tencoding.wherego.utils.Define;
 @Controller
 @RequestMapping("/member")
 public class MemberController {
-	
+
 	@Autowired
 	private MemberService memberService;
-	
-
-	
 	@Autowired
 	private HttpSession session;
 
+	// 로그인 페이지 진입
 	@GetMapping("/login")
 	public String login() {
 		return "member/login";
 	}
 
-	@GetMapping("/sign_up")
+	// 일반 로그인 처리
 	@PostMapping("/login")
-	@ResponseBody // 메인페이지가 생기면 교체
-	public Member loginProc(LogInFormDto logInFormDto) {
-		// TODO : 유효성검사
+	public String loginProc(LogInFormDto logInFormDto) {
+
+		if (logInFormDto.getId().isEmpty() || logInFormDto.getId() == null) {
+			throw new CustomRestfulException("ID를 입력하세요", HttpStatus.BAD_REQUEST);
+		}
+		if (logInFormDto.getPassword().isEmpty() || logInFormDto.getPassword() == null) {
+			throw new CustomRestfulException("패스워드를 입력하세요", HttpStatus.BAD_REQUEST);
+		}
+		// ================== 폼 입력 유효성 검사 ==================
 
 		Member principal = memberService.logIn(logInFormDto);
-		principal.setMemPassword(null);
-		// 3. 쿠키 + 세션
-		session.setAttribute(Define.PRINCIPAL, principal);
 
-		return principal;
-//		return "member/login";
+		principal.setMemPassword(null);
+		// 세션에 등록되는 정보중 비밀번호는 삭제
+
+		session.setAttribute(Define.PRINCIPAL, principal);
+		// 세션에 등록
+
+//		return "redirect:main"; 메인이 생기면 그쪽으로
+		return "redirect:login";
 	}
 
+	// 회원가입 페이지 진입
 	@GetMapping("/sign-up")
 	public String signUp() {
 		return "member/signUp";
 	}
 
+	// 일반 회원가입 처리
 	@PostMapping("/sign-up")
 	public String signUpProc(SignUpFormDto signUpFormDto) {
-		// TODO : 유효성검사
-		
-		memberService.signUp(signUpFormDto);
-		
+
+		if (signUpFormDto.getId().isEmpty() || signUpFormDto.getId() == null) {
+			throw new CustomRestfulException("ID를 입력하세요", HttpStatus.BAD_REQUEST);
+		}
+		if (signUpFormDto.getPassword().isEmpty() || signUpFormDto.getPassword() == null) {
+			throw new CustomRestfulException("비밀번호를 입력하세요", HttpStatus.BAD_REQUEST);
+		}
+		if (signUpFormDto.getName().isEmpty() || signUpFormDto.getName() == null) {
+			throw new CustomRestfulException("성명을 입력하세요", HttpStatus.BAD_REQUEST);
+		}
+		if (signUpFormDto.getNickname().isEmpty() || signUpFormDto.getNickname() == null) {
+			throw new CustomRestfulException("별명 입력하세요", HttpStatus.BAD_REQUEST);
+		}
+		if (signUpFormDto.getEmail().isEmpty() || signUpFormDto.getEmail() == null) {
+			throw new CustomRestfulException("이메일을 입력하세요", HttpStatus.BAD_REQUEST);
+		}
+		if (signUpFormDto.getAddr1().isEmpty() || signUpFormDto.getAddr1() == null) {
+			throw new CustomRestfulException("주소를 입력하세요", HttpStatus.BAD_REQUEST);
+		}
+		if (signUpFormDto.getPhone().isEmpty() || signUpFormDto.getPhone() == null) {
+			throw new CustomRestfulException("연락처를 입력하세요", HttpStatus.BAD_REQUEST);
+		}
+		// ================== 폼 입력 유효성 검사 ==================
+
+		int result = memberService.signUp(signUpFormDto);
+		// 쿼리문 던지기
+
+		if (result != 1) { // 인서트 실패했을 경우
+			throw new CustomRestfulException("회원가입에 실패했습니다.", HttpStatus.BAD_REQUEST);
+		}
+
 		return "redirect:/member/login";
 	}
 
-
 	@GetMapping("/kakao/callback")
-//	@ResponseBody // 이녀셕은 data 반환 명시
 	public String kakaoCallback(@RequestParam String code, Model model) {
 		// code = 인가 코드
 		HttpHeaders headers = new HttpHeaders();
@@ -109,15 +145,24 @@ public class MemberController {
 		// ============================== 사용자 정보 받기 =============================
 
 		LogInFormDto logInFormDto = new LogInFormDto();
-		String id = kakaoProfileDto.getKakaoAccount().getEmail() + "_" + kakaoProfileDto.getId();
+		String id = kakaoProfileDto.getKakaoAccount().getEmail() + "_" + kakaoProfileDto.getId(); // 테이블에 등록하기 위한 id
 		logInFormDto.setId(id);
-		Member member = memberService.kakaoLogIn(logInFormDto); // 아이디로 가입되어있는지 확인
-		System.out.println(kakaoProfileDto.getProperties().getNickname());
-		kakaoProfileDto.getKakaoAccount().getEmail();
-		
-		if (member != null) {
-			return member.toString();
-		} else {
+
+		Member principal = memberService.kakaoLogIn(logInFormDto); // 아이디로 가입되어있는지 확인
+		// 로그인처리 시도
+
+		if (principal != null) { // 로그인 정보가 있다면 세션에 정보 등록, 로그인 처리
+
+			principal.setMemPassword(null);
+			// 세션에 등록되는 정보중 패스워드는 삭제
+
+			session.setAttribute(Define.PRINCIPAL, principal);
+			// 세션에 등록
+
+//			return "redirect:main"; 메인이 생기면 그쪽으로
+			return "redirect:login";
+			
+		} else { // 로그인 정보가 없다면 회원가입 페이지로
 			model.addAttribute("id", id);
 			model.addAttribute("profile", kakaoProfileDto);
 
@@ -126,14 +171,45 @@ public class MemberController {
 
 	}
 
+	// 카카오 회원가입 처리
 	@PostMapping("/kakao-sign-up")
 	public String kakaoSignUpProc(SignUpFormDto signUpFormDto) {
-		// TODO : 유효성검사
-		
-		memberService.signUp(signUpFormDto);
+
+		int result = memberService.kakaoSignUp(signUpFormDto);
+
+		if (result != 1) { // 인서트 실패했을 경우
+			throw new CustomRestfulException("회원가입에 실패했습니다.", HttpStatus.BAD_REQUEST);
+		}
 
 		return "redirect:/member/login";
 	}
-	
 
+	// 아이디 중복 체크
+	// 조회결과가 null이면(중복이 없다면) 1을 반환
+	@RequestMapping("idChk")
+	public @ResponseBody int idChk(@RequestParam("mem_id") String mem_id) {
+		System.out.println(memberService.idChk(mem_id));
+		if (memberService.idChk(mem_id) == null) {
+			return 1;
+		} else {
+			return 0;
+		}
+	}
+
+	// 닉네임 중복 체크
+	// 조회결과가 null이면(중복이 없다면) 1을 반환
+	@RequestMapping({"nickChk", "kakao/nickChk"})
+	public @ResponseBody int nickChk(@RequestParam("mem_nickname") String mem_nickname) {
+		if (memberService.nickChk(mem_nickname) == null) {
+			return 1;
+		} else {
+			return 0;
+		}
+	}
+
+//	// 임시메인컨트롤러
+//	@GetMapping("/main")
+//	public String main() {
+//		return "main";
+//	}
 }
