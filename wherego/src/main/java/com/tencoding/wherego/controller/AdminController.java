@@ -13,19 +13,10 @@ public class AdminController {
 	MemberRepository memberRepository;
 	
     @GetMapping("/admin-page")
-    public String home(){
-        return "admin/admin";
+    public String index(){
+        return "admin/index";
     }
     
-    @GetMapping("/test")
-    public String test(){
-    	return "admin/test";
-    }
-    
-    @GetMapping("/companyMyPage")
-    public String companyMyPage() {
-    	return "company/companyMyPage";
-    }
-    
+
     
 }
