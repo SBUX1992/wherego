@@ -37,5 +37,6 @@ out/
 .vscode/
 
 application.properties
+
 *.log
 *.gz

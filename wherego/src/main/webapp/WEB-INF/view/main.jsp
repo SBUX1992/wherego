@@ -12,10 +12,11 @@
 <meta charset="UTF-8">
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <title>메인 페이지</title>
-<style>
-@import
-'css/wherego_main_css.css'
-</style>
+
+<!-- css -->
+<link rel="stylesheet" href="../css/wherego_main_css.css" />
+
+
 <script src="js/wherego_main_js.js"></script>
 </head>
 <body style="overflow-y: scroll; margin: 0 70px;">
@@ -65,9 +66,10 @@
 			</div>
 		</div>
 	</div>
-	
-	
-	<h2 style="margin-top: 50px; margin-bottom: 30px;">⚡️ 원하는 숙소를 클릭해보세요!</h2>
+
+
+	<h2 style="margin-top: 50px; margin-bottom: 30px;">⚡️ 원하는 숙소를
+		클릭해보세요!</h2>
 	<div class="select_section">
 		<li class="hotel"><span>호텔</span></li>
 		<li class="motel"><span>모텔</span></li>
@@ -78,17 +80,23 @@
 
 	<h2 style="margin-top: 50px; margin-bottom: 30px;">💖 평점 높은 숙소 추천!</h2>
 
-	<div class="swiper" >
+	<div class="swiper">
 		<!-- Additional required wrapper -->
 		<div class="swiper-wrapper">
 			<!-- Slides -->
-			<div class="swiper-slide" style="background-image:url( 'img/main/m_hotel.jpg' ); background-size: cover;" >canda호텔</div>
-			<div class="swiper-slide" style="background-image:url( 'img/main/m_hotel.jpg' ); background-size: cover;" ></div>
-			<div class="swiper-slide" style="background-image:url( 'img/main/m_hotel.jpg' ); background-size: cover;" ></div>
-			<div class="swiper-slide" style="background-image:url( 'img/main/m_hotel.jpg' ); background-size: cover;" ></div>
-			<div class="swiper-slide" style="background-image:url( 'img/main/m_hotel.jpg' ); background-size: cover;" ></div>
-			<div class="swiper-slide" style="background-image:url( 'img/main/m_hotel.jpg' ); background-size: cover;" ></div>
-		
+			<div class="swiper-slide"
+				style="background-image: url( 'img/main/m_hotel.jpg' ); background-size: cover;">canda호텔</div>
+			<div class="swiper-slide"
+				style="background-image: url( 'img/main/m_hotel.jpg' ); background-size: cover;"></div>
+			<div class="swiper-slide"
+				style="background-image: url( 'img/main/m_hotel.jpg' ); background-size: cover;"></div>
+			<div class="swiper-slide"
+				style="background-image: url( 'img/main/m_hotel.jpg' ); background-size: cover;"></div>
+			<div class="swiper-slide"
+				style="background-image: url( 'img/main/m_hotel.jpg' ); background-size: cover;"></div>
+			<div class="swiper-slide"
+				style="background-image: url( 'img/main/m_hotel.jpg' ); background-size: cover;"></div>
+
 		</div>
 		<!-- If we need pagination 
 		<div class="swiper-pagination"></div>
@@ -104,33 +112,31 @@
 	</div>
 
 	<script>
-const swiper = new Swiper('.swiper', {
-  direction: 'horizontal',
-  loop: true,
-  slidesPerView: 4, // 4개의 슬라이드를 동시에 표시
+		const swiper = new Swiper('.swiper', {
+			direction : 'horizontal',
+			loop : true,
+			slidesPerView : 4, // 4개의 슬라이드를 동시에 표시
 
-  autoplay: {
-    delay: 3000, // 3초마다 슬라이드를 자동으로 넘김
-    disableOnInteraction: true,
-  },
-  
-  loopedSlides: 3, // 마지막 슬라이드에서 처음 슬라이드로 돌아가기 위한 추가 슬라이드 수
+			autoplay : {
+				delay : 3000, // 3초마다 슬라이드를 자동으로 넘김
+				disableOnInteraction : true,
+			},
 
-  pagination: {
-    el: '.swiper-pagination',
-  },
+			loopedSlides : 3, // 마지막 슬라이드에서 처음 슬라이드로 돌아가기 위한 추가 슬라이드 수
 
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
+			pagination : {
+				el : '.swiper-pagination',
+			},
 
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
-});
+			navigation : {
+				nextEl : '.swiper-button-next',
+				prevEl : '.swiper-button-prev',
+			},
 
-</script>
-
+			scrollbar : {
+				el : '.swiper-scrollbar',
+			},
+		});
+	</script>
 </body>
 </html>
