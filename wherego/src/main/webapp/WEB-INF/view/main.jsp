@@ -128,8 +128,5 @@ const swiper = new Swiper('.swiper', {
 });
 
 </script>
-<footer style="margin-top:50px;">
-	<%@include file="../view/footer.jsp"%>
-</footer>
 </body>
 </html>
