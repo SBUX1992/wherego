@@ -36,6 +36,7 @@
 					</tr>
 				</table>
 
+
 				<table class="main_serch_table2">
 					<tr>
 						<td><input type='date' placeholder="날짜를 선택해주세요." id="checkin"
@@ -64,9 +65,11 @@
 			</div>
 		</div>
 	</div>
+	
+	
 	<h2 style="margin-top: 50px; margin-bottom: 30px;">⚡️ 원하는 숙소를 클릭해보세요!</h2>
 	<div class="select_section">
-		<li class="hotel"><span>호텔111</span></li>
+		<li class="hotel"><span>호텔</span></li>
 		<li class="motel"><span>모텔</span></li>
 		<li class="pension"><span>펜션</span></li>
 		<li class="resort"><span>리조트</span></li>
@@ -128,8 +131,6 @@ const swiper = new Swiper('.swiper', {
 });
 
 </script>
-<footer style="margin-top:50px;">
-	<%@include file="../view/footer.jsp"%>
-</footer>
+
 </body>
 </html>
