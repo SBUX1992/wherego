@@ -15,7 +15,7 @@ import com.tencoding.wherego.repository.interfaces.TagRepository;
 
 @RestController
 @RequestMapping("accomodation")
-public class AccomodationRestController {
+public class AccommodationRestController {
 
 	@Autowired
 	TagRepository tagRepository;
