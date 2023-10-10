@@ -63,8 +63,8 @@ public class MemberController {
 		session.setAttribute(Define.PRINCIPAL, principal);
 		// 세션에 등록
 
-//		return "redirect:main"; 메인이 생기면 그쪽으로
-		return "redirect:login";
+		return "redirect:main"; 
+//		return "redirect:login";
 	}
 
 	// 회원가입 페이지 진입
@@ -207,9 +207,17 @@ public class MemberController {
 		}
 	}
 
-//	// 임시메인컨트롤러
-//	@GetMapping("/main")
-//	public String main() {
-//		return "main";
-//	}
+	// 임시메인컨트롤러
+	@GetMapping("/main")
+	public String main() {
+		return "main";
+	}
+	
+	
+	// 제작중인 회원가입 폼
+	@GetMapping("/sign-up2")
+	public String login2() {
+		return "member/signUp2";
+	}
 }
+

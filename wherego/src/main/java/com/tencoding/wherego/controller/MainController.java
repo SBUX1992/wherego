@@ -1,5 +1,12 @@
 package com.tencoding.wherego.controller;
 
-public class MainController {
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
+@Controller
+public class MainController {
+	@GetMapping("/header2")
+	public String TempHeader() {
+		return "header2";
+	}
 }
