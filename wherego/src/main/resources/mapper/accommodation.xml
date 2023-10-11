@@ -3,7 +3,7 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.tencoding.wherego.repository.interfaces.AccommodationRepository">
 	
-	<select id="findListById" resultType="com.tencoding.wherego.dto.AccommodationDto">
+	<select id="findListById"  resultType="com.tencoding.wherego.dto.AccommodationDto">
 		SELECT
 		ACC.room_no, ACC.room_name, ACC.room_view,
 		ACC.room_size, ACC.room_type, ACC.room_detail, 

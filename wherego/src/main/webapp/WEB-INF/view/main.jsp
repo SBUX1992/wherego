@@ -14,8 +14,10 @@
 <title>메인 페이지</title>
 
 <!-- css -->
-<link rel="stylesheet" href="../css/wherego_main_css.css" />
-
+<style>
+@import
+'css/wherego_main_css.css'
+</style>
 
 <script src="js/wherego_main_js.js"></script>
 </head>

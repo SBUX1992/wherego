@@ -12,5 +12,4 @@ public class PaymentDto {
 	 public String  pay_payment;
 	 public int  pay_completed;
 	   public Timestamp created_at;
-	
 }

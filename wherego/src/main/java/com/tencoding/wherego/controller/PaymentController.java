@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping({"/payment",""})
 public class PaymentController {
 	
+	
+	
+	
 	@GetMapping("/main")
 	public String main() {
 		System.out.println("main page");
