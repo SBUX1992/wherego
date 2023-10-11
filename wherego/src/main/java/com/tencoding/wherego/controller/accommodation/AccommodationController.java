@@ -1,4 +1,4 @@
-package com.tencoding.wherego.controller;
+package com.tencoding.wherego.controller.accommodation;
 
 import java.util.List;
 
@@ -6,10 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import com.tencoding.wherego.dto.AccommodationDto;
-import com.tencoding.wherego.service.AccommodationService;
+import com.tencoding.wherego.dto.accommodation.AccommodationDto;
+import com.tencoding.wherego.service.accommodation.AccommodationService;
 
 @Controller
 @RequestMapping({"/acc"})
@@ -41,7 +43,7 @@ public class AccommodationController {
 //	}
 //	
 	
-	@GetMapping("/detail")
+	@GetMapping("/list")
 	public String getShowAcclist(Model model) {
 		List<AccommodationDto> accommodationList = accommodationService.getAccList();
 		
@@ -49,5 +51,13 @@ public class AccommodationController {
 		
 		return "/accommodation/acc_list";
 	}
-
+	
+	@GetMapping("/detail/{roomNo}")
+	public String getAccDetail(@PathVariable int roomNo, @RequestParam List<String> accImgList) {
+		List<String> imgList = accommodationService.getAccDetail(roomNo);
+		
+		for(String img : imgList) System.out.println(img);
+		
+		return null;
+	}
 }
