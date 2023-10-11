@@ -1,4 +1,4 @@
-package com.tencoding.wherego.dto;
+package com.tencoding.wherego.dto.member;
 
 import lombok.Data;
 
