@@ -6,8 +6,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.tencoding.wherego.dto.LogInFormDto;
-import com.tencoding.wherego.dto.SignUpFormDto;
+import com.tencoding.wherego.dto.member.LogInFormDto;
+import com.tencoding.wherego.dto.member.SignUpFormDto;
 import com.tencoding.wherego.handler.exception.CustomRestfulException;
 import com.tencoding.wherego.repository.interfaces.MemberRepository;
 import com.tencoding.wherego.repository.model.Member;
@@ -39,10 +39,9 @@ public class MemberService {
 	public Member logIn(LogInFormDto logInFormDto) {
 		Member memberEntity = memberRepository.findById(logInFormDto.getId());
 		// 계정 정보 mySql에서 셀렉트 조회
-		System.out.println("id:"+memberEntity);
 
 		if (memberEntity == null) { // 조회된 계정이 없을 경우
-			System.out.println("123124");
+			System.out.println("aaaa");
 			throw new CustomRestfulException("계정이 없습니다.", HttpStatus.BAD_REQUEST);
 		}
 

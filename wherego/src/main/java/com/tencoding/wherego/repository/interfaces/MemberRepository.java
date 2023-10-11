@@ -4,9 +4,9 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.tencoding.wherego.dto.LogInFormDto;
 import com.tencoding.wherego.dto.MemberListDto;
-import com.tencoding.wherego.dto.SignUpFormDto;
+import com.tencoding.wherego.dto.member.LogInFormDto;
+import com.tencoding.wherego.dto.member.SignUpFormDto;
 import com.tencoding.wherego.repository.model.Member;
 
 @Mapper

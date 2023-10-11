@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
@@ -12,16 +11,15 @@
 <meta charset="UTF-8">
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <title>메인 페이지</title>
-
-<!-- css -->
-<link rel="stylesheet" href="../css/wherego_main_css.css" />
-
-
+<style>
+@import
+'css/wherego_main_css.css'
+</style>
 <script src="js/wherego_main_js.js"></script>
 </head>
-<body style="overflow-y: scroll; margin: 0 70px;">
+<body style="overflow-y: scroll; margin: 0 0px;">
 	<header>
-		<%@include file="../view/header.jsp"%>
+		<%@include file="../view/header2.jsp"%>
 	</header>
 	<div class="main-container">
 		<div class="main-content">
@@ -36,7 +34,6 @@
 						<td class="td1" onclick="toggleCategory('리조트')">리조트</td>
 					</tr>
 				</table>
-
 
 				<table class="main_serch_table2">
 					<tr>
@@ -66,12 +63,9 @@
 			</div>
 		</div>
 	</div>
-
-
-	<h2 style="margin-top: 50px; margin-bottom: 30px;">⚡️ 원하는 숙소를
-		클릭해보세요!</h2>
+	<h2 style="margin-top: 50px; margin-bottom: 30px;">⚡️ 원하는 숙소를 클릭해보세요!</h2>
 	<div class="select_section">
-		<li class="hotel"><span>호텔</span></li>
+		<li class="hotel"><span>호텔111</span></li>
 		<li class="motel"><span>모텔</span></li>
 		<li class="pension"><span>펜션</span></li>
 		<li class="resort"><span>리조트</span></li>
@@ -80,23 +74,17 @@
 
 	<h2 style="margin-top: 50px; margin-bottom: 30px;">💖 평점 높은 숙소 추천!</h2>
 
-	<div class="swiper">
+	<div class="swiper" >
 		<!-- Additional required wrapper -->
 		<div class="swiper-wrapper">
 			<!-- Slides -->
-			<div class="swiper-slide"
-				style="background-image: url( 'img/main/m_hotel.jpg' ); background-size: cover;">canda호텔</div>
-			<div class="swiper-slide"
-				style="background-image: url( 'img/main/m_hotel.jpg' ); background-size: cover;"></div>
-			<div class="swiper-slide"
-				style="background-image: url( 'img/main/m_hotel.jpg' ); background-size: cover;"></div>
-			<div class="swiper-slide"
-				style="background-image: url( 'img/main/m_hotel.jpg' ); background-size: cover;"></div>
-			<div class="swiper-slide"
-				style="background-image: url( 'img/main/m_hotel.jpg' ); background-size: cover;"></div>
-			<div class="swiper-slide"
-				style="background-image: url( 'img/main/m_hotel.jpg' ); background-size: cover;"></div>
-
+			<div class="swiper-slide" style="background-image:url( 'img/main/m_hotel.jpg' ); background-size: cover;" >canda호텔</div>
+			<div class="swiper-slide" style="background-image:url( 'img/main/m_hotel.jpg' ); background-size: cover;" ></div>
+			<div class="swiper-slide" style="background-image:url( 'img/main/m_hotel.jpg' ); background-size: cover;" ></div>
+			<div class="swiper-slide" style="background-image:url( 'img/main/m_hotel.jpg' ); background-size: cover;" ></div>
+			<div class="swiper-slide" style="background-image:url( 'img/main/m_hotel.jpg' ); background-size: cover;" ></div>
+			<div class="swiper-slide" style="background-image:url( 'img/main/m_hotel.jpg' ); background-size: cover;" ></div>
+		
 		</div>
 		<!-- If we need pagination 
 		<div class="swiper-pagination"></div>
@@ -110,33 +98,150 @@
 		<!-- If we need scrollbar -->
 		<div class="swiper-scrollbar"></div>
 	</div>
+	
+	<!-- 테스트용 -->
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1</div>
 
+	<!-- 테스트용 -->
 	<script>
-		const swiper = new Swiper('.swiper', {
-			direction : 'horizontal',
-			loop : true,
-			slidesPerView : 4, // 4개의 슬라이드를 동시에 표시
+const swiper = new Swiper('.swiper', {
+  direction: 'horizontal',
+  loop: true,
+  slidesPerView: 4, // 4개의 슬라이드를 동시에 표시
 
-			autoplay : {
-				delay : 3000, // 3초마다 슬라이드를 자동으로 넘김
-				disableOnInteraction : true,
-			},
+  autoplay: {
+    delay: 3000, // 3초마다 슬라이드를 자동으로 넘김
+    disableOnInteraction: true,
+  },
+  
+  loopedSlides: 3, // 마지막 슬라이드에서 처음 슬라이드로 돌아가기 위한 추가 슬라이드 수
 
-			loopedSlides : 3, // 마지막 슬라이드에서 처음 슬라이드로 돌아가기 위한 추가 슬라이드 수
+  pagination: {
+    el: '.swiper-pagination',
+  },
 
-			pagination : {
-				el : '.swiper-pagination',
-			},
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
 
-			navigation : {
-				nextEl : '.swiper-button-next',
-				prevEl : '.swiper-button-prev',
-			},
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
 
-			scrollbar : {
-				el : '.swiper-scrollbar',
-			},
-		});
-	</script>
+</script>
 </body>
 </html>

@@ -19,10 +19,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 
-import com.tencoding.wherego.dto.KakaoProfileDto;
-import com.tencoding.wherego.dto.LogInFormDto;
-import com.tencoding.wherego.dto.OAuthTokenDto;
-import com.tencoding.wherego.dto.SignUpFormDto;
+import com.tencoding.wherego.dto.member.KakaoProfileDto;
+import com.tencoding.wherego.dto.member.LogInFormDto;
+import com.tencoding.wherego.dto.member.OAuthTokenDto;
+import com.tencoding.wherego.dto.member.SignUpFormDto;
 import com.tencoding.wherego.handler.exception.CustomRestfulException;
 import com.tencoding.wherego.repository.model.Member;
 import com.tencoding.wherego.service.MemberService;
@@ -34,6 +34,7 @@ public class MemberController {
 
 	@Autowired
 	private MemberService memberService;
+	
 	@Autowired
 	private HttpSession session;
 
@@ -63,7 +64,7 @@ public class MemberController {
 		session.setAttribute(Define.PRINCIPAL, principal);
 		// 세션에 등록
 
-		return "redirect:main"; 
+		return "redirect:main"; // 차후 수정, 진짜 메인페이지로  
 //		return "redirect:login";
 	}
 
@@ -218,6 +219,13 @@ public class MemberController {
 	@GetMapping("/sign-up2")
 	public String login2() {
 		return "member/signUp2";
+	}
+	
+	@GetMapping("/logout")
+	public String logout() {
+		session.invalidate();
+
+		return "redirect:main";
 	}
 }
 
