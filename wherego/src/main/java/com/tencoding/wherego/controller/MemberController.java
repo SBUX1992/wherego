@@ -47,7 +47,7 @@ public class MemberController {
 	// 일반 로그인 처리
 	@PostMapping("/login")
 	public String loginProc(LogInFormDto logInFormDto) {
-
+		System.out.println(logInFormDto);
 		if (logInFormDto.getId().isEmpty() || logInFormDto.getId() == null) {
 			throw new CustomRestfulException("ID를 입력하세요", HttpStatus.BAD_REQUEST);
 		}
