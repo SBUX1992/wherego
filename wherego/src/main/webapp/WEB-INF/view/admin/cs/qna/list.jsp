@@ -69,7 +69,7 @@
 								<td><input type="checkbox"></td>
 								<td>1</td>
 								<td>고객 서비스</td>
-								<td>[안내] 해외결제 사칭 문자 주의</td>
+								<td><a href="/wherego/admin/cs/qna/view">[가입] 가입 문의내용</a></td>
 								<td>강중현</td>
 								<td>2023.10.10</td>
 								<td><a href="/wherego/admin/cs/qna/view">[검토중]</a>
@@ -78,7 +78,7 @@
 								<td><input type="checkbox"></td>
 								<td>1</td>
 								<td>고객 서비스</td>
-								<td>[안내] 해외결제 사칭 문자 주의</td>
+								<td><a href="/wherego/admin/cs/qna/view">[탈퇴] 탈퇴 문의내용</a></td>
 								<td>강중현</td>
 								<td>2023.10.10</td>
 								<td><label>[답변완료]</label></td>

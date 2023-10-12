@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,41 +56,34 @@
 				</nav>
 				<div id="admin_cs_list">
 					<div class="admin_cs_list_div">
-						<table>
-							<tr>
-								<th><input type="checkbox" class="all" /></th>
-								<th>번호</th>
-								<th>유형</th>
-								<th>제목</th>
-								<th>조회</th>
-								<th>날짜</th>
-								<th>관리</th>
-							</tr>
-							<tr class="notice_list">
-								<td><input type="checkbox"></td>
-								<td>1</td>
-								<td>고객 서비스</td>
-								<td>[안내] 해외결제 사칭 문자 주의</td>
-								<td>5</td>
-								<td>2023.10.10</td>
-								<td>
-									<a href="/wherego/admin/cs/notice/modify">[수정]</a>
-									<a href="#">[삭제]</a>
-								</td>
-							</tr>
-							<tr class="notice_list">
-								<td><input type="checkbox"></td>
-								<td>1</td>
-								<td>고객 서비스</td>
-								<td>[안내] 해외결제 사칭 문자 주의</td>
-								<td>5</td>
-								<td>2023.10.10</td>
-								<td>
-									<a href="/wherego/admin/cs/notice/modify">[수정]</a>
-									<a href="#">[삭제]</a>
-								</td>
-							</tr>
-						</table>
+						<c:choose>
+							<c:when test="${noticeList != null}">
+								<table>
+									<tr>
+										<th><input type="checkbox" class="all" /></th>
+										<th>번호</th>
+										<th>유형</th>
+										<th>제목</th>
+										<th>작성자</th>
+										<th>날짜</th>
+										<th>관리</th>
+									</tr>
+									<c:forEach var="notice" items="${noticeList}">
+										<tr class="notice_list">
+											<td><input type="checkbox"></td>
+											<td>12</td>
+											<td>고객 서비스</td>
+											<td>${notice.title}</td>
+											<td>${notice.memId}</td>
+											<td>2023-10-10</td>
+											<td><a href="/wherego/admin/cs/notice/modify/${notice.memId}">[수정]</a>
+											<a href="#">[삭제]</a></td>
+										</tr>
+									</c:forEach>
+								</table>
+							</c:when>
+						</c:choose>
+
 						<div class="btn">
 							<a href="#" class="btn_selectDelete selectDelete">선택삭제</a> <a
 								href="/wherego/admin/cs/notice/write"

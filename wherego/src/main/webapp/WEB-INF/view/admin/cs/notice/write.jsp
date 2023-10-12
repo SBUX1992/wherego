@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,7 +56,7 @@
 				</nav>
 				<div id="admin_cs_write">
 					<div class="admin_cs_write_div">
-						<form id="form" action="#" method="post">
+						<form id="form" action="/wherego/admin/cs/notice/write" method="post">
 							<table>
 								<tbody>
 									<tr>
@@ -78,8 +79,9 @@
 								</tbody>
 							</table>
 							<div class="btn_right">
-								<a href="/wherego/admin/cs/notice/list" class="btn_gray">목록</a> <a href="#"
-									name="submit_board" class="btn_register" type="submit">등록</a>
+								<a href="/wherego/admin/cs/notice/list" class="btn_gray">목록</a>
+								<button href="#" name="submit_board" class="btn_register"
+									type="submit">등록</button>
 							</div>
 						</form>
 					</div>
