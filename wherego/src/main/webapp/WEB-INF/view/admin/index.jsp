@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <title>롯데호텔::관리자</title>
 <meta charset="utf-8">
@@ -23,14 +23,14 @@
 	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
 <!-- css -->
-<link rel="stylesheet" href="/wherego/css/adminCss/main.css">
+<link rel="stylesheet" href="/wherego/css/admin/admin.css">
 </head>
 <body>
 	<div id="admin-wrapper">
 		<header>
 			<div>
-				<a href="#" class="logo"><img src="./img/admin/lotte_logo.PNG"
-					alt="admin_logo" /></a>
+				<a href="/wherego/admin/index" class="logo"><img
+					src="../img/admin/lotte_logo.PNG" alt="admin_logo" /></a>
 				<p>
 					<span>홍길동님 반갑습니다.</span> <a href="#">HOME |</a> <a href="#">로그아웃
 						|</a> <a href="#">고객센터</a>
@@ -48,9 +48,10 @@
 					<li><a href="#"><i class="fa fa-pencil-square-o"
 							aria-hidden="true"></i>게시판관리</a>
 						<ol>
-							<li><a href="#">공지사항</a></li>
-							<li><a href="#">고객문의</a></li>
-						</ol></li>
+							<li><a href="/wherego/admin/cs/notice/list">공지사항</a></li>
+							<li><a href="/wherego/cs/notice/list">고객문의</a></li>
+						</ol>
+					</li>
 				</ul>
 			</aside>
 
