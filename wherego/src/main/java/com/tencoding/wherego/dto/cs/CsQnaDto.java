@@ -1,9 +1,9 @@
-package com.tencoding.wherego.dto.admin;
+package com.tencoding.wherego.dto.cs;
 
 import lombok.Data;
 
 @Data
-public class AdminCsNoticeDto {
+public class CsQnaDto {
 	
 	private int no;
 	private String title;
