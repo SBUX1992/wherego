@@ -854,6 +854,10 @@ div>span:last-child {
 	width: 10%;
 }
 
+#admin_cs_list>.admin_cs_list_div>table tr>th {
+	font-size: 16px;
+}
+
 #admin_cs_list>.admin_cs_list_div>table tr>td>a {
 	font-size: 16px;
 }

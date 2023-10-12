@@ -19,10 +19,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 
-import com.tencoding.wherego.dto.KakaoProfileDto;
-import com.tencoding.wherego.dto.LogInFormDto;
-import com.tencoding.wherego.dto.OAuthTokenDto;
-import com.tencoding.wherego.dto.SignUpFormDto;
+import com.tencoding.wherego.dto.member.KakaoProfileDto;
+import com.tencoding.wherego.dto.member.LogInFormDto;
+import com.tencoding.wherego.dto.member.OAuthTokenDto;
+import com.tencoding.wherego.dto.member.SignUpFormDto;
 import com.tencoding.wherego.handler.exception.CustomRestfulException;
 import com.tencoding.wherego.repository.model.Member;
 import com.tencoding.wherego.service.MemberService;
@@ -33,6 +33,7 @@ public class MemberController {
 
 	@Autowired
 	private MemberService memberService;
+	
 	@Autowired
 	private HttpSession session;
 
@@ -46,7 +47,7 @@ public class MemberController {
 	// 일반 로그인 처리
 	@PostMapping("/login")
 	public String loginProc(LogInFormDto logInFormDto) {
-
+		System.out.println(logInFormDto);
 		if (logInFormDto.getId().isEmpty() || logInFormDto.getId() == null) {
 			throw new CustomRestfulException("ID를 입력하세요", HttpStatus.BAD_REQUEST);
 		}
@@ -63,8 +64,9 @@ public class MemberController {
 		session.setAttribute(Define.PRINCIPAL, principal);
 		// 세션에 등록
 
+
 		return "redirect:wherego/main"; 
-//		return "redirect:login";
+
 	}
 
 	// 회원가입 페이지 진입
@@ -218,6 +220,13 @@ public class MemberController {
 	@GetMapping("/sign-up2")
 	public String login2() {
 		return "member/signUp2";
+	}
+	
+	@GetMapping("/logout")
+	public String logout() {
+		session.invalidate();
+
+		return "redirect:main";
 	}
 }
 

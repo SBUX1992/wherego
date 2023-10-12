@@ -6,11 +6,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class TestController {
 
+
 	
 	@GetMapping("check1")
 	public String check() {
 		System.out.println("check");
 		return "accomodation/acc_list";
 		
+
 	}
 }
