@@ -29,7 +29,6 @@ import com.tencoding.wherego.service.MemberService;
 import com.tencoding.wherego.utils.Define;
 
 @Controller
-@RequestMapping("/member")
 public class MemberController {
 
 	@Autowired
@@ -41,6 +40,7 @@ public class MemberController {
 	// 로그인 페이지 진입
 	@GetMapping("/login")
 	public String login() {
+		System.out.println("login page");
 		return "member/login";
 	}
 
@@ -64,8 +64,9 @@ public class MemberController {
 		session.setAttribute(Define.PRINCIPAL, principal);
 		// 세션에 등록
 
-		return "redirect:main"; // 차후 수정, 진짜 메인페이지로  
-//		return "redirect:login";
+
+		return "redirect:wherego/main"; 
+
 	}
 
 	// 회원가입 페이지 진입
@@ -160,8 +161,8 @@ public class MemberController {
 			session.setAttribute(Define.PRINCIPAL, principal);
 			// 세션에 등록
 
-//			return "redirect:main"; 메인이 생기면 그쪽으로
-			return "redirect:login";
+			return "redirect:main"; //메인이 생기면 그쪽으로
+//			return "redirect:login";
 			
 		} else { // 로그인 정보가 없다면 회원가입 페이지로
 			model.addAttribute("id", id);
@@ -209,10 +210,10 @@ public class MemberController {
 	}
 
 	// 임시메인컨트롤러
-	@GetMapping("/main")
-	public String main() {
-		return "main";
-	}
+//	@GetMapping("/main")
+//	public String main() {
+//		return "main";
+//	}
 	
 	
 	// 제작중인 회원가입 폼
