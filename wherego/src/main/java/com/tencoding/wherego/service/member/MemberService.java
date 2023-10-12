@@ -1,4 +1,4 @@
-package com.tencoding.wherego.service;
+package com.tencoding.wherego.service.member;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -39,10 +39,9 @@ public class MemberService {
 	public Member logIn(LogInFormDto logInFormDto) {
 		System.out.println(logInFormDto.getId());
 		
-		Member memberEntity = memberRepository.findById("test3");
+		Member memberEntity = memberRepository.findById(logInFormDto.getId());
 		// 계정 정보 mySql에서 셀렉트 조회
 		if (memberEntity == null) { // 조회된 계정이 없을 경우
-			System.out.println("aaaa");
 			throw new CustomRestfulException("계정이 없습니다.", HttpStatus.BAD_REQUEST);
 		}
 

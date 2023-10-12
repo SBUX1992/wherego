@@ -1,0 +1,256 @@
+@charset "UTF-8";
+
+body {
+	margin: 0;
+}
+
+.form-area {
+	margin: 0 auto;
+	width: 1120px;
+}
+
+.txt-color-sig {
+	color: #998465;
+}
+
+.headline {
+	text-align: center;
+}
+
+.li-horizontal-divider.login {
+	border-left: 1px solid #666666;
+	font-size: 10px;
+	margin-left: -6px;
+	
+}
+
+.li-horizontal-divider.mypage {
+	border-left: 1px solid #666666;
+	font-size: 16px;
+	
+}
+
+.jb-division-line {
+	border-top: 1px solid #E0E0E0;
+	margin: 20px 0px;
+}
+
+.jb-division-line.login {
+	border-top: 1px solid #E0E0E0;
+	margin-top: 0;
+	margin-bottom: 40px;
+}
+
+
+.form-area {
+	padding: 0 24px;
+}
+
+input {
+	box-sizing: border-box;
+	border: solid 1px #999999;
+	margin-top: 10px;
+	width: 340px;
+	height: 50px;
+	padding: 10px 20px;
+}
+
+.input-text.focus {
+	box-sizing: border-box;
+	border: solid 2px #1B65B3;
+	border-radius: 2px;
+	margin-top: 10px;
+	width: 340px;
+	height: 50px;
+	padding: 10px 19px;
+}
+
+input:focus {
+	outline: none;
+}
+
+.validation__text {
+	font-size: 12px;
+}
+
+.col-box {
+	display: flex;
+}
+
+ul {
+	box-sizing: border-box;
+}
+
+li {
+	float: left;
+}
+
+.input-btn {
+	box-sizing: border-box;
+	margin-top: 10px;
+	margin-left: 10px;
+	height: 50px;
+	width: 130px;
+	border: solid 1px #666666;
+	background-color: #555555;
+	color: white;
+	font-size: 13px;
+	cursor: Pointer;
+}
+
+.input-wrap.col2 {
+	margin-left: 10px;
+}
+
+.input-title {
+	margin-top: 10px;
+}
+
+.notice-box {
+	display: inline-block;
+	box-sizing: border-box;
+	border: solid 1px #F8DE72;
+	width: 690px;
+	background-color: #FEF9E5;
+	margin-top: 22px;
+	padding: 20px;
+}
+
+.notice-text {
+	color: #ac8a00;
+	font-size: 13px;
+}
+
+.material-symbols-outlined {
+	font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24
+}
+
+#confirm-bar {
+	position: fixed;
+	height: 60px;
+	padding: 30px 0;
+	bottom: 0px;
+	/* 원하는 위치로 조정 */
+	left: 0px;
+	/* 원하는 위치로 조정 */
+	right: 0px;
+	background-color: #ffffff;
+	box-shadow: rgba(0, 0, 0, 0.07) 0px -10px 20px 0px;
+}
+
+.confirm-bar_btn {
+	position: absolute;
+	box-sizing: border-box;
+	height: 60px;
+	width: 150px;
+	margin: 0;
+	border: none;
+	color: #FFFFFF;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.confirm-bar_btn.submit {
+	right: 120px;
+	background-color: #DCDCDC;
+}
+
+.confirm-bar_btn.back {
+	right: 285px;
+	background-color: #333333;
+}
+
+.inner {
+	padding: 15px 15px;
+	margin: 0 auto;
+	width: 1400px;
+}
+
+.login-box {
+	width: 1170px;
+	padding-bottom: 30px;
+	margin: 0 auto;
+}
+
+.login-form-box {
+	position: relative;
+	margin: 0 auto;
+	width: 690px;
+
+}
+
+.login-form-box-btn {
+	width: 210px;
+	height: 110px;
+	margin-top: 0;
+	font-size: 18px;
+	border: none;
+	background-color: #AD9E87;
+	color: #FFFFFF;
+	cursor: pointer;
+}
+
+.login-field {
+	position: relative;
+	width: 470px;
+}
+
+.login-btn {
+	position: absolute;
+	left: 480px;
+	top: 0;
+}
+
+#remember-me {
+	height: 20px;
+	width: 20px;
+	margin: 0 10px 0 0;
+	
+
+}
+
+.login-form-box.inputchk {
+	margin-top: 20px;
+}
+
+.remember-me-text{
+	position: absolute;
+	top:-2px;
+}
+
+.atext_mem {
+	color: #998465;
+	border-bottom: 1px solid #998465;
+	font-size: 14px;
+	margin: 0 15px;
+}
+
+.atext_mem.first {
+	margin-left: 30px;
+}
+
+.login-atext-set{
+	margin-top: 10px;
+}
+#mypage {
+	margin: 0 auto;
+	width: 1440px;
+	padding: 0 24px;
+	
+}
+.mypage-space {
+	border-top: 2px solid #666;
+	width: 1440px;
+	padding: 30px 0 60px 0;
+}
+
+.mylist {
+	position: static;
+	background-color: #f5f5f5;
+	width: 1440px;
+	height: 110px;
+}
+
+.mylist-element{
+	width: 20%;
+}
