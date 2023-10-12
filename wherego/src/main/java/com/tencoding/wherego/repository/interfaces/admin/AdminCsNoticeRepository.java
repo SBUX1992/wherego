@@ -10,11 +10,11 @@ import com.tencoding.wherego.repository.model.admin.AdminCsNotice;
 public interface AdminCsNoticeRepository {
 	
 	public int insert(AdminCsNotice adminCsNotice);
-	public int updateById(AdminCsNotice adminCsNotice);
-	public int deleteById(String memId);
+	public int updateByNo(AdminCsNotice adminCsNotice);
+	public int deleteByNo(Integer no);
 
 	public List<AdminCsNotice> findAll();
-	public List<AdminCsNotice> findById(String memId);
+	public List<AdminCsNotice> findByNo(Integer no);
 	
 	public List<AdminCsNotice> findByMemId(String principalId);
 }

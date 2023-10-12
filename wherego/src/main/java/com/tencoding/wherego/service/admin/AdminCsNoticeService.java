@@ -18,19 +18,17 @@ public class AdminCsNoticeService {
 	private AdminCsNoticeRepository adminCsNoticeRepository;
 	
 	@Transactional
-	public void writeNotice(AdminCsNoticeDto adminCsNoticeDto, String principalId) {
+	public int writeNotice(AdminCsNoticeDto adminCsNoticeDto, Integer principalNo) {
 		// 등록 처리
 		AdminCsNotice adminCsNotice = new AdminCsNotice();
 		adminCsNotice.setTitle(adminCsNoticeDto.getTitle());
 		adminCsNotice.setContent(adminCsNoticeDto.getContent());
-		adminCsNotice.setMemId(principalId);
+		adminCsNotice.setNo(principalNo);
 
+		int resultRowCount =  adminCsNoticeRepository.insert(adminCsNotice);
+		
 
-//	    // 현재 날짜를 "yyyy-MM-dd" 형식으로 변환
-//	    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-//	    String formattedDate = dateFormat.format(new Date());
-//	    
-//	    adminCsNotice.setRdate(formattedDate);
+		return resultRowCount;
 	}
 	
 	
@@ -39,7 +37,8 @@ public class AdminCsNoticeService {
 	public List<AdminCsNotice> readAdminCsNoticeList(String memId) {
 		
 		List<AdminCsNotice> list = adminCsNoticeRepository.findByMemId(memId);
-		System.out.println("list aaa size() :  " + list.size());
+		// list page 값 받는지 확인
+//		System.out.println("list aaa size() :  " + list.size());
 		return list;
 	}
 	
