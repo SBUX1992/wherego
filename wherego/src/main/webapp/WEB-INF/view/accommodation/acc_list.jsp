@@ -11,65 +11,7 @@
     <!-- iamport.payment.js -->
     <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
 <!-- 포트원 결제 -->
-
-<script>
-var IMP = window.IMP;
-IMP.init('imp73063051');
-
-function requestPay() {
-	// 클릭된 버튼에서 amount값
-	 var amount = event.target.getAttribute('data-amount'); 
-	// 클릭된 버튼에서 name값
-	 var name = event.target.getAttribute('data-name'); 
-	//클릭된 버튼에서 number값
-	 var number = event.target.getAttribute('data-number'); 
-IMP.request_pay({
-    pg : 'kakaopay',
-    pay_method : 'card', //생략 가능
-    merchant_uid: number, 
-    name : name,
-    amount : amount,
-    buyer_email : 'iamport@siot.do',
-    buyer_name : '구매자이름',
-    buyer_tel : '010-1234-5678',
-    buyer_addr : '서울특별시 강남구 삼성동',
-    buyer_postcode : '123-456'
-}, function(rsp) {
-    if ( rsp.success ) {
-    	//[1] 서버단에서 결제정보 조회를 위해 jQuery ajax로 imp_uid 전달하기
-    	jQuery.ajax({
-    		url: "/payments/complete", //cross-domain error가 발생하지 않도록 주의해주세요
-    		type: 'POST',
-    		dataType: 'json',
-    		data: {
-	    		imp_uid : rsp.imp_uid
-	    		//기타 필요한 데이터가 있으면 추가 전달
-    		}
-    	}).done(function(data) {
-    		//[2] 서버에서 REST API로 결제정보확인 및 서비스루틴이 정상적인 경우
-    		if ( everythings_fine ) {
-    			var msg = '결제가 완료되었습니다.';
-    			msg += '\n고유ID : ' + rsp.imp_uid;
-    			msg += '\n상점 거래ID : ' + rsp.merchant_uid;
-    			msg += '\결제 금액 : ' + rsp.paid_amount;
-    			msg += '카드 승인번호 : ' + rsp.apply_num;
-    			
-    			alert(msg);
-    		} else {
-    			//[3] 아직 제대로 결제가 되지 않았습니다.
-    			//[4] 결제된 금액이 요청한 금액과 달라 결제를 자동취소처리하였습니다.
-    		}
-    	});
-    } else {
-        var msg = '결제에 실패하였습니다.';
-        msg += '에러내용 : ' + rsp.error_msg;
-        
-        alert(msg);
-    }
-});
-}
-
-</script>
+<script type="text/javascript" src="../js/payment/payment_js.js" ></script> 
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -99,6 +41,7 @@ IMP.request_pay({
   </head>
 <!--------------------------------------- 바디 시작 -------------------------------------------------------->
   <body>
+
     <div class="header">
         <div class="logo_img">
             <img src="../img/accommodation/lottehotel_logo.png" alt="호텔로고">
@@ -150,6 +93,7 @@ IMP.request_pay({
             <div class="acc_price_info">
                 <div>*100 points = 1$ 가치 &nbsp &nbsp *평균가/1박 (세금, 봉사료 미포함)</div>
             </div>
+            
             <c:forEach var="acc" items="${accList}">
 	            <div class="acc_list_contents">
 	                <div class="acc_list_contain" data-toggle="modal" data-target="#staticBackdrop" onclick="getImgList()">
@@ -164,20 +108,16 @@ IMP.request_pay({
 	                    </div>
 	                </div>
 	                <div class="acc_list_button">
-
-	                   <a><button onclick="requestPay()" type="button" class="btn price_btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" 
+	                   <a><button type="button"   onclick="kakaopay()"class="price_btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" 
 	                   data-amount="${acc.roomPrice}"
 	                   data-name="${acc.roomName}"
-	                   data-number="${acc.roomNo}">
-	           
+	                   data-number="${acc.roomNo}">         
     ${acc.roomPrice} KRW</button>
 	                </a>
-
-	                    <button type="button" class="price_btn">${acc.roomPrice } KRW</button>
-
 	                </div>
 	            </div>
             </c:forEach>
+            
         </div>
     </div>
     
@@ -269,12 +209,12 @@ IMP.request_pay({
             </div>
         </div>
       
-    <script type="text/javascript">
+<!--     <script type="text/javascript">
         function getImgList() {
         	let roomNumber = document.getElementById('roomNumber').value;
             console.log(roomNumber);
         }
-    </script>
+    </script> -->
 
   </body>
 </html>
