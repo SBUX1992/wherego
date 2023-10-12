@@ -2,11 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.tencoding.wherego.repository.interfaces.PaymentRepository">
-<select id="paymentById" >
-select
- m.mem_user_no, m.mem_id, a.room_price , a.room_no , a.room_name
-from member as m
-left join accommodation as a
-on m.mem_user_no = a. room_no
-</select>
+<!-- <select id="paymentById"  resultType="com.tencoding.wherego.dto.accommodation.PaymentDto">
+
+</select> -->
 </mapper>

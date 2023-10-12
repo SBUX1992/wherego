@@ -70,7 +70,7 @@ li {
 		</div>
 
 		<ul>
-			<li><a href="#" class="list-item">호텔찾기</a> <span class="li-horizontal-divider"></span></li>
+			<li><a href="acc/list" class="list-item">호텔찾기</a> <span class="li-horizontal-divider"></span></li>
 			<li><a href="#" class="list-item">멤버십</a> <span class="li-horizontal-divider"></span></li>
 			<li><a href="#" class="list-item">예약조회</a> <span class="li-horizontal-divider"></span></li>
 			<c:choose>

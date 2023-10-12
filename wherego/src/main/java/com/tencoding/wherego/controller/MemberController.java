@@ -29,6 +29,7 @@ import com.tencoding.wherego.service.MemberService;
 import com.tencoding.wherego.utils.Define;
 
 @Controller
+@RequestMapping({"/member",""})
 public class MemberController {
 
 	@Autowired
@@ -65,7 +66,7 @@ public class MemberController {
 		// 세션에 등록
 
 
-		return "redirect:wherego/main"; 
+		return "redirect:/main"; 
 
 	}
 

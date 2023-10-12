@@ -1,13 +1,19 @@
 var IMP = window.IMP;
 IMP.init('imp73063051');
 
-function requestPay() {
+function kakaopay() {
+	//클릭된 버튼에서 number값
+	 var number = event.target.getAttribute('data-number'); 
+	// 클릭된 버튼에서 name값
+	 var name = event.target.getAttribute('data-name'); 
+	// 클릭된 버튼에서 amount값
+	 var amount = event.target.getAttribute('data-amount'); 
 IMP.request_pay({
     pg : 'kakaopay',
     pay_method : 'card', //생략 가능
-    merchant_uid: "11", // 상점에서 관리하는 주문 번호
-    name : '주문명:결제테스트',
-    amount : acc.roomPrice ,
+    merchant_uid: number, 
+    name : name,
+    amount : amount,
     buyer_email : 'iamport@siot.do',
     buyer_name : '구매자이름',
     buyer_tel : '010-1234-5678',
