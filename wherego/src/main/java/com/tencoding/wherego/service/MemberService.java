@@ -17,6 +17,7 @@ public class MemberService {
 
 	@Autowired
 	private MemberRepository memberRepository;
+	
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 
