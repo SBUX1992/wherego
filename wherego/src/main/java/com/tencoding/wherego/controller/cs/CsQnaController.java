@@ -8,9 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.tencoding.wherego.dto.cs.CsQnaDto;
 import com.tencoding.wherego.repository.model.cs.CsQna;
 import com.tencoding.wherego.service.cs.CsQnaService;
 import com.tencoding.wherego.utils.Define;
@@ -53,9 +55,13 @@ public class CsQnaController {
     }
     
     
-    @GetMapping("/view")
-    public String view(){
+    @GetMapping("/view/{num}")
+    public String view(Model model, @PathVariable int num){
     	log.info("cs qna view 페이지 접속");
+    	
+    	List<CsQna> csQnaView = csQnaService.readCsQna(num);
+    	model.addAttribute("csQnaView", csQnaView);
+    	
     	return "cs/qna/view";
     }
 
@@ -65,17 +71,19 @@ public class CsQnaController {
     public String write(){
     	log.info("cs qna write 페이지 접속");
     	CsQna csQna = (CsQna)session.getAttribute(Define.PRINCIPAL);
+    	System.out.println("csQna" + csQna);
     	
     	
     	return "cs/qna/write";
     }
     
     @PostMapping("/write")
-    public String writeProc() {
+    public String writeProc(CsQnaDto csQnaDto) {
+    	System.out.println("csQnaDto" + csQnaDto);
     	log.info("등록 Post 클릭");
-    	CsQna csQna = (CsQna)session.getAttribute(Define.PRINCIPAL);
+//    	CsQna csQna = (CsQna)session.getAttribute(Define.PRINCIPAL);
     	
-    	
+    	csQnaService.writeCsQna(csQnaDto);
     	
     	return "redirect:/cs/qna/list";
     }

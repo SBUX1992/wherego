@@ -31,7 +31,7 @@
 						<table>
 							<c:forEach var="csQna" items="${csQnaList}">
 								<tr>
-									<td><a href="/wherego/cs/qna/view">${csQna.title}</a></td>
+									<td><a href="/wherego/cs/qna/view/${csQna.no}">${csQna.title}</a></td>
 									<td>${csQna.memId}</td>
 									<td>${csQna.rdate.substring(0, 10)}</td>
 								</tr>

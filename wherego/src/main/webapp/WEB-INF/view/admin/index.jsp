@@ -1,42 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<title>롯데호텔::관리자</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- google -->
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-
-<!-- fontawesome -->
-<script src="https://kit.fontawesome.com/20962f3e4b.js"
-	crossorigin="anonymous"></script>
-
-<link rel="stylesheet"
-	href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" />
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-
-<!-- css -->
-<link rel="stylesheet" href="/wherego/css/admin/admin.css">
-</head>
-<body>
-	<div id="admin-wrapper">
-		<header>
-			<div>
-				<a href="/wherego/admin/index" class="logo"><img
-					src="../img/admin/lotte_logo.PNG" alt="admin_logo" /></a>
-				<p>
-					<span>홍길동님 반갑습니다.</span> <a href="#">HOME |</a> <a href="#">로그아웃
-						|</a> <a href="#">고객센터</a>
-				</p>
-			</div>
-		</header>
+<%@ include file="/WEB-INF/view/admin/header.jsp"%>
 		<main>
 			<aside>
 				<ul id="gnb">
@@ -49,7 +13,7 @@
 							aria-hidden="true"></i>게시판관리</a>
 						<ol>
 							<li><a href="/wherego/admin/cs/notice/list">공지사항</a></li>
-							<li><a href="/wherego/cs/notice/list">고객문의</a></li>
+							<li><a href="/wherego/admin/cs/qna/list">고객문의</a></li>
 						</ol>
 					</li>
 				</ul>
