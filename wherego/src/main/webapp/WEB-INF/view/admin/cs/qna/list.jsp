@@ -45,13 +45,12 @@
 											type="hidden" name="size" /></td>
 									<td>${qna.no}</td>
 									<td>회원 문의</td>
-									<td><a href="/wherego/admin/cs/qna/view">${qna.title}</a></td>
+									<td><a href="/wherego/admin/cs/qna/view/${qna.no}">${qna.title}</a></td>
 									<td>강**</td>
 									<td>${qna.rdate.substring(0, 10)}</td>
-									<td><a href="/wherego/admin/cs/qna/view">[답변대기]</a>
+									<td><a href="/wherego/admin/cs/qna/view/${qna.no}">[답변대기]</a>
 								</tr>
 							</c:forEach>
-								
 						</table>
 					</c:when>
 				</c:choose>

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/view/admin/header.jsp"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 		<main>
 			<aside>
 				<ul id="gnb">
@@ -27,36 +28,39 @@
 				<div id="admin_cs_view">
 					<div class="admin_cs_view_div">
 						<form action="/wherego/admin/cs/qna/view" method="post">
-							<table border="0">
-								<tr>
-									<th>글유형</th>
-									<td><h2>회원</h2></td>
-								</tr>
-								<tr>
-									<th>제목</th>
-									<td><h2 class="title">[가입] 가입 문의내용</h2></td>
-								</tr>
-								<tr>
-									<th>내용</th>
-									<td>
-										<p>
-											개인회원에서 법인회원(사업자 회원)으로 전환은 불가하므로 법인회원(사업자 회원) 전환은 신규 가입으로 진행을
-											해야 합니다. <br /> <br /> 감사합니다.
-										</p>
-									</td>
-								</tr>
-								<tr>
-									<th>답변</th>
-									<td><textarea name="comment" id="comment" rows="22"
-											maxlength="1000"></textarea></td>
-								</tr>
-							</table>
+							<c:choose>
+								<c:when test="${qnaView != null}">
+									<table border="0">
+										<c:forEach var="qna" items="${qnaView}">
+											<tr>
+												<th>글유형</th>
+												<td><h2>회원</h2></td>
+											</tr>
+											<tr>
+												<th>제목</th>
+												<td><h2 class="title">${qna.title}</h2></td>
+											</tr>
+											<tr>
+												<th>내용</th>
+												<td>
+													<p>${qna.content}</p>
+												</td>
+											</tr>
+											<tr>
+												<th>답변</th>
+												<td><textarea name="comment" id="comment" rows="22"
+														maxlength="1000"></textarea></td>
+											</tr>
+										</c:forEach>
+									</table>
+								</c:when>
+							</c:choose>
+							<div class="btn_right">
+								<button class="btn_red">삭제</button>
+								<button class="btn_register" type="submit">답변등록</button>
+								<a href="/wherego/admin/cs/qna/list" class="btn_gray">목록</a>
+							</div>
 						</form>
-						<div class="btn_right">
-							<button class="btn_red">삭제</button>
-							<button class="btn_register" type="submit">답변등록</button>
-							<a href="/wherego/admin/cs/qna/list" class="btn_gray">목록</a>
-						</div>
 					</div>
 				</div>
 			</section>

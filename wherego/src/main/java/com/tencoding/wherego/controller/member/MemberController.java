@@ -30,6 +30,10 @@ import com.tencoding.wherego.utils.Define;
 
 @Controller
 @RequestMapping({"/member",""})
+<<<<<<< HEAD
+=======
+
+>>>>>>> 84400aa1afbc7d2f39a262c585942fd26d609c88
 public class MemberController {
 
 	@Autowired
@@ -66,7 +70,12 @@ public class MemberController {
 		// 세션에 등록
 
 
+<<<<<<< HEAD
 		return "redirect:/main"; 
+=======
+		return "redirect:/main";
+
+>>>>>>> 84400aa1afbc7d2f39a262c585942fd26d609c88
 	}
 
 	// 회원가입 페이지 진입
@@ -234,7 +243,7 @@ public class MemberController {
 	public String login2() {
 		return "member/login2";
 	}
-	
+
 	// 마이페이지 출력
 	@GetMapping("/my-page")
 	public String myPage() {
@@ -242,7 +251,7 @@ public class MemberController {
 		if (session.getAttribute(Define.PRINCIPAL) == null) {
 			throw new CustomRestfulException("잘못된 요청입니다.", HttpStatus.BAD_REQUEST);
 		}
-		
+
 		return "member/myPage";
 	}
 }
