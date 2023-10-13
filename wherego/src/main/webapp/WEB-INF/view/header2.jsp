@@ -11,7 +11,7 @@ a {
 	color: black;
 }
 
-ul {
+.header2Ul {
 	box-sizing: border-box;
 	position: absolute;
 	height: 20px;
@@ -23,7 +23,7 @@ ul {
 	top: 5px;
 }
 
-li {
+.header2Li {
 	float: left;
 }
 
@@ -76,10 +76,10 @@ li {
 			</a>
 		</div>
 
-		<ul>
-			<li><a href="acc/list" class="list-item">호텔찾기</a> <span class="li-horizontal-divider"></span></li>
-			<li><a href="#" class="list-item">멤버십</a> <span class="li-horizontal-divider"></span></li>
-			<li><a href="#" class="list-item">예약조회</a> <span class="li-horizontal-divider"></span></li>
+		<ul class = "header2Ul">
+			<li class = "header2Li"><a href="acc/list" class="list-item">호텔찾기</a> <span class="li-horizontal-divider"></span></li>
+			<li class = "header2Li"><a href="#" class="list-item">멤버십</a> <span class="li-horizontal-divider"></span></li>
+			<li class = "header2Li"><a href="#" class="list-item">예약조회</a> <span class="li-horizontal-divider"></span></li>
 			<c:choose>
 				<c:when test="${principal == null}">
 					<li><a href="${pageContext.request.contextPath}/member/login2" class="list-item">로그인</a> <span class="li-horizontal-divider"></span></li>
@@ -91,7 +91,6 @@ li {
 				</c:when>
 			</c:choose>
 		</ul>
-
 
 	</div>
 
