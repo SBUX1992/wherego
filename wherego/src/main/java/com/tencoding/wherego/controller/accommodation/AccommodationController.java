@@ -54,15 +54,9 @@ public class AccommodationController {
 	}
 	
 	@GetMapping("/detail/{roomNo}")
-<<<<<<< HEAD
 	@ResponseBody
 	public Object getAccDetail(@PathVariable int roomNo) {
-=======
-	public String getAccDetail(@PathVariable int roomNo) {
->>>>>>> cfe665224ac3872f84659e7155829678f4482295
 		List<String> imgList = accommodationService.getAccDetail(roomNo);
-		
-		for(String img : imgList) System.out.println(img);
 		
 		return imgList;
 	}
