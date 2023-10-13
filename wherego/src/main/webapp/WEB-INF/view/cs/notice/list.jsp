@@ -29,10 +29,10 @@
 				<c:choose>
 					<c:when test="${csNoticeList != null}">
 						<table>
-							<c:forEach var="csNotice" items="${csNoticeList}">
+							<c:forEach var="notice" items="${csNoticeList}">
 								<tr>
-									<td><a href="/wherego/cs/notice/view">${csNotice.title}</a></td>
-									<td>${csNotice.rdate.substring(0, 10)}</td>
+									<td><a href="/wherego/cs/notice/view/${notice.no}">${notice.title}</a></td>
+									<td>${notice.rdate.substring(0, 10)}</td>
 								</tr>
 							</c:forEach>
 							

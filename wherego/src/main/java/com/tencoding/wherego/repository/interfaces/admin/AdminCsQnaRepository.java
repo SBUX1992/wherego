@@ -17,6 +17,6 @@ public interface AdminCsQnaRepository {
 	public List<AdminCsQna> findByNo(Integer no);
 	
 	public List<AdminCsQna> findByMemId(String principalId);
- 
+
 	
 }
