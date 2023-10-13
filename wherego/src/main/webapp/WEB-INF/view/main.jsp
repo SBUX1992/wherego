@@ -11,10 +11,15 @@
 <meta charset="UTF-8">
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <title>메인 페이지</title>
+
+
+<!-- css -->
+
 <style>
 @import
 'css/wherego_main_css.css'
 </style>
+
 <script src="js/wherego_main_js.js"></script>
 </head>
 <body style="overflow-y: scroll; margin: 0 0px;">

@@ -1,4 +1,4 @@
-package com.tencoding.wherego.controller;
+package com.tencoding.wherego.controller.member;
 
 import javax.servlet.http.HttpSession;
 
@@ -25,29 +25,34 @@ import com.tencoding.wherego.dto.member.OAuthTokenDto;
 import com.tencoding.wherego.dto.member.SignUpFormDto;
 import com.tencoding.wherego.handler.exception.CustomRestfulException;
 import com.tencoding.wherego.repository.model.Member;
-import com.tencoding.wherego.service.MemberService;
+import com.tencoding.wherego.service.member.MemberService;
 import com.tencoding.wherego.utils.Define;
 
 @Controller
+<<<<<<< HEAD:wherego/src/main/java/com/tencoding/wherego/controller/MemberController.java
+@RequestMapping({"/member",""})
+=======
 @RequestMapping("/member")
+>>>>>>> 4f7d6cd5a2e2735e3a4a061f54be5935b21ffc29:wherego/src/main/java/com/tencoding/wherego/controller/member/MemberController.java
 public class MemberController {
 
 	@Autowired
 	private MemberService memberService;
-	
+
 	@Autowired
 	private HttpSession session;
 
 	// 로그인 페이지 진입
 	@GetMapping("/login")
 	public String login() {
+		System.out.println("login page");
 		return "member/login";
 	}
 
 	// 일반 로그인 처리
 	@PostMapping("/login")
 	public String loginProc(LogInFormDto logInFormDto) {
-
+		System.out.println(logInFormDto);
 		if (logInFormDto.getId().isEmpty() || logInFormDto.getId() == null) {
 			throw new CustomRestfulException("ID를 입력하세요", HttpStatus.BAD_REQUEST);
 		}
@@ -64,8 +69,13 @@ public class MemberController {
 		session.setAttribute(Define.PRINCIPAL, principal);
 		// 세션에 등록
 
-		return "redirect:main"; // 차후 수정, 진짜 메인페이지로  
-//		return "redirect:login";
+<<<<<<< HEAD:wherego/src/main/java/com/tencoding/wherego/controller/MemberController.java
+
+		return "redirect:/main"; 
+=======
+		return "redirect:/main";
+>>>>>>> 4f7d6cd5a2e2735e3a4a061f54be5935b21ffc29:wherego/src/main/java/com/tencoding/wherego/controller/member/MemberController.java
+
 	}
 
 	// 회원가입 페이지 진입
@@ -160,9 +170,9 @@ public class MemberController {
 			session.setAttribute(Define.PRINCIPAL, principal);
 			// 세션에 등록
 
-//			return "redirect:main"; 메인이 생기면 그쪽으로
-			return "redirect:login";
-			
+			return "redirect:main"; // 메인이 생기면 그쪽으로
+//			return "redirect:login";
+
 		} else { // 로그인 정보가 없다면 회원가입 페이지로
 			model.addAttribute("id", id);
 			model.addAttribute("profile", kakaoProfileDto);
@@ -199,7 +209,7 @@ public class MemberController {
 
 	// 닉네임 중복 체크
 	// 조회결과가 null이면(중복이 없다면) 1을 반환
-	@RequestMapping({"nickChk", "kakao/nickChk"})
+	@RequestMapping({ "nickChk", "kakao/nickChk" })
 	public @ResponseBody int nickChk(@RequestParam("mem_nickname") String mem_nickname) {
 		if (memberService.nickChk(mem_nickname) == null) {
 			return 1;
@@ -213,19 +223,35 @@ public class MemberController {
 	public String main() {
 		return "main";
 	}
-	
-	
+
 	// 제작중인 회원가입 폼
 	@GetMapping("/sign-up2")
-	public String login2() {
+	public String signup2() {
 		return "member/signUp2";
 	}
-	
+
+	// 로그아웃 처리 href="${pageContext.request.contextPath}/member/logout"
 	@GetMapping("/logout")
 	public String logout() {
 		session.invalidate();
 
 		return "redirect:main";
 	}
-}
 
+	// 임시로그인페이지
+	@GetMapping("/login2")
+	public String login2() {
+		return "member/login2";
+	}
+	
+	// 마이페이지 출력
+	@GetMapping("/my-page")
+	public String myPage() {
+		// 로그인 정보없이 url조작으로 마이페이지 진입했을시
+		if (session.getAttribute(Define.PRINCIPAL) == null) {
+			throw new CustomRestfulException("잘못된 요청입니다.", HttpStatus.BAD_REQUEST);
+		}
+		
+		return "member/myPage";
+	}
+}

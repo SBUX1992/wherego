@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping({"/payment",""})
 public class PaymentController {
 	
+	
+	
+	
 	@GetMapping("/main")
 	public String main() {
 		System.out.println("main page");
@@ -25,10 +28,10 @@ public class PaymentController {
 		System.out.println("detail"); 
 		return "accomodation/detail";
 	}
-	@GetMapping("/charge")
+	@GetMapping("/cancel")
 	public String charge() {
-		System.out.println("detail"); 
-		return "payment/charge";
+		System.out.println("cancel"); 
+		return "payment/cancel";
 	}
 	
 }

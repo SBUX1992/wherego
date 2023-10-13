@@ -15,7 +15,13 @@ public class AccommodationService {
 	private AccommodationRepository accommodationRepository;
 	
 	public List<AccommodationDto> getAccList() {
+<<<<<<< HEAD
 		List<AccommodationDto> accommodationDtoList = accommodationRepository.findAccList();		
+=======
+		
+		List<AccommodationDto> accommodationDtoList = accommodationRepository.findListById();
+		
+>>>>>>> cfe665224ac3872f84659e7155829678f4482295
 		return accommodationDtoList;
 	}
 	
