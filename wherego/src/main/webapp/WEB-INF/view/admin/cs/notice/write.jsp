@@ -51,7 +51,7 @@
 							</table>
 							<div class="btn_right">
 								<a href="/wherego/admin/cs/notice/list" class="btn_gray">목록</a>
-								<button href="#" name="submit_board" class="btn_register"
+								<button name="submit_board" class="btn_register"
 									type="submit">등록</button>
 							</div>
 						</form>

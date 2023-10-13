@@ -1,9 +1,9 @@
-package com.tencoding.wherego.dto.cs;
+package com.tencoding.wherego.dto.admin;
 
 import lombok.Data;
 
 @Data
-public class CsQnaDto {
+public class AdminCsQnaDto {
 	
 	private int no;
 	private String comment;

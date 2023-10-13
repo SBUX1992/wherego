@@ -11,4 +11,6 @@ public interface CsNoticeRepository {
 
 	
 	public List<CsNotice> findAll();
+	// view 볼때 사용
+	public List<CsNotice> findByNo(Integer no);
 }

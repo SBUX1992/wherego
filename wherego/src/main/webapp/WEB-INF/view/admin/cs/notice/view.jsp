@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/view/admin/header.jsp"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 		<main>
 			<aside>
 				<ul id="gnb">
@@ -27,27 +28,28 @@
 				</nav>
 				<div id="admin_cs_view">
 					<div class="admin_cs_view_div">
-						<table border="0">
-							<tr>
-								<th>글유형</th>
-								<td><h2>고객 서비스</h2></td>
-							</tr>
-							<tr>
-								<th>제목</th>
-								<td><h2 class="title">[안내] 해외결제 사칭 문자 주의</h2></td>
-							</tr>
-							<tr>
-								<th>내용</th>
-								<td>
-									<p>
-										안녕하세요. 롯데호텔입니다. <br /> 롯데호텔을 사칭하는 피싱 문자가 최근 다시 신고되고 있어 주의
-										안내드립니다. <br /> 승인결제 피싱 문자 또는 발신번호 006, 002 등으로 시작하는 피싱 문자를
-										수신하신 고객님께서는 통화 또는 문자 내 기재된 번호/링크 등을 클릭하지 않도록 주의하여 주시기 바랍니다. <br />
-										<br /> 감사합니다.
-									</p>
-								</td>
-							</tr>
-						</table>
+						<c:choose>
+							<c:when test="${noticeView != null}">
+								<table border="0">
+									<c:forEach var="notice" items="${noticeView}">
+										<tr>
+											<th>글유형</th>
+											<td><h2>고객 서비스</h2></td>
+										</tr>
+										<tr>
+											<th>제목</th>
+											<td><h2 class="title">${notice.title}</h2></td>
+										</tr>
+										<tr>
+											<th>내용</th>
+											<td>
+												<p>${notice.content}</p>
+											</td>
+										</tr>
+									</c:forEach>
+								</table>
+							</c:when>
+						</c:choose>
 						<div class="btn_right">
 							<button class="btn_red">삭제</button>
 							<button class="btn_register">수정</button>
