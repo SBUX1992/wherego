@@ -1,11 +1,17 @@
 package com.tencoding.wherego.controller.reservationController;
 
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import com.tencoding.wherego.dto.reservation.ReservationDto;
+import com.tencoding.wherego.repository.interfaces.reservation.ReservationRepository;
 import com.tencoding.wherego.service.reservationService.ReservationService;
 
 @Controller
@@ -13,6 +19,12 @@ public class TestController {
 	
 	@Autowired
 	ReservationService reservationService;
+	
+	@Autowired
+	ReservationRepository reservationRepository;
+	
+	@Autowired
+	HttpSession session;
 	
 	@GetMapping("/test")
 	public String test() {
@@ -31,9 +43,9 @@ public class TestController {
 	
 	@GetMapping("/testCode")
 	public void testCode() {
-		
+		System.out.println(session.getAttribute("roomCount"));
+		System.out.println(session.getAttribute("roomList"));
 	}
-	
 
 
 }
