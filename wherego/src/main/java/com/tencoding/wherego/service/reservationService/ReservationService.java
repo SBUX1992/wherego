@@ -41,6 +41,7 @@ public class ReservationService {
 		// 3. 가져온 dto 의 값과 배열의 값을 비교하는 로직을 짜야한다.
 		// 4. 값의 비교를 위해 dto 에 있는 getFullDate 를 써야한다.
 		List<Integer> list = new ArrayList<>();
+		System.out.println(map.toString());
 		for (Integer key : map.keySet()) {
 			System.out.println(key + 1);
 			List<ReservationDto> value = map.get(key);
@@ -50,9 +51,11 @@ public class ReservationService {
 			} else {
 				System.out.println(key + "else실행됨");
 				// value 는 List<ReservationDto> 이다.
+				System.out.println(dto.getFullDate());
 				Set<LocalDate> set1 = new HashSet<>(dto.getFullDate());
 				boolean isDup = false;
 				for (ReservationDto e : value) {
+					System.out.println(e);
 					Set<LocalDate> set2 = new HashSet<>(e.getFullDate());
 					boolean anyOfDup = duplicationTest(set1, set2);
 					if (anyOfDup) {
@@ -64,7 +67,6 @@ public class ReservationService {
 					list.add(key + 1);
 				}
 			} // else end
-			System.out.println(list.toString());
 		} // for end
 
 		return list;
@@ -72,10 +74,6 @@ public class ReservationService {
 
 	// 두 배열에 대한 중복확인. 중복된 값이 있으면 true 를 반환한다.
 	private boolean duplicationTest(Set<LocalDate> set1, Set<LocalDate> set2) {
-		System.out.println("duplicationTest");
-		System.out.println(set1.toString());
-		System.out.println(set2.toString());
-		System.out.println("duplicationTest");
 		set2.retainAll(set1);
 		return !set2.isEmpty();
 	}

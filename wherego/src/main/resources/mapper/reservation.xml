@@ -7,7 +7,7 @@
 
 	<select id="findAllReservationByRoomNo"
 		resultType="com.tencoding.wherego.dto.reservation.ReservationDto">
-		select id, room_no, from_date, to_date from res_date where
+		select res_id, room_no, res_from_date, res_to_date from reservation where
 		room_no = #{roomNo} order by room_no asc
 	</select>
 

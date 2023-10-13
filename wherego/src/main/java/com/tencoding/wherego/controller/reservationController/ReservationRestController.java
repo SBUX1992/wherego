@@ -1,16 +1,13 @@
 package com.tencoding.wherego.controller.reservationController;
 
-import java.io.IOException;
 import java.util.List;
 
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tencoding.wherego.dto.reservation.ReservationDto;
@@ -22,29 +19,31 @@ public class ReservationRestController {
 	@Autowired
 	ReservationService reservationService;
 	
+	@Autowired
+	private HttpSession session;
+	
 	@PostMapping("/asdf/searchResult")
-	public void dateTest(@RequestBody ReservationDto reservationDto,HttpServletResponse response) {
+	public int dateTest(@RequestBody ReservationDto reservationDto) {
+		System.out.println("------------controller--------------");
 		System.out.println(reservationDto);
-		System.out.println("결과");
-		System.out.println(reservationService.findAllReservationDates(reservationDto));
-		System.out.println("결과");
-		try {
-			response.sendRedirect("/wherego/abc?abc=asdfasdf");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		List<Integer> list = reservationService.findAllReservationDates(reservationDto);
+		if(session.getAttribute("roomList") != null || session.getAttribute("roomCount") != null) {
+			System.out.println("session이 있는 경우");
+			session.removeAttribute("roomList");
+			session.removeAttribute("roomCount");
 		}
 		
-		//queryString 이나 session 으로 가져가서 저장하자.
-		//model.addAttribute("availableRooms","roomNo"); service 에서 받아온 List<Integer>
-		
-		//return "redirect:/abc?abc=가나다라";
-	}
-	
-	@GetMapping("/abc")
-	public void abc(@RequestParam String abc) {
-		System.out.println(123);
-		System.out.println(abc);
+		if(list.isEmpty() || list.size() < reservationDto.getRoomCount()) {
+			System.out.println("방이 없는 경우");
+			return 1;
+		}else {
+			System.out.println("방이 있는 경우");
+			session.setAttribute("roomList", list);
+			session.setAttribute("roomCount", reservationDto.getRoomCount());
+			System.out.println(session.getAttribute("roomCount"));
+			System.out.println(session.getAttribute("roomList"));
+			return 0;
+		}
 	}
 	
 }

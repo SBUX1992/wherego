@@ -22,14 +22,14 @@
 					<input type="text" id="fromDateInput" name="from" readonly /> <label
 						for="fromDateInput" id="fromDateBtn"><div
 							id="fromDateHtml">체크인</div>
-						<div id="fromDate">10월 10일 (화)</div> </label>
+						<div id="fromDate">날짜선택</div> </label>
 				</div>
 				<div id="nightCount">1박</div>
 				<div id="toDateWrapper" class="dateWrapper">
 					<input type="text" id="toDateInput" name="to" readonly /> <label
 						for="toDateInput" id="toDateBtn">
 						<div id="toDateHtml">체크아웃</div>
-						<div id="toDate">10월 10일 (수)</div>
+						<div id="toDate">날짜선택</div>
 					</label>
 				</div>
 			</div>

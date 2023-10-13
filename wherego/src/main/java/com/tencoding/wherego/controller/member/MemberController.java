@@ -30,7 +30,10 @@ import com.tencoding.wherego.utils.Define;
 
 @Controller
 @RequestMapping({"/member",""})
+<<<<<<< HEAD
+=======
 
+>>>>>>> 84400aa1afbc7d2f39a262c585942fd26d609c88
 public class MemberController {
 
 	@Autowired
@@ -67,8 +70,12 @@ public class MemberController {
 		// 세션에 등록
 
 
+<<<<<<< HEAD
+		return "redirect:/main"; 
+=======
 		return "redirect:/main";
 
+>>>>>>> 84400aa1afbc7d2f39a262c585942fd26d609c88
 	}
 
 	// 회원가입 페이지 진입

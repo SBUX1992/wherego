@@ -16,14 +16,31 @@ $(function() {
 	console.log($('#adultCount').text());
 	console.log($('#childCount').text());
 	datePicker();
+	$('#searchBtn').hover(
+		function() {
+			console.log('asdf');
+			$(this).stop().animate({
+				backgroundColor: 'white',
+				color: 'rgb(173, 158, 135)'
+			}, 300); // 300ms 동안 서서히 변경
+		},
+		function() {
+			$(this).stop().animate({
+				backgroundColor: 'rgb(173, 158, 135)',
+				color: 'white'
+			}, 300); // 300ms 동안 서서히 변경
+		}
+	);
 	$("#searchBtn").on("click", function() {
 		// 검색 버튼 클릭 시
+		console.log('-----------------');
+		console.log($('#roomCount').text());
 		console.log($("#fromDate").attr('data-realDate'));
 		console.log($("#toDate").attr('data-realDate'));
 		let data = {
-			'fromDate': $("#fromDate").attr('data-realDate'),
-			'toDate': $("#toDate").attr('data-realDate'),
-			'people': parseInt($('#childCount').text()) + parseInt($('#adultCount').text())
+			'resFromDate': $("#fromDate").attr('data-realDate'),
+			'resToDate': $("#toDate").attr('data-realDate'),
+			'roomCount': $('#roomCount').text()
 		}
 		$.ajax({
 			//TODO 추후수정
@@ -111,8 +128,14 @@ $(function() {
 				})
 				.on("change", function() {
 					date2 = getDate(this); // 두 번째 날짜를 변수에 저장
+					if (isNaN(Math.round((date2 - date1) / (1000 * 60 * 60 * 24)))) {
+						console.log('if문 실행됨');
+						alert('체크인 데이트를 먼저 입력해주세요.');
+						return;
+					}
 					$("#toDate").html(getDateFormat("otherDate", getDate(this)));
 					$('#toDate').attr('data-realDate', formatDate(getDate(this)));
+
 					$('#nightCount').html(Math.round((date2 - date1) / (1000 * 60 * 60 * 24)) + '박')
 					from.datepicker("option", "maxDate", getDate(this));
 				});
@@ -191,8 +214,8 @@ function displayReservationOption() {
 	$('#countDetailWrapper').css('left', widthValue + 'px');
 	//$('#countDetailWrapper').css('right','20%');
 	$('#countDetailWrapper').css('border-radius', '2%');
-	$('#countDetailWrapper').css('opacity', '0.8');
-	$('#countDetailWrapper').css('backgroundColor', 'grey');
+	$('#countDetailWrapper').css('opacity', '0.9');
+	$('#countDetailWrapper').css('backgroundColor', 'white');
 	$('#countDetailWrapper').attr('data-clicked', 'true');
 	$('#countDetailWrapper').append($('<div id = "roomAndOptionOuterWrapper">'));
 
@@ -245,6 +268,7 @@ function displayReservationOption() {
 	$('#selectCompleteBtn').css('color', 'white');
 	$('#selectCompleteBtn').hover(
 		function() {
+			console.log('asdf');
 			$(this).stop().animate({
 				backgroundColor: 'white',
 				color: 'black'
@@ -252,7 +276,7 @@ function displayReservationOption() {
 		},
 		function() {
 			$(this).stop().animate({
-				backgroundColor: 'black',
+				backgroundColor: '#333',
 				color: 'white'
 			}, 300); // 300ms 동안 서서히 변경
 		}
