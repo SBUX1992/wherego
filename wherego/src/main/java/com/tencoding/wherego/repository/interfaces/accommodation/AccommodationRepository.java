@@ -10,5 +10,6 @@ import com.tencoding.wherego.dto.accommodation.AccommodationDto;
 public interface AccommodationRepository {
 	public List<AccommodationDto> findAccList();
 	public List<String> findImgListById(int roomNo);
+	public AccommodationDto findAccByRoomNo(int roomNo);
 }
 

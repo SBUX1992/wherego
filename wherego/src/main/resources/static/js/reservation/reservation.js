@@ -50,11 +50,16 @@ $(function() {
 			dataType: 'json',
 			data: JSON.stringify(data),
 			success: (data) => {
-				console.log("123");
-				//location.href = "/";
+				if(data == 1){
+					alert('방이 없습니다.');
+					return;
+				}
+				window.location.href = "acc/list"
 			}
 		});
 	});
+	
+	
 
 	$('#reservationOptionWrapper').on('click', () => {
 		console.log('clicked');

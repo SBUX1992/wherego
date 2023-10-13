@@ -23,5 +23,7 @@ public class AccommodationService {
 		List<String> getImglist = accommodationRepository.findImgListById(roomNo);
 		return getImglist;
 	}
+
+	
 }
 
