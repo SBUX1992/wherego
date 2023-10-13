@@ -9,6 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+
 import com.tencoding.wherego.dto.accommodation.AccommodationDto;
 import com.tencoding.wherego.service.accommodation.AccommodationService;
 
@@ -52,11 +56,15 @@ public class AccommodationController {
 	}
 	
 	@GetMapping("/detail/{roomNo}")
-	public String getAccDetail(@PathVariable int roomNo) {
+	@ResponseBody
+	public Object getAccDetail(@PathVariable int roomNo) {
 		List<String> imgList = accommodationService.getAccDetail(roomNo);
 		
-		for(String img : imgList) System.out.println(img);
-		
-		return null;
+		return imgList;
+	}
+	
+	@GetMapping("/test")
+	public String test() {
+		return "accommodation/test";
 	}
 }

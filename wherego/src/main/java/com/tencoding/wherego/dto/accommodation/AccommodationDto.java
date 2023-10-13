@@ -15,7 +15,6 @@ public class AccommodationDto {
 	private String roomSize;
 	private String roomType;
 	private String roomDetail;
-	private String accInfo;
 	private String amenitiesCommon;
 	private String amenitiesBath;
 	private String amenitiesEtc;

@@ -29,14 +29,7 @@ import com.tencoding.wherego.service.member.MemberService;
 import com.tencoding.wherego.utils.Define;
 
 @Controller
-
-<<<<<<< HEAD
-@RequestMapping("/member")
-=======
 @RequestMapping({"/member",""})
-
-
->>>>>>> ec417623eed56ba285685b1be5289cbbee0f92f8
 
 public class MemberController {
 
@@ -73,16 +66,8 @@ public class MemberController {
 		session.setAttribute(Define.PRINCIPAL, principal);
 		// 세션에 등록
 
-<<<<<<< HEAD
+
 		return "redirect:/main";
-=======
-
-
-		return "redirect:/main"; 
-
-
-
->>>>>>> ec417623eed56ba285685b1be5289cbbee0f92f8
 
 	}
 

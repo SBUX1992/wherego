@@ -8,7 +8,7 @@ import com.tencoding.wherego.dto.accommodation.AccommodationDto;
 
 @Mapper
 public interface AccommodationRepository {
-	public List<AccommodationDto> findListById();
+	public List<AccommodationDto> findAccList();
 	public List<String> findImgListById(int roomNo);
 }
 
