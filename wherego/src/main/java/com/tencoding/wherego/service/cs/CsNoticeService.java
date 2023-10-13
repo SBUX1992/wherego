@@ -15,9 +15,19 @@ public class CsNoticeService {
 	@Autowired
 	private CsNoticeRepository csNoticeRepository; 
 
+	
+	// cs notice list
 	@Transactional
 	public List<CsNotice> readCsNoticeList(){
 		List<CsNotice> list = csNoticeRepository.findAll();
+		return list;
+	}
+	
+	// cs notice view
+	public List<CsNotice> readCsNotice(Integer no) {
+		
+		List<CsNotice> list = csNoticeRepository.findByNo(no);
+		
 		return list;
 	}
 	

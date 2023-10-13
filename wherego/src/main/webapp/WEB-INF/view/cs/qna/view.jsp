@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/view/cs/header.jsp"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 	<section id="cs">
 		<div class="qna">
 			<nav>
@@ -21,24 +22,27 @@
 					</ul>
 				</aside>
 				<article>
-					<nav>
-						<h2 class="title">[가입] 가입 문의내용</h2>
-						<p>
-							<span>강**</span> <span>2022-11-21</span>
-						</p>
-					</nav>
-					<div class="content">
-						<p>
-							개인회원에서 법인회원(사업자 회원)으로 전환은 불가하므로 법인회원(사업자 회원) 전환은 신규 가입으로 진행을 해야
-							합니다. <br /> <br /> 감사합니다.
-						</p>
-					</div>
-					<div class="comment">
-						<p>
-							답변입니다
-						</p>
-					</div>
-					<a href="/wherego/cs/qna/list" class="btnList">목록보기</a>
+					<c:choose>
+						<c:when test="${csQnaView != null}">
+							<c:forEach var="qna" items="${csQnaView}">
+								<nav>
+									<h2 class="title">${qna.title}</h2>
+									<p>
+										<span>${qna.rdate.substring(0, 10)}</span>
+									</p>
+								</nav>
+								<div class="content">
+									<p>${qna.content}</p>
+								</div>
+								<div class="comment">
+									<p>${qna.comment}</p>
+								</div>
+								<a href="/wherego/cs/qna/list" class="btnList">목록보기</a>
+							</c:forEach>
+						</c:when>
+					</c:choose>	
+							
+							
 				</article>
 			</section>
 		</div>

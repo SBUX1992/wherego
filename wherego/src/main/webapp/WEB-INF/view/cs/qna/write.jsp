@@ -22,7 +22,7 @@
 				</ul>
 			</aside>
 			<article>
-				<form action="/cs/qna/write" method="post">
+				<form action="/wherego/cs/qna/write" method="post">
 					<table class="cs_write_table">
 						<tr>
 							<td>문의유형</td>
@@ -46,8 +46,8 @@
 						</tr>
 					</table>
 					<div class="btn_right">
-						<a href="/wherego/cs/qna/list" class="btnList">취소하기</a> <input
-							type="submit" class="btnSubmit" value="등록하기" />
+						<a href="/wherego/cs/qna/list" class="btnList">취소하기</a>
+						<button type="submit" class="btnSubmit">등록하기</button>
 					</div>
 				</form>
 			</article>

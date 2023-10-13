@@ -8,13 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.tencoding.wherego.dto.admin.AdminCsNoticeDto;
 import com.tencoding.wherego.repository.model.admin.AdminCsNotice;
 import com.tencoding.wherego.service.admin.AdminCsNoticeService;
-import com.tencoding.wherego.utils.Define;
 
 import lombok.extern.log4j.Log4j2;
 /**
@@ -39,12 +39,11 @@ public class AdminCsNoticeController {
 	@GetMapping("/list")
 	public String list(Model model) {
 		log.info("admin notice list 페이지 접속");
-		AdminCsNotice adminCsNotice = (AdminCsNotice)session.getAttribute(Define.PRINCIPAL);
+//		AdminCsNotice adminCsNotice = (AdminCsNotice)session.getAttribute(Define.PRINCIPAL);
 		
 		// 공지 목록 가져오기
-		// TODO - 수정 예정 
 //		List<AdminCsNotice> noticeList = adminCsNoticeService.readAdminCsNoticeList(adminCsNotice.getMemId());
-		List<AdminCsNotice> noticeList = adminCsNoticeService.readAdminCsNoticeList("관리자");
+		List<AdminCsNotice> noticeList = adminCsNoticeService.readAdminCsNoticeList();
 		if(noticeList.isEmpty()) {
 			model.addAttribute("noticeList", null);
 		}else {
@@ -58,9 +57,22 @@ public class AdminCsNoticeController {
 	
 	
 	// 공지사항 view
-	@GetMapping("/view")
-	public String view() {
+	@GetMapping("/view/{num}")
+	public String view(@PathVariable int num, Model model) {
 		log.info("admin notice view 페이지 접속");
+		//AdminCsNotice adminCsNotice = (AdminCsNotice)session.getAttribute(Define.PRINCIPAL);
+//		System.out.println("admincsno"+ adminCsNotice);
+		
+		//List<AdminCsNotice> noticeView = adminCsNoticeService.readAdminCsNotice(adminCsNotice.getNo());
+		List<AdminCsNotice> noticeView = adminCsNoticeService.readAdminCsNotice(num);
+		model.addAttribute("noticeView", noticeView);
+		
+//		if(noticeView.isEmpty()) {
+//			model.addAttribute("noticeView", null);
+//		}else {
+//			model.addAttribute("noticeView", noticeView);
+//		}
+		
 		return "admin/cs/notice/view";
 	}
 	
@@ -72,7 +84,7 @@ public class AdminCsNoticeController {
 		AdminCsNotice adminCsNotice = (AdminCsNotice)session.getAttribute("principal");
 		
 		if(adminCsNotice == null) {
-    		System.out.println("실패");
+    		
     	}
 		return "admin/cs/notice/write";
 	}
@@ -81,13 +93,12 @@ public class AdminCsNoticeController {
 	@PostMapping("/write")
 	public String writeProc(AdminCsNoticeDto adminCsNoticeDto) {
 		log.info("공지사항 등록 성공");
-		AdminCsNotice adminCsNotice = (AdminCsNotice)session.getAttribute(Define.PRINCIPAL);
+//		AdminCsNotice adminCsNotice = (AdminCsNotice)session.getAttribute(Define.PRINCIPAL);
 		
-		if(adminCsNoticeDto.getTitle() == null || adminCsNoticeDto.getTitle().isEmpty()) {
-			
-			
-		}
-		adminCsNoticeService.writeNotice(adminCsNoticeDto, adminCsNotice.getNo());
+//		if(adminCsNoticeDto.getTitle() == null || adminCsNoticeDto.getTitle().isEmpty()) {
+//			
+//		}
+		adminCsNoticeService.writeNotice(adminCsNoticeDto);
 		
 		return "redirect:/admin/cs/notice/list";
 	}
@@ -99,4 +110,5 @@ public class AdminCsNoticeController {
 		log.info("admin notice modify 페이지 접속");
 		return "admin/cs/notice/modify";
 	}
+	
 }

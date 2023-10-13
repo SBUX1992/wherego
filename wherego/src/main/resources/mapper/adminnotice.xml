@@ -26,7 +26,7 @@
 	</select>
 	
 	<select id="findByMemId" resultType="com.tencoding.wherego.repository.model.admin.AdminCsNotice"> 
-		select * from admin_cs_notice where mem_id = #{memId};	
+		select * from admin_cs_notice where mem_id = #{memId};
 	</select>
 	
 	

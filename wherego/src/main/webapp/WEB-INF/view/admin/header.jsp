@@ -23,7 +23,7 @@
 		<header>
 			<div>
 				<a href="/wherego/admin/index" class="logo"><img
-					src="../../../img/admin/lotte_logo.PNG" alt="admin_logo" /></a>
-				
+					src="/wherego/img/admin/lotte_logo.PNG" alt="admin_logo" /></a>
+
 			</div>
 		</header>

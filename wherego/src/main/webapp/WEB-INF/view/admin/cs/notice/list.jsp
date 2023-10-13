@@ -42,15 +42,19 @@
 							</tr>
 							<c:forEach var="notice" items="${noticeList}">
 								<tr class="notice_list">
-									<td><input type="checkbox" name="check" /><input
-										type="hidden" name="size" /></td>
+									<td>
+										<input type="checkbox" name="check" />
+										<input type="hidden" name="size" />
+									</td>
 									<td>${notice.no}</td>
 									<td>고객 서비스</td>
-									<td><a href="/wherego/admin/cs/notice/view">${notice.title}</a></td>
+									<td><a href="/wherego/admin/cs/notice/view/${notice.no}">${notice.title}</a></td>
 									<td>관리자</td>
 									<td>${notice.rdate.substring(0, 10)}</td>
-									<td><a href="/wherego/admin/cs/notice/modify/${notice.no}">[수정]</a>
-										<a href="#" onclick="deleteNotice(${notice.no})">[삭제]</a></td>
+									<td>
+										<a href="/wherego/admin/cs/notice/modify/${notice.no}">[수정]</a>
+										<a href="/wherego/admin/cs/notice/delete/${notice.no}">[삭제]</a>
+									</td>
 								</tr>
 							</c:forEach>
 						</table>
@@ -81,10 +85,7 @@
 </footer>
 </div>
 <script>
-	function deleteNotice(noticeNo) {
-	    
-	    alert('공지 ' + noticeNo + ' 를 삭제합니다.'); // 예시: 삭제 확인을 위한 알림
-	}
+	
 	
 	// 선택
 	$(function(){
@@ -102,13 +103,18 @@
 		// 개별체크 선택 및 해제시 전체 체크 활성 및 비활성
 		$('input:checkbox[name=check]').click(function(){
 			let checked = $('input:checkbox[name=check]:checked').length;
-// 			console.log(checked);
+			let totalChecks = $('input:checkbox[name=check]').length;
+//  			console.log(checked);
 			let size = $('input[name=size]').val();
-			if (checked == size){
-				$('#checkAll').prop('checked', true);
-			}else{
-				$('#checkAll').prop('checked', false);
-			}
+// 			if (checked == size){
+// 				$('#checkAll').prop('checked', true);
+// 			}else{
+// 				$('#checkAll').prop('checked', false);
+// 			}
+			
+			$('#checkAll').prop('checked', checked === totalChecks);
+			
+			// 게시글 카운터, 체크 카운터 == 
 		});
 		
 		// 선택삭제

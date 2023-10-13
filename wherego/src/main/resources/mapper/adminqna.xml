@@ -9,6 +9,10 @@
 		VALUE(#{comment}, now());
 	</insert>
 	
+	<update id="updateByNo">
+		update admin_cs_qna set comment = #{comment} where no = #{no}
+	</update>
+	
 	<delete id="deleteByNo">
 		DELETE FROM admin_cs_qna WHERE no = #{no};
 	</delete>
