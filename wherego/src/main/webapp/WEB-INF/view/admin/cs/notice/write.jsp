@@ -1,36 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<title>롯데호텔::관리자</title>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<script src="https://kit.fontawesome.com/20962f3e4b.js"
-	crossorigin="anonymous"></script>
-<link rel="stylesheet"
-	href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" />
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-<!-- css -->
-<link rel="stylesheet" href="/wherego/css/admin/admin.css">
-</head>
-<body>
-	<div id="admin-wrapper">
-		<header>
-			<div>
-				<a href="#" class="logo"><img src="../../../img/lotte_logo.PNG"
-					alt="admin_logo" /></a>
-				<p>
-					<span>홍길동님 반갑습니다.</span> <a href="#">HOME |</a> <a href="#">로그아웃
-						|</a> <a href="#">고객센터</a>
-				</p>
-			</div>
-		</header>
+<%@ include file="/WEB-INF/view/admin/header.jsp"%>
 		<main>
 			<aside>
 				<ul id="gnb">
@@ -69,12 +40,12 @@
 									<tr>
 										<td>제목</td>
 										<td><textarea type="text" name="title" rows="1"
-												maxlength="20" onkeydown="return preventEnterKey(event)"></textarea></td>
+												maxlength="20" onkeydown="return preventEnterKey(event)" id="title"></textarea></td>
 									</tr>
 									<tr>
 										<td>내용</td>
 										<td><textarea type="textarea" name="content" id="content"
-												rows="22" maxlength="1000"></textarea></td>
+												rows="22" maxlength="1000" id="content"></textarea></td>
 									</tr>
 								</tbody>
 							</table>

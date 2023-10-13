@@ -1,132 +1,58 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<title>롯데호텔 고객센터</title>
-<link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico" />
-<link rel="stylesheet"
-	href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" />
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<script src="https://kit.fontawesome.com/20962f3e4b.js"
-	crossorigin="anonymous"></script>
-<!-- css -->
-<link rel="stylesheet" href="/wherego/css/cs/cs.css">
-</head>
-<body>
-	<header>
-		<div class="top">
+<%@ include file="/WEB-INF/view/cs/header.jsp"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<section id="cs">
+	<div class="qna">
+		<nav>
 			<div>
-				<a href="#">로그인</a> <a href="#">회원가입</a> <a href="#">마이페이지</a> <a
-					href="#"> <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-					장바구니
-				</a>
+				<p>
+					홈<span>></span>문의하기
+				</p>
 			</div>
-		</div>
-		<div class="logo">
-			<div>
-				<a href="#"> <img src="../../img/cs/lotte_logo.PNG" alt="로고" />
-				</a>
-			</div>
-		</div>
-	</header>
-	<section id="cs">
-		<div class="qna">
-			<nav>
-				<div>
-					<p>
-						홈<span>></span>문의하기
-					</p>
+		</nav>
+		<section class="list">
+			<aside>
+				<h2>문의하기</h2>
+				<ul>
+					<li class="on"><a href="#">회원</a></li>
+					<li><a href="#">쿠폰/이벤트</a></li>
+					<li><a href="#">주문/결제</a></li>
+					<li><a href="#">취소/반품/교환</a></li>
+				</ul>
+			</aside>
+			<article>
+				<nav>
+					<h1>회원</h1>
+					<h2>회원관련 문의 내용입니다.</h2>
+				</nav>
+				<c:choose>
+					<c:when test="${csQnaList != null}">
+						<table>
+							<c:forEach var="csQna" items="${csQnaList}">
+								<tr>
+									<td><a href="/wherego/cs/qna/view">${csQna.title}</a></td>
+									<td>${csQna.memId}</td>
+									<td>${csQna.rdate.substring(0, 10)}</td>
+								</tr>
+							</c:forEach>
+						</table>
+					</c:when>
+				</c:choose>
+				<div class="page">
+					<a href="#" class="prev">이전</a> <a href="#" class="num on">1</a> <a
+						href="#" class="num">2</a> <a href="#" class="num">3</a> <a
+						href="#" class="next">다음</a>
 				</div>
-			</nav>
-			<section class="list">
-				<aside>
-					<h2>문의하기</h2>
-					<ul>
-						<li class="on"><a href="#">회원</a></li>
-						<li><a href="#">쿠폰/이벤트</a></li>
-						<li><a href="#">주문/결제</a></li>
-						<li><a href="#">취소/반품/교환</a></li>
-					</ul>
-				</aside>
-				<article>
-					<nav>
-						<h1>회원</h1>
-						<h2>회원관련 문의 내용입니다.</h2>
-					</nav>
-					<table>
-						<tr>
-							<td><a href="/wherego/cs/qna/view">[가입] 가입 문의내용</a></td>
-							<td>강**</td>
-							<td>2023.10.10</td>
-						</tr>
-						<tr>
-							<td><a href="/wherego/cs/qna/view">[탈퇴] 탈퇴 문의내용</a></td>
-							<td>강**</td>
-							<td>2023.10.10</td>
-						</tr>
-						<tr>
-							<td><a href="/wherego/cs/qna/view">[회원정보] 회원정보 문의내용</a></td>
-							<td>강**</td>
-							<td>2023.10.10</td>
-						</tr>
-						<tr>
-							<td><a href="/wherego/cs/qna/view">[로그인] 회원정보 문의내용</a></td>
-							<td>강**</td>
-							<td>2023.10.10</td>
-						</tr>
-						<tr>
-							<td><a href="/wherego/cs/qna/view">[로그인] 회원정보 문의내용</a></td>
-							<td>강**</td>
-							<td>2023.10.10</td>
-						</tr>
-						<tr>
-							<td><a href="/wherego/cs/qna/view">[로그인] 회원정보 문의내용</a></td>
-							<td>강**</td>
-							<td>2023.10.10</td>
-						</tr>
-						<tr>
-							<td><a href="/wherego/cs/qna/view">[회원정보] 회원정보 문의내용</a></td>
-							<td>강**</td>
-							<td>2023.10.10</td>
-						</tr>
-						<tr>
-							<td><a href="/wherego/cs/qna/view">[회원정보] 회원정보 문의내용</a></td>
-							<td>강**</td>
-							<td>2023.10.10</td>
-						</tr>
-						<tr>
-							<td><a href="/wherego/cs/qna/view">[탈퇴] 회원정보 문의내용</a></td>
-							<td>강**</td>
-							<td>2023.10.10</td>
-						</tr>
-						<tr>
-							<td><a href="/wherego/cs/qna/view">[탈퇴] 회원정보 문의내용</a></td>
-							<td>강**</td>
-							<td>2023.10.10</td>
-						</tr>
-					</table>
-					<div class="page">
-						<a href="#" class="prev">이전</a> <a href="#" class="num on">1</a> <a
-							href="#" class="num">2</a> <a href="#" class="num">3</a> <a
-							href="#" class="next">다음</a>
-					</div>
-					<a href="/wherego/cs/qna/write" class="btnWrite">문의하기</a>
-				</article>
-			</section>
-		</div>
-	</section>
-	<footer>
-		<div>
-			<p>Lotte Hotel&Resorts</p>
-		</div>
-	</footer>
+				<a href="/wherego/cs/qna/write" class="btnWrite">문의하기</a>
+			</article>
+		</section>
+	</div>
+</section>
+<footer>
+	<div>
+		<p>Lotte Hotel&Resorts</p>
+	</div>
+</footer>
 </body>
 </html>

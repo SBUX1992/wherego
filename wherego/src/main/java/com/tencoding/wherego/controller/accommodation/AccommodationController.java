@@ -53,7 +53,7 @@ public class AccommodationController {
 	}
 	
 	@GetMapping("/detail/{roomNo}")
-	public String getAccDetail(@PathVariable int roomNo, @RequestParam List<String> accImgList) {
+	public String getAccDetail(@PathVariable int roomNo) {
 		List<String> imgList = accommodationService.getAccDetail(roomNo);
 		
 		for(String img : imgList) System.out.println(img);

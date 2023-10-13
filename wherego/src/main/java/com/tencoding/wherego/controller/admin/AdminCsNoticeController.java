@@ -44,14 +44,14 @@ public class AdminCsNoticeController {
 		// 공지 목록 가져오기
 		// TODO - 수정 예정 
 //		List<AdminCsNotice> noticeList = adminCsNoticeService.readAdminCsNoticeList(adminCsNotice.getMemId());
-		List<AdminCsNotice> noticeList = adminCsNoticeService.readAdminCsNoticeList("admintest");
+		List<AdminCsNotice> noticeList = adminCsNoticeService.readAdminCsNoticeList("관리자");
 		if(noticeList.isEmpty()) {
 			model.addAttribute("noticeList", null);
 		}else {
 			model.addAttribute("noticeList", noticeList);
 		}
-		
-		System.out.println(noticeList.get(0));
+		// list page 값 받는지 확인
+//		System.out.println(noticeList.get(0));
 		return "admin/cs/notice/list";
 	}
 	
@@ -69,6 +69,11 @@ public class AdminCsNoticeController {
 	@GetMapping("/write")
 	public String write() {
 		log.info("admin notice write 페이지 접속");
+		AdminCsNotice adminCsNotice = (AdminCsNotice)session.getAttribute("principal");
+		
+		if(adminCsNotice == null) {
+    		System.out.println("실패");
+    	}
 		return "admin/cs/notice/write";
 	}
 	
@@ -78,7 +83,12 @@ public class AdminCsNoticeController {
 		log.info("공지사항 등록 성공");
 		AdminCsNotice adminCsNotice = (AdminCsNotice)session.getAttribute(Define.PRINCIPAL);
 		
-		adminCsNoticeService.writeNotice(adminCsNoticeDto, adminCsNotice.getMemId());
+		if(adminCsNoticeDto.getTitle() == null || adminCsNoticeDto.getTitle().isEmpty()) {
+			
+			
+		}
+		adminCsNoticeService.writeNotice(adminCsNoticeDto, adminCsNotice.getNo());
+		
 		return "redirect:/admin/cs/notice/list";
 	}
 	

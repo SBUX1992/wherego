@@ -1,9 +1,14 @@
 package com.tencoding.wherego.dto.accommodation;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+
+@Getter
+@Setter
+
 public class AccommodationDto {
+	// room_no; 
 	private int roomNo;
 	private String roomName;
 	private String roomView;

@@ -14,7 +14,7 @@ public class Member {
 	private String memEmail;
 	private Integer memPerLevel = 1;
 	private Integer memProvider = 1;
-	private Integer memPoint = 0;
+	private Integer memPoint;
 	private String memPhone;
 	private String memAddr1;
 	private String memAddr2;

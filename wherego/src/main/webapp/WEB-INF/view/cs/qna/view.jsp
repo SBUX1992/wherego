@@ -1,42 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<title>롯데호텔 고객센터</title>
-<link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico" />
-<link rel="stylesheet"
-	href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" />
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<script src="https://kit.fontawesome.com/20962f3e4b.js"
-	crossorigin="anonymous"></script>
-<!-- css -->
-<link rel="stylesheet" href="/wherego/css/cs/cs.css">
-</head>
-<body>
-	<header>
-		<div class="top">
-			<div>
-				<a href="#">로그인</a> <a href="#">회원가입</a> <a href="#">마이페이지</a> <a
-					href="#"> <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-					장바구니
-				</a>
-			</div>
-		</div>
-		<div class="logo">
-			<div>
-				<a href="#"> <img src="../../img/cs/lotte_logo.PNG" alt="로고" />
-				</a>
-			</div>
-		</div>
-	</header>
+<%@ include file="/WEB-INF/view/cs/header.jsp"%>
 	<section id="cs">
 		<div class="qna">
 			<nav>
@@ -67,6 +31,11 @@
 						<p>
 							개인회원에서 법인회원(사업자 회원)으로 전환은 불가하므로 법인회원(사업자 회원) 전환은 신규 가입으로 진행을 해야
 							합니다. <br /> <br /> 감사합니다.
+						</p>
+					</div>
+					<div class="comment">
+						<p>
+							답변입니다
 						</p>
 					</div>
 					<a href="/wherego/cs/qna/list" class="btnList">목록보기</a>

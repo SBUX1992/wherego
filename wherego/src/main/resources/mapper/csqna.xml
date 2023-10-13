@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tencoding.wherego.repository.interfaces.cs.CsQnaRepository"> 
+	
+
+	<insert id="insert">
+		INSERT INTO admin_cs_qna(title, content, rdate)
+		VALUE(#{title}, #{content}, NOW());
+	</insert>
+	
+	<update id="updateByNo">
+		update admin_cs_qna set title = #{title}, content = #{content} where no = #{no} 
+	</update>
+	
+	<delete id="deleteByNo">
+		DELETE FROM admin_cs_qna WHERE no = #{no};
+	</delete>
+	
+	<select id="findByNo" resultType="com.tencoding.wherego.repository.model.cs.CsQna">
+		select * from admin_cs_qna where no = #{no}
+	</select>
+	
+	<select id="findAll" resultType="com.tencoding.wherego.repository.model.cs.CsQna">
+		select * from admin_cs_qna
+	</select>
+	
+	<select id="findByMemId" resultType="com.tencoding.wherego.repository.model.cs.CsQna"> 
+		select * from admin_cs_qna where mem_id = #{memId};
+	</select>
+
+	
+	
+	
+</mapper>
