@@ -16,8 +16,7 @@ public class AdminCsNotice {
 	private int no;
 	private String title;
 	private String content;
-	private String memId;
 	private String rdate;
+	private String memId;
 	
-
 }
