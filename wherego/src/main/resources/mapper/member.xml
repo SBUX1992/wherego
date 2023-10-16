@@ -2,8 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper
-	namespace="com.tencoding.wherego.repository.interfaces.MemberRepository">
-
+	namespace="com.tencoding.wherego.repository.interfaces.member.MemberRepository">
 	<insert id="insert">
 		INSERT INTO member (
 		mem_id,
@@ -77,7 +76,20 @@
 		where mem_nickname = #{nickname}
 	</select>
 
-
+	<!-- 회원탈퇴 계정 정보 날리기 -->
+	<update id="deleteMember">
+		UPDATE member 
+		SET	mem_password = '', 
+		    mem_name = '', 
+		    mem_email = '', 
+		    mem_per_level = '0', 
+		    mem_provider = '0', 
+		    mem_phone = '',
+		    mem_addr1 = '', 
+		    mem_addr2 = '', 
+		    mem_del = 1 
+		WHERE mem_user_no = #{no}
+	</update>
 
 
 

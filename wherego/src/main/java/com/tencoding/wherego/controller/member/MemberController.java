@@ -29,11 +29,7 @@ import com.tencoding.wherego.service.member.MemberService;
 import com.tencoding.wherego.utils.Define;
 
 @Controller
-@RequestMapping({"/member",""})
-<<<<<<< HEAD
-=======
-
->>>>>>> 84400aa1afbc7d2f39a262c585942fd26d609c88
+@RequestMapping("/member")
 public class MemberController {
 
 	@Autowired
@@ -46,7 +42,7 @@ public class MemberController {
 	@GetMapping("/login")
 	public String login() {
 		System.out.println("login page");
-		return "member/login";
+		return "member/login2";
 	}
 
 	// 일반 로그인 처리
@@ -69,19 +65,13 @@ public class MemberController {
 		session.setAttribute(Define.PRINCIPAL, principal);
 		// 세션에 등록
 
-
-<<<<<<< HEAD
-		return "redirect:/main"; 
-=======
 		return "redirect:/main";
-
->>>>>>> 84400aa1afbc7d2f39a262c585942fd26d609c88
 	}
 
 	// 회원가입 페이지 진입
 	@GetMapping("/sign-up")
 	public String signUp() {
-		return "member/signUp";
+		return "member/signUp2";
 	}
 
 	// 일반 회원가입 처리
@@ -118,7 +108,7 @@ public class MemberController {
 			throw new CustomRestfulException("회원가입에 실패했습니다.", HttpStatus.BAD_REQUEST);
 		}
 
-		return "redirect:/member/login";
+		return "redirect:/main";
 	}
 
 	@GetMapping("/kakao/callback")
@@ -170,14 +160,13 @@ public class MemberController {
 			session.setAttribute(Define.PRINCIPAL, principal);
 			// 세션에 등록
 
-			return "redirect:main"; // 메인이 생기면 그쪽으로
-//			return "redirect:login";
+			return "redirect:/main";
 
 		} else { // 로그인 정보가 없다면 회원가입 페이지로
 			model.addAttribute("id", id);
 			model.addAttribute("profile", kakaoProfileDto);
 
-			return "member/kakaoSignUp";
+			return "member/kakaoSignUp2";
 		}
 
 	}
@@ -218,40 +207,49 @@ public class MemberController {
 		}
 	}
 
-	// 임시메인컨트롤러
-	@GetMapping("/main")
-	public String main() {
-		return "main";
-	}
-
-	// 제작중인 회원가입 폼
-	@GetMapping("/sign-up2")
-	public String signup2() {
-		return "member/signUp2";
-	}
-
 	// 로그아웃 처리 href="${pageContext.request.contextPath}/member/logout"
 	@GetMapping("/logout")
 	public String logout() {
 		session.invalidate();
 
-		return "redirect:main";
-	}
-
-	// 임시로그인페이지
-	@GetMapping("/login2")
-	public String login2() {
-		return "member/login2";
+		return "redirect:/main";
 	}
 
 	// 마이페이지 출력
 	@GetMapping("/my-page")
 	public String myPage() {
 		// 로그인 정보없이 url조작으로 마이페이지 진입했을시
-		if (session.getAttribute(Define.PRINCIPAL) == null) {
-			throw new CustomRestfulException("잘못된 요청입니다.", HttpStatus.BAD_REQUEST);
-		}
+//		if (session.getAttribute(Define.PRINCIPAL) == null) {
+//			throw new CustomRestfulException("잘못된 요청입니다.", HttpStatus.BAD_REQUEST);
+//		}
 
 		return "member/myPage";
+	}
+
+	// 회원탈퇴 페이지 진입
+	@GetMapping("/delete")
+	public String delete() {
+		// 로그인 정보없이 url조작으로 회원탈퇴 페이지 진입했을시
+//		if (session.getAttribute(Define.PRINCIPAL) == null) {
+//			throw new CustomRestfulException("잘못된 요청입니다.", HttpStatus.BAD_REQUEST);
+//		}
+
+		return "member/delete";
+	}
+
+	@PostMapping("/delete")
+	public String deleteProc(LogInFormDto logInFormDto) {
+		Member member = (Member) session.getAttribute(Define.PRINCIPAL);
+		logInFormDto.setId(member.getMemId());
+
+		boolean isPasswordMatched = memberService.passwordChk(logInFormDto);
+		System.out.println("===============매치완료");
+
+		if (isPasswordMatched) {
+			int result = memberService.deleteMember(member.getMemUserNo());
+			System.out.println();
+		}
+
+		return "redirect:/main";
 	}
 }
