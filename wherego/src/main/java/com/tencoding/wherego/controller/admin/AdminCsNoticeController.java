@@ -92,11 +92,9 @@ public class AdminCsNoticeController {
 	
 	@PostMapping("/write")
 	public String writeProc(AdminCsNoticeDto adminCsNoticeDto) {
-		
+		adminCsNoticeDto.setMemId("admin");
 //		AdminCsNotice adminCsNotice = (AdminCsNotice)session.getAttribute(Define.PRINCIPAL);
 		System.out.println("1. controller" + adminCsNoticeDto);
-		
-		
 		
 		adminCsNoticeService.writeNotice(adminCsNoticeDto);
 		System.out.println("2. controller" + adminCsNoticeDto);

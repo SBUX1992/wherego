@@ -27,6 +27,7 @@ public class CsQnaService {
 		CsQna csQna = new CsQna();
 		csQna.setTitle(csQnaDto.getTitle());
 		csQna.setContent(csQnaDto.getContent());
+		csQna.setMemId(csQnaDto.getMemId());
 		System.out.println("writeCsQnaService end" + csQnaDto);
 		
 		int resultRowCount = csQnaRepository.insert(csQna);
