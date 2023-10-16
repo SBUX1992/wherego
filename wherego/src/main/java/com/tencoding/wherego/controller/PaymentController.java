@@ -20,11 +20,11 @@ public class PaymentController {
 	
 	
 	
-	@GetMapping("/main")
-	public String main() {
-		System.out.println("main page");
-		return "main";
-	}
+//	@GetMapping("/main")
+//	public String main() {
+//		System.out.println("main page");
+//		return "main";
+//	}
 	
 	@GetMapping("/payment")
 	public String payment() {

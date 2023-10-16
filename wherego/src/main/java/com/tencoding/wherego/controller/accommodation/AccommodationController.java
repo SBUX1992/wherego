@@ -63,9 +63,6 @@ public class AccommodationController {
 			 accDtoList.add(accommodationRepository.findAccByRoomNo(e));
 		});
 
-//		List<AccommodationDto> accommodationList = accommodationService.getAccList();
-		
-		//model.addAttribute("accDtoList",accDtoList);
 		model.addAttribute("roomCount",session.getAttribute("roomCount"));
 		model.addAttribute("accList", accDtoList);
 		
@@ -79,7 +76,7 @@ public class AccommodationController {
 		
 		return imgList;
 	}
-	
+
 	@GetMapping("/test")
 	public String test() {
 		return "accommodation/test";
