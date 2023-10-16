@@ -5,8 +5,8 @@
 	
 
 	<insert id="insert">
-		INSERT INTO admin_cs_qna(title, content, rdate)
-		VALUE(#{title}, #{content}, NOW());
+		INSERT INTO admin_cs_qna(title, content, rdate, mem_id)
+		VALUE(#{title}, #{content}, NOW(), #{memId});
 	</insert>
 	
 	<update id="updateByNo">

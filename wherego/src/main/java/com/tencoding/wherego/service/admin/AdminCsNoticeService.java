@@ -25,6 +25,7 @@ public class AdminCsNoticeService {
 		AdminCsNotice adminCsNotice = new AdminCsNotice();
 		adminCsNotice.setTitle(adminCsNoticeDto.getTitle());
 		adminCsNotice.setContent(adminCsNoticeDto.getContent());
+		adminCsNotice.setMemId(adminCsNoticeDto.getMemId());
 //		adminCsNotice.setMemId(principalId);	
 		System.out.println("writeNoticeService end..." + adminCsNoticeDto);
 
