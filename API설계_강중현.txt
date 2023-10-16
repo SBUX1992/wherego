@@ -1,0 +1,22 @@
+api설계
+--1차 개발--
+
+admin
+메인페이지	http://localhost:8080/wherego/admin/index
+
+noticeList		http://localhost:8080/wherego/admin/cs/notice/list
+noticeView	http://localhost:8080/wherego/admin/cs/notice/view
+noticeWrite	http://localhost:8080/wherego/admin/cs/notice/write
+noticeModify	http://localhost:8080/wherego/admin/cs/notice/modify
+
+qnaList		http://localhost:8080/wherego/admin/cs/qna/list
+qnaView		http://localhost:8080/wherego/admin/cs/qna/view
+
+
+cs
+noticeList		http://localhost:8080/wherego/cs/notice/list
+noticeView	http://localhost:8080/wherego/cs/notice/view
+
+qnaList		http://localhost:8080/wherego/cs/qna/list
+qnaView		http://localhost:8080/wherego/cs/qna/view
+qnaWrite		http://localhost:8080/wherego/cs/qna/write
