@@ -15,7 +15,7 @@ public class AccommodationService {
 	private AccommodationRepository accommodationRepository;
 	
 	public List<AccommodationDto> getAccList() {
-		List<AccommodationDto> accommodationDtoList = accommodationRepository.findAccList();		
+		List<AccommodationDto> accommodationDtoList = accommodationRepository.findAllAccList();		
 		return accommodationDtoList;
 	}
 	

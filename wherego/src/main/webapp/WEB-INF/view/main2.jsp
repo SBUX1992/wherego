@@ -33,14 +33,10 @@
 
 	<!-- 카카오지도 -->
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1f843b2d8cbe3941e14d9091037ba789&libraries=services"></script>   
-	
-	<!-- 구글폰트 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
+    
 
   </head>
-  <body style="font-family: 'Noto Sans KR', sans-serif">
+  <body>
 	 <!-- 헤더 -->
 	<%@ include file="/WEB-INF/view/header2.jsp"%>
 	<%@ include file="/WEB-INF/view/reservation/reservation.jsp"%>
@@ -68,27 +64,28 @@
     </div>
     <div class="container">
 
+
       <!-- main_first_content_info -->
       <div class="main_first_content">
         <div class="main_first_content_title">
           <div>롯데호텔 부산 추천 객실</div>
         </div>
         <div class="main_first_content_a">
-          <a href="http://localhost:8080/wherego/acc/list">전체 객실 보기</a>
+          <a href="#">전체 객실 보기</a>
         </div>
         
         <div class="main_first_content_info">
         	<c:forEach var="top3" items="${cheaperAccList }">
-	          	<div id="${top3.roomNo }" class="main_first_content_info_children" data-toggle="modal" data-target="#staticBackdrop">
-        		<div id="roomName${top3.roomNo }" style="display: none">${top3.roomName }</div>
-        	  	<div id="roomView${top3.roomNo }" style="display: none">${top3.roomView }</div>
-        	  	<div id="roomSize${top3.roomNo }" style="display: none">${top3.roomSize }</div>
-        	  	<div id="roomType${top3.roomNo }" style="display: none">${top3.roomType }</div>
-        	  	<div id="roomDetail${top3.roomNo }" style="display: none">${top3.roomDetail }</div>
-        	  	<div id="amenitiesCommon${top3.roomNo }" style="display: none">${top3.amenitiesCommon }</div>
-        	  	<div id="amenitiesBath${top3.roomNo }" style="display: none">${top3.amenitiesBath }</div>
-        	  	<div id="amenitiesEtc${top3.roomNo }" style="display: none">${top3.amenitiesEtc }</div>
-        	  	<div id="roomPrice${top3.roomNo }" style="display: none">${top3.roomPrice }</div>
+	          <div id="${top3.roomNo }" class="main_first_content_info_children" data-toggle="modal" data-target="#staticBackdrop">
+	        	  <div id="roomName${top3.roomNo }" style="display: none">${top3.roomName }</div>
+	        	  <div id="roomView${top3.roomNo }" style="display: none">${top3.roomView }</div>
+	        	  <div id="roomSize${top3.roomNo }" style="display: none">${top3.roomSize }</div>
+	        	  <div id="roomType${top3.roomNo }" style="display: none">${top3.roomType }</div>
+	        	  <div id="roomName${top3.roomNo }" style="display: none">${top3.roomDetail }</div>
+	        	  <div id="amenitiesCommon${top3.roomNo }" style="display: none">${top3.amenitiesCommon }</div>
+	        	  <div id="amenitiesBath${top3.roomNo }" style="display: none">${top3.amenitiesBath }</div>
+	        	  <div id="amenitiesEtc${top3.roomNo }" style="display: none">${top3.amenitiesEtc }</div>
+	        	  <div id="roomPrice${top3.roomNo }" style="display: none">${top3.roomPrice }</div>
 	            <div class="main_first_content_info_children_img">
 	              <img src="${top3.imgUrl }" class="img-thumbnail" alt="">
 	            </div>
@@ -302,6 +299,7 @@
             </div>
 	    </div>
     
+
 	  <script type="text/javascript">
 		  var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 		  mapOption = {
@@ -341,39 +339,13 @@
 			  } 
 			});    
 			
-			$('document').ready(function() {
-				$('.class').on('click', function() {
-					$('#imgWrapper > img').remove();
-				});
-				
-				$('.main_first_content_info_children').each(function(index, item) {
-					$(item).on('click', function() {
-						let roomNo = $(item).attr('id');
-						getModalImgList(roomNo);
-						
-						$('.modal-header > h5').html($('#roomName' + roomNo).text());
-						$('.acc_detail_div > h3').html($('#roomName' + roomNo).text());
-			            $('.acc_detail_div > div').html($('#roomDetail' + roomNo).text());
-			            $('#modalnRoomView').html($('#roomView' + roomNo).text());
-			            $('#modalInRoomSize').html($('#roomSize' + roomNo).text());
-			            $('#modalInAmenitiesCommon').html($('#amenitiesCommon' + roomNo).html());
-			            $('#modalInAmenitiesBath').html($('#amenitiesBath' + roomNo).html());
-			            $('#modalInAmenitiesEtc').html($('#amenitiesEtc' + roomNo).html());
-					});
-				});
-			});
-			
-			function getModalImgList(roomNo) {
-				$.get('http://localhost:8080/wherego/acc/detail/'+ roomNo, function(data) {
-					console.log(data);
-					data.forEach((data, index) => {
-						$('#imgWrapper').append($('<img id = "imgListView'+ (index + 1) + '" src ="" class="w-100" alt="">'));
-						$('#imgListView' + (index + 1)).attr('src', data)
-					});
-				});
+			$('document').ready() {
+				$
 			}
+			
 			
 	  </script>
   </body>
 
 </html>
+

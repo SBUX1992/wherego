@@ -53,10 +53,8 @@ public class AccommodationController {
 //	}
 //	
 	
-	@GetMapping("/list")
-	public String getShowAcclist(Model model) {
-		System.out.println("listController");
-		System.out.println(session.getAttribute("roomList"));
+	@GetMapping("/searchList")
+	public String availableReservationRoomList(Model model) {
 		List<Integer> list = (List<Integer>) session.getAttribute("roomList");
 		List<AccommodationDto> accDtoList = new ArrayList<>();
 		list.forEach(e -> {
@@ -64,6 +62,16 @@ public class AccommodationController {
 		});
 
 		model.addAttribute("roomCount",session.getAttribute("roomCount"));
+		model.addAttribute("accList", accDtoList);
+		
+		return "/accommodation/acc_available_reservation_room_list";
+	}
+	
+	@GetMapping("/list")
+	public String getShowAcclist(Model model) {
+		List<AccommodationDto> accDtoList = new ArrayList<>(); 
+		accDtoList = accommodationService.getAccList();
+
 		model.addAttribute("accList", accDtoList);
 		
 		return "/accommodation/acc_list";
@@ -77,8 +85,4 @@ public class AccommodationController {
 		return imgList;
 	}
 
-	@GetMapping("/test")
-	public String test() {
-		return "accommodation/test";
-	}
 }

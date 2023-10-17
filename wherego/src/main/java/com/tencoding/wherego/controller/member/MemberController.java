@@ -229,6 +229,12 @@ public class MemberController extends HttpServlet{
 		}
 	}
 
+	// 제작중인 회원가입 폼
+	@GetMapping("/sign-up2")
+	public String signup2() {
+		return "member/signUp2";
+	}
+
 	// 로그아웃 처리 href="${pageContext.request.contextPath}/member/logout"
 	@GetMapping("/logout")
 	public String logout() {
