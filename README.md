@@ -7,15 +7,15 @@
 23-9-18 ~ 23-10-18
 
 ## 팀원
-김태영 - 지도 API
+김태영 - 지도 API, 상품 리스트
 
 김민훈 - 로그인(일반 로그인/카카오 등)
 
 박기태 - 결제 API(포트원)
 
-양승리 - 관리자 페이지(일반 유저 / 호텔관리자 / 서버 관리자)
+양승리 - 예약 페이지
 
-강중현 - 리뷰페이지(별점 등)
+강중현 - 관리자 페이지
 
 ## 프로젝트 구현 환경
 + Languages: <img src="https://img.shields.io/badge/Java-007396?style=flat-square&logo=Java&logoColor=white"/>
