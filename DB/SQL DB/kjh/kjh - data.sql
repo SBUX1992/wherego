@@ -212,6 +212,9 @@ value('[안내] 해외결제 사칭 문자 주의', '테스트 입니다.', NOW(
 INSERT INTO `admin_cs_notice` (title, content, rdate, mem_id)
 VALUES ('test title', 'test content', NOW(), 'admin');
 
+INSERT INTO `admin_cs_notice` (title, content, rdate, mem_id)
+VALUES ('test title', 'test content', NOW(), 'test');
+
 
 
 SELECT * FROM admin_cs_notice;
@@ -219,7 +222,16 @@ SELECT * FROM member;
 
 SELECT * 
 FROM admin_cs_notice
-WHERE mem_id IN (SELECT mem_id FROM member);
+WHERE mem_id = 'admin';
+
+
+INSERT INTO `admin_cs_qna` (title, content, rdate, mem_id)
+VALUES ('[회원] 가입문의', 'test content', NOW(), 'test');
+
+SELECT * FROM admin_cs_qna;
+
+
+
 
 
 

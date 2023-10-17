@@ -1,16 +1,21 @@
 package com.tencoding.wherego.controller.admin;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.tencoding.wherego.dto.admin.AdminCsNoticeDto;
 import com.tencoding.wherego.repository.model.admin.AdminCsNotice;
@@ -94,10 +99,10 @@ public class AdminCsNoticeController {
 	public String writeProc(AdminCsNoticeDto adminCsNoticeDto) {
 		adminCsNoticeDto.setMemId("admin");
 //		AdminCsNotice adminCsNotice = (AdminCsNotice)session.getAttribute(Define.PRINCIPAL);
-		System.out.println("1. controller" + adminCsNoticeDto);
+		System.out.println("1. controller : " + adminCsNoticeDto);
 		
 		adminCsNoticeService.writeNotice(adminCsNoticeDto);
-		System.out.println("2. controller" + adminCsNoticeDto);
+		System.out.println("2. controller : " + adminCsNoticeDto);
 		
 		return "redirect:/admin/cs/notice/list";
 	}
@@ -109,5 +114,17 @@ public class AdminCsNoticeController {
 		log.info("admin notice modify 페이지 접속");
 		return "admin/cs/notice/modify";
 	}
+	
+	// 공지 글 삭제
+	@PostMapping("/delete")
+    @ResponseBody
+    public ResponseEntity<Map<String, Object>> deleteNotices(@RequestParam("noArray[]") List<Integer> noArray) {
+
+		
+		
+        Map<String, Object> response = new HashMap<>();
+        response.put("success", true); // 삭제 성공 시 true, 실패 시 false
+        return ResponseEntity.ok(response);
+    }
 	
 }
