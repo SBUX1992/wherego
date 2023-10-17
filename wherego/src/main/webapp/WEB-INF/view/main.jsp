@@ -8,7 +8,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Review Write Page</title>
+    <title>WhereGo</title>
 
     <!-- css -->
     <link rel="stylesheet" href="../css/main/main.css" />
@@ -68,7 +68,7 @@
       <!-- main_first_content_info -->
       <div class="main_first_content">
         <div class="main_first_content_title">
-          <div>롯데호텔 부산 추천 객실</div>
+          <div>웨어고호텔 부산 추천 객실</div>
         </div>
         <div class="main_first_content_a">
           <a href="http://localhost:8080/wherego/acc/list">전체 객실 보기</a>
@@ -90,7 +90,7 @@
 	              <img src="${top3.imgUrl }" class="img-thumbnail" alt="">
 	            </div>
 	            <div class="main_first_content_info_children_div">
-	              <div>롯데호텔 부산</div>
+	              <div>웨어고호텔</div>
 	              <div>일반 요금</div>
 	            </div>
 	            <div class="main_first_content_info_children_info">
@@ -123,8 +123,8 @@
       <!-- main_second_content -->
       <div class="main_second_content">
         <div class="main_second_content_info">
-          <div>롯데호텔 부산 소개</div>
-          <div>부산역에서 차로 약 15분 거리에 위치하여 뛰어난 접근성을 자랑하는 롯데호텔 부산은 여행의 목적에 따라 선택할 수 있는 650개의 객실을 갖추고 있습니다. 감각적이고 모던한 스타일의 객실과 다양한 레스토랑, 전용 카지노와 함께 부산에서 즐기는 특별한 즐거움이 될 것입니다.</div>
+          <div>웨어고 호텔 소개</div>
+          <div>부산역에서 차로 약 15분 거리에 위치하여 뛰어난 접근성을 자랑하는 웨어고 호텔 은 여행의 목적에 따라 선택할 수 있는 650개의 객실을 갖추고 있습니다. 감각적이고 모던한 스타일의 객실과 다양한 레스토랑, 전용 카지노와 함께 부산에서 즐기는 특별한 즐거움이 될 것입니다.</div>
           <div>부산광역시 부산진구 가야대로 772</div>
         </div>
         <div id="map" style="width:100%;height:100%;"></div>
@@ -180,57 +180,9 @@
       
     </div>
     <!-- main_footer -->
-    <div class="main_footer">
-      <div class="main_footer_top">
-        <div class="main_footer_top_left">
-          <div><img src="../img/main/footer-logo.png" alt=""></div>
-          <div>
-            <div>㈜호텔롯데 04533, 서울특별시 중구 을지로 30 / +82-2-771-1000</div>
-            <div>대표이사 김태홍 / 사업자등록번호 104-81-25980 /</div>
-            <div>통신판매신고번호 중구02802호</div>
-          </div>
-        </div>
-        <div class="main_footer_top_right">
-          <div class="main_footer_top_right_content">
-            <div>
-              <a href="#">호텔 찾기</a>
-              <a href="#">롯데호텔 소개</a>
-              <a href="#">브랜드 소개</a>
-              <a href="#">수상</a>
-              <a href="#">갤러리</a>
-              <a href="#">Art Experience</a>
-            </div>
-          </div>
-          <div class="main_footer_top_right_content">
-            <div>
-              <a href="#">고객의 소리</a>
-              <a href="#">지점별 연락처</a>
-              <a href="#">신문고(제보)</a>
-              <a href="#">컴플라이언스</a>
-              <a href="#">채용</a>
-            </div>
-          </div>
-          <div class="main_footer_top_right_content">
-            <div>
-              <a href="#">시니어 레지던스 VL</a>
-              <a href="#">신규 개발</a>
-              <a href="#">임직원</a>
-              <a href="#">서비스아카데미</a>
-              <a href="#">사이트맵</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <%@ include file="/WEB-INF/view/footer.jsp"%>
     
-    <div class="main_footer_bottom">
-      <div>
-        <div class="main_footer_bottom_a_border"><a href="#">개인정보처리방침</a></div>
-        <div class="main_footer_bottom_a_border"><a href="#">사이트 이용약관</a></div>
-        <div class="main_footer_bottom_a_border"><a href="#">약관 및 정책</a></div>
-        <div><a href="#">쿠키 설정</a></div>
-      </div>
-    </div>
+    
     
     <!-- Modal -->
 	<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -298,7 +250,7 @@
                 </div>
             </div>
 	    </div>
-    
+    	
 
 	  <script type="text/javascript">
 		  var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
@@ -330,7 +282,7 @@
 			
 			      // 인포윈도우로 장소에 대한 설명을 표시합니다
 			      var infowindow = new kakao.maps.InfoWindow({
-			          content: '<div style="width:150px;text-align:center;padding:6px 0;">롯데호텔 부산</div>'
+			          content: '<div style="width:150px;text-align:center;padding:6px 0;">HOTEL WHEREGO</div>'
 			      });
 			      infowindow.open(map, marker);
 			

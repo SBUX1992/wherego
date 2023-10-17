@@ -37,12 +37,11 @@ a {
 	position: relative;
 	border-bottom: 1px solid #AFA18A;
 	width: 100%;
-	min-height: 40px;
-	height: 40px;
+	min-height: 60px;
 	top: 0;
 	left: 0;
 	margin: 0;
-	height: 40px;
+	height: 60px;
 }
 
 .top-text-area {
@@ -72,7 +71,8 @@ a {
 <body>
 	<div class="top">
 		<div class="top-text-area">
-			<a href="http://localhost:8080/wherego/main/home"> <span class="top-text col1">WHERE GO</span> <span class="top-text col2">HOTEL & RESORTS</span>
+			<a href="http://localhost:8080/wherego/main/home"> 
+				<img height="60px" alt="" src="/wherego/img/logo.PNG" style="">
 			</a>
 		</div>
 

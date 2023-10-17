@@ -173,8 +173,13 @@
     display: flex;
     flex-direction: column;
 }
+.main_footer_top_left > div {
+	
+}
 .main_footer_top_left > div > img {
     color: #fff;
+    width: 100px;
+    height: 88px;
     margin-bottom: 20px;
 }
 .main_footer_top_left :last-child {
