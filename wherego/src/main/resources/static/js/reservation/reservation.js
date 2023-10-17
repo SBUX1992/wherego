@@ -59,7 +59,7 @@ $(function() {
 				}
 				// 새로운 request 객체 
 				/*close.log("/acc/list");*/
-				window.location.href = "/wherego/acc/list";
+				window.location.href = "/wherego/acc/searchList";
 			}
 		});
 	});

@@ -80,8 +80,7 @@ a {
 <body>
 	<div class="top">
 		<div class="top-text-area">
-			<a href="${pageContext.request.contextPath}/main"> <span class="top-text col1">WHERE GO</span> <span class="top-text col2">HOTEL & RESORTS</span>
-			</a>
+			<a href="http://localhost:8080/wherego/main/home"> <span class="top-text col1">WHERE GO</span> <span class="top-text col2">HOTEL & RESORTS</span>	
 		</div>
 		<div class="top2">
 			<ul class="header2Ul">
