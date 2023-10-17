@@ -40,7 +40,7 @@
 		</article>
 		<div>
 			<div>
-				<a href="/where/admin/cs/notice/list"><h4>공지사항</h4></a>
+				<a href="/wherego/admin/cs/notice/list"><span style="font-size: 15px; font-weight: bold;">공지사항</span></a>
 				<article>
 					<c:choose>
 						<c:when test="${noticeList != null}">
@@ -54,7 +54,7 @@
 				</article>
 			</div>
 			<div>
-				<a href="/where/admin/cs/qna/list"><h4>고객문의</h4></a>
+				<a href="/wherego/admin/cs/qna/list"><span style="font-size: 15px; font-weight: bold;">고객문의</span></a>
 				<article>
 					<c:choose>
 						<c:when test="${qnaList != null}">

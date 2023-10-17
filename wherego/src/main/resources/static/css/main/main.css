@@ -223,3 +223,49 @@
 .main_footer_bottom > div > div > a {
 	color: #A7A7A7;
 }
+
+.acc_detail_div {
+    background-color: #fff;
+    padding: 50px;
+}
+.acc_detail_div h3 {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.acc_detail_div div{
+    color: #999999;
+    font-weight: 500;
+}
+
+.acc_detail_exp {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 50px;
+}
+
+.acc_detail_info {
+    display: flex;
+}
+
+.acc_detail_info_title {
+    font-weight: 900;
+    margin-right: 50px;
+    font-size: 16px;
+    color: #333;
+    white-space: nowrap;
+}
+
+.acc_detail_info_content {
+    margin-bottom: 10px;
+}
+
+.acc_detail_info_content_title {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.br_div {
+    border-bottom: 1px solid #eeeeee;
+    margin: 20px 0;
+}
+
