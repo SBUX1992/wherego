@@ -6,11 +6,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.net.ssl.HttpsURLConnection;
 
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -18,15 +20,27 @@ import org.springframework.stereotype.Service;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.tencoding.wherego.dto.payment.PaymentDto;
+import com.tencoding.wherego.repository.interfaces.MemberRepository;
 import com.tencoding.wherego.repository.interfaces.payment.PaymentRespository;
+
+import lombok.extern.slf4j.Slf4j;
 
 
 
 
 @Service
+@Slf4j
 public class PaymentService {
 	@Autowired
 	private PaymentRespository paymentRespository;
+	@Autowired
+	private SqlSession session;
+	
+	public void application_process(HashMap<String, String> param) {
+		log.info("@# Service: application_process");
+		MemberRepository mr = session.getMapper(MemberRepository.class);
+		mr.application_process(param);
+	}
 	
 	public List<PaymentDto> getPayList(){
 		
