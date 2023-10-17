@@ -33,10 +33,14 @@
 
 	<!-- 카카오지도 -->
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1f843b2d8cbe3941e14d9091037ba789&libraries=services"></script>   
-    
+	
+	<!-- 구글폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
 
   </head>
-  <body>
+  <body style="font-family: 'Noto Sans KR', sans-serif">
 	 <!-- 헤더 -->
 	<%@ include file="/WEB-INF/view/header2.jsp"%>
 	<%@ include file="/WEB-INF/view/reservation/reservation.jsp"%>
@@ -63,7 +67,6 @@
       </button>
     </div>
     <div class="container">
-
 
       <!-- main_first_content_info -->
       <div class="main_first_content">
@@ -250,8 +253,12 @@
                 </div>
             </div>
 	    </div>
+<<<<<<< HEAD
     	
 
+=======
+    
+>>>>>>> 6794c7fc7e96d0908129d750d255718572dc0156
 	  <script type="text/javascript">
 		  var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 		  mapOption = {
@@ -327,4 +334,3 @@
   </body>
 
 </html>
-

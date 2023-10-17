@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.tencoding.wherego.repository.model.cs.CsNotice;
 import com.tencoding.wherego.service.cs.CsNoticeService;
-import com.tencoding.wherego.utils.Define;
 
 import lombok.extern.log4j.Log4j2;
 /**
@@ -37,7 +36,7 @@ public class CsNoticeController {
     @GetMapping("/list")
     public String list(Model model){
     	log.info("cs notice list 페이지 접속");
-    	CsNotice csNotice = (CsNotice)session.getAttribute(Define.PRINCIPAL);
+//    	CsNotice csNotice = (CsNotice)session.getAttribute(Define.PRINCIPAL);
     	
     	List<CsNotice> csNoticeList = csNoticeService.readCsNoticeList();
     	if(csNoticeList.isEmpty()) {
