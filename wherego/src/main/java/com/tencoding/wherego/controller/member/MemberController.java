@@ -1,5 +1,10 @@
 package com.tencoding.wherego.controller.member;
 
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,14 +34,8 @@ import com.tencoding.wherego.service.member.MemberService;
 import com.tencoding.wherego.utils.Define;
 
 @Controller
-
-
 @RequestMapping("/member")
-
-
-
-public class MemberController {
-
+public class MemberController extends HttpServlet{
 	@Autowired
 	private MemberService memberService;
 
@@ -47,7 +46,7 @@ public class MemberController {
 	@GetMapping("/login")
 	public String login() {
 		System.out.println("login page");
-		return "member/login";
+		return "member/login2";
 	}
 	/****************************************TEST********************************/
 	@GetMapping("/main")
@@ -56,7 +55,7 @@ public class MemberController {
     }
 	// 일반 로그인 처리
 	@PostMapping("/login")
-	public String loginProc(LogInFormDto logInFormDto) {
+	public String loginProc(LogInFormDto logInFormDto, HttpServletRequest req) throws ServletException, IOException {
 		System.out.println(logInFormDto);
 		if (logInFormDto.getId().isEmpty() || logInFormDto.getId() == null) {
 			throw new CustomRestfulException("ID를 입력하세요", HttpStatus.BAD_REQUEST);
@@ -74,9 +73,24 @@ public class MemberController {
 		session.setAttribute(Define.PRINCIPAL, principal);
 		// 세션에 등록
 
+		// 10-17 강중현 권한별 표시내용 수정
+		String id = req.getParameter("id");
+		System.out.println("memId : "+id);
 
+		HttpSession session = req.getSession();
+		System.out.println("memId : "+id);
+		
+		if (id != null && id.equals("admin")) {
+		    // userId가 "admin"인 경우에 해당하는 작업을 수행
+			System.out.println("id : "+id);
+			session.setAttribute("isAdmin", true);
+		} else {
+		    // 다른 경우에 대한 처리나 오류 메시지를 보여줄 수 있음
+			System.out.println("admin 아님");
+			session.setAttribute("isAdmin", false);
+		}
+		
 		return "redirect:/main";
-
 	}
 
 	
@@ -85,7 +99,7 @@ public class MemberController {
 	// 회원가입 페이지 진입
 	@GetMapping("/sign-up")
 	public String signUp() {
-		return "member/signUp";
+		return "member/signUp2";
 	}
 
 	// 일반 회원가입 처리
@@ -122,11 +136,13 @@ public class MemberController {
 			throw new CustomRestfulException("회원가입에 실패했습니다.", HttpStatus.BAD_REQUEST);
 		}
 
-		return "redirect:/member/login";
+		return "redirect:/main";
 	}
 
 	@GetMapping("/kakao/callback")
 	public String kakaoCallback(@RequestParam String code, Model model) {
+
+		
 		// code = 인가 코드
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Content-type", "application/x-www-form-urlencoded;charset=utf-8");
@@ -174,12 +190,12 @@ public class MemberController {
 			session.setAttribute(Define.PRINCIPAL, principal);
 			// 세션에 등록
 
-			return "redirect:main"; // 메인이 생기면 그쪽으로
-//			return "redirect:login";
+			return "redirect:/main";
 
 		} else { // 로그인 정보가 없다면 회원가입 페이지로
 			model.addAttribute("id", id);
 			model.addAttribute("profile", kakaoProfileDto);
+			
 
 			return "member/kakaoSignUp";
 		}
@@ -223,35 +239,50 @@ public class MemberController {
 	}
 
 
+	// 로그아웃 처리 
+	// href="${pageContext.request.contextPath}/member/logout"
 
-	// 제작중인 회원가입 폼
-	@GetMapping("/sign-up2")
-	public String signup2() {
-		return "member/signUp2";
-	}
-
-	// 로그아웃 처리 href="${pageContext.request.contextPath}/member/logout"
 	@GetMapping("/logout")
 	public String logout() {
 		session.invalidate();
 
-		return "redirect:main";
-	}
-
-	// 임시로그인페이지
-	@GetMapping("/login2")
-	public String login2() {
-		return "member/login2";
+		return "redirect:/main";
 	}
 
 	// 마이페이지 출력
 	@GetMapping("/my-page")
 	public String myPage() {
 		// 로그인 정보없이 url조작으로 마이페이지 진입했을시
-		if (session.getAttribute(Define.PRINCIPAL) == null) {
-			throw new CustomRestfulException("잘못된 요청입니다.", HttpStatus.BAD_REQUEST);
-		}
+//		if (session.getAttribute(Define.PRINCIPAL) == null) {
+//			throw new CustomRestfulException("잘못된 요청입니다.", HttpStatus.BAD_REQUEST);
+//		}
 
 		return "member/myPage";
+	}
+
+	// 회원탈퇴 페이지 진입
+	@GetMapping("/delete")
+	public String delete() {
+		// 로그인 정보없이 url조작으로 회원탈퇴 페이지 진입했을시
+//		if (session.getAttribute(Define.PRINCIPAL) == null) {
+//			throw new CustomRestfulException("잘못된 요청입니다.", HttpStatus.BAD_REQUEST);
+//		}
+
+		return "member/delete";
+	}
+
+	@PostMapping("/delete")
+	public String deleteProc(LogInFormDto logInFormDto) {
+		Member member = (Member) session.getAttribute(Define.PRINCIPAL);
+		logInFormDto.setId(member.getMemId());
+
+		boolean isPasswordMatched = memberService.passwordChk(logInFormDto);
+
+		if (isPasswordMatched) {
+			int result = memberService.deleteMember(member.getMemUserNo());
+			System.out.println("삭제 결과(1이면 성공 0이면 실패) :" + result);
+		}
+
+		return "redirect:/main";
 	}
 }

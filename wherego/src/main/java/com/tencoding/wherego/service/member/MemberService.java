@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.tencoding.wherego.dto.member.LogInFormDto;
 import com.tencoding.wherego.dto.member.SignUpFormDto;
 import com.tencoding.wherego.handler.exception.CustomRestfulException;
-import com.tencoding.wherego.repository.interfaces.MemberRepository;
+import com.tencoding.wherego.repository.interfaces.member.MemberRepository;
 import com.tencoding.wherego.repository.model.Member;
 
 @Service
@@ -48,7 +48,6 @@ public class MemberService {
 
 		// sql에서 해시화된 암호를 비교
 		boolean isPasswordMatched = passwordEncoder.matches(logInFormDto.getPassword(), memberEntity.getMemPassword());
-		System.out.println("isPasswordMatched : " + isPasswordMatched);
 
 		if (isPasswordMatched == false) { // 매칭이 안됐을 경우
 			throw new CustomRestfulException("비밀번호가 잘못되었습니다.", HttpStatus.BAD_REQUEST);
@@ -85,6 +84,29 @@ public class MemberService {
 	public String nickChk(String mem_nickname) {
 		// mem_nickname을 찾는 쿼리문 던지고 String으로 반환
 		return memberRepository.nickChk(mem_nickname);
+	}
+
+	// 패스워드 체크, 사용처:회원탈퇴, 회원정보변경 진입시
+	public boolean passwordChk(LogInFormDto logInFormDto) {
+		
+		Member memberEntity = memberRepository.findById(logInFormDto.getId());
+		if (memberEntity == null) { // 조회된 계정이 없을 경우
+			throw new CustomRestfulException("계정이 없습니다.", HttpStatus.BAD_REQUEST);
+		}
+		
+		// sql에서 해시화된 암호를 비교
+		boolean isPasswordMatched = passwordEncoder.matches(logInFormDto.getPassword(), memberEntity.getMemPassword());
+		System.out.println("delete: isPasswordMatched : " + isPasswordMatched);
+		
+		return isPasswordMatched;
+	}
+
+	// 회원탈퇴, 업데이트로 유저 정보만 다 날림
+	public int deleteMember(Integer memUserNo) {
+		
+		int result = memberRepository.deleteMember(memUserNo);
+		
+		return result;
 	}
 
 }

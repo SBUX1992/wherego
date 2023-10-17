@@ -20,7 +20,7 @@
 				<div id="fromDateWrapper">
 					<label id="fromDateBtn">
 						<div id="fromDateHtml">호텔</div>
-						<div id="busan">롯데호텔 부산</div> 
+						<div id="busan">웨어고호텔</div> 
 					</label>
 				</div>
 			</div>

@@ -15,8 +15,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.tencoding.wherego.dto.MemberListDto;
 import com.tencoding.wherego.dto.accommodation.AccommodationDto;
 import com.tencoding.wherego.dto.payment.PaymentDto;
-import com.tencoding.wherego.repository.interfaces.MemberRepository;
+
 import com.tencoding.wherego.repository.interfaces.accommodation.AccommodationRepository;
+
+import com.tencoding.wherego.repository.interfaces.member.MemberRepository;
+
 import com.tencoding.wherego.repository.interfaces.payment.PaymentRespository;
 import com.tencoding.wherego.service.accommodation.AccommodationService;
 import com.tencoding.wherego.service.payment.PaymentService;

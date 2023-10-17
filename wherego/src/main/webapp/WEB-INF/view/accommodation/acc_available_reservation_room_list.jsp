@@ -17,7 +17,7 @@
         <!-- iamport.payment.js -->
         <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
     <!-- 포트원 결제 -->
-    <script type="text/javascript" src="../js/payment/pay_js.js" ></script> 
+    <script type="text/javascript" src="../js/payment/payment_js.js" ></script> 
 
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,7 +25,7 @@
     <script
         src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- css -->
-    <link rel="stylesheet" href="../css/accommodation/acc_list.css" />
+    <link rel="stylesheet" href="../css/accommodation/acc_available_reservation_room_list.css" />
 
     <!-- bootstrap 4.6v -->
     <link rel="stylesheet"
@@ -46,6 +46,7 @@
 <body>
 
 	<%@ include file="/WEB-INF/view/header2.jsp"%>
+	<%@ include file="/WEB-INF/view/reservation/reservation.jsp"%>
 	<div class="acc_list">
 		<div class="acc_list_header">
 			<div class="container acc_info">
@@ -81,16 +82,18 @@
 						</div>
 					</div>
 					<div class="acc_list_button">
-
-	                   <div class="price">${acc.roomPrice} KRW</div>
+	                   <a><button type="button"   onclick="kakaopay()"class="price_btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" 
+	                   data-amount="${acc.roomPrice}"
+	                   data-name="${acc.roomName}"
+	                   data-number="${acc.roomNo}">         
+    					${acc.roomPrice} KRW</button>
+	                	</a>
 	                </div>
-	                <br>	               	
 				</div>
 			</c:forEach>
 		</div>
 		<%@ include file="/WEB-INF/view/footer.jsp"%>
 	</div>
-
 	<!-- Modal -->
 	<div class="modal fade" id="staticBackdrop" data-backdrop="static"
 		data-keyboard="false" tabindex="-1"

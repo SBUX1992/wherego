@@ -8,7 +8,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WhereGo</title>
+    <title>Review Write Page</title>
 
     <!-- css -->
     <link rel="stylesheet" href="../css/main/main.css" />
@@ -33,14 +33,10 @@
 
 	<!-- 카카오지도 -->
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1f843b2d8cbe3941e14d9091037ba789&libraries=services"></script>   
-	
-	<!-- 구글폰트 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
+    
 
   </head>
-  <body style="font-family: 'Noto Sans KR', sans-serif">
+  <body>
 	 <!-- 헤더 -->
 	<%@ include file="/WEB-INF/view/header2.jsp"%>
 	<%@ include file="/WEB-INF/view/reservation/reservation.jsp"%>
@@ -68,32 +64,33 @@
     </div>
     <div class="container">
 
+
       <!-- main_first_content_info -->
       <div class="main_first_content">
         <div class="main_first_content_title">
-          <div>웨어고호텔 부산 추천 객실</div>
+          <div>롯데호텔 부산 추천 객실</div>
         </div>
         <div class="main_first_content_a">
-          <a href="http://localhost:8080/wherego/acc/list">전체 객실 보기</a>
+          <a href="#">전체 객실 보기</a>
         </div>
         
         <div class="main_first_content_info">
         	<c:forEach var="top3" items="${cheaperAccList }">
-	          	<div id="${top3.roomNo }" class="main_first_content_info_children" data-toggle="modal" data-target="#staticBackdrop">
-        		<div id="roomName${top3.roomNo }" style="display: none">${top3.roomName }</div>
-        	  	<div id="roomView${top3.roomNo }" style="display: none">${top3.roomView }</div>
-        	  	<div id="roomSize${top3.roomNo }" style="display: none">${top3.roomSize }</div>
-        	  	<div id="roomType${top3.roomNo }" style="display: none">${top3.roomType }</div>
-        	  	<div id="roomDetail${top3.roomNo }" style="display: none">${top3.roomDetail }</div>
-        	  	<div id="amenitiesCommon${top3.roomNo }" style="display: none">${top3.amenitiesCommon }</div>
-        	  	<div id="amenitiesBath${top3.roomNo }" style="display: none">${top3.amenitiesBath }</div>
-        	  	<div id="amenitiesEtc${top3.roomNo }" style="display: none">${top3.amenitiesEtc }</div>
-        	  	<div id="roomPrice${top3.roomNo }" style="display: none">${top3.roomPrice }</div>
+	          <div id="${top3.roomNo }" class="main_first_content_info_children" data-toggle="modal" data-target="#staticBackdrop">
+	        	  <div id="roomName${top3.roomNo }" style="display: none">${top3.roomName }</div>
+	        	  <div id="roomView${top3.roomNo }" style="display: none">${top3.roomView }</div>
+	        	  <div id="roomSize${top3.roomNo }" style="display: none">${top3.roomSize }</div>
+	        	  <div id="roomType${top3.roomNo }" style="display: none">${top3.roomType }</div>
+	        	  <div id="roomName${top3.roomNo }" style="display: none">${top3.roomDetail }</div>
+	        	  <div id="amenitiesCommon${top3.roomNo }" style="display: none">${top3.amenitiesCommon }</div>
+	        	  <div id="amenitiesBath${top3.roomNo }" style="display: none">${top3.amenitiesBath }</div>
+	        	  <div id="amenitiesEtc${top3.roomNo }" style="display: none">${top3.amenitiesEtc }</div>
+	        	  <div id="roomPrice${top3.roomNo }" style="display: none">${top3.roomPrice }</div>
 	            <div class="main_first_content_info_children_img">
 	              <img src="${top3.imgUrl }" class="img-thumbnail" alt="">
 	            </div>
 	            <div class="main_first_content_info_children_div">
-	              <div>웨어고호텔</div>
+	              <div>롯데호텔 부산</div>
 	              <div>일반 요금</div>
 	            </div>
 	            <div class="main_first_content_info_children_info">
@@ -126,8 +123,8 @@
       <!-- main_second_content -->
       <div class="main_second_content">
         <div class="main_second_content_info">
-          <div>웨어고 호텔 소개</div>
-          <div>부산역에서 차로 약 15분 거리에 위치하여 뛰어난 접근성을 자랑하는 웨어고 호텔 은 여행의 목적에 따라 선택할 수 있는 650개의 객실을 갖추고 있습니다. 감각적이고 모던한 스타일의 객실과 다양한 레스토랑, 전용 카지노와 함께 부산에서 즐기는 특별한 즐거움이 될 것입니다.</div>
+          <div>롯데호텔 부산 소개</div>
+          <div>부산역에서 차로 약 15분 거리에 위치하여 뛰어난 접근성을 자랑하는 롯데호텔 부산은 여행의 목적에 따라 선택할 수 있는 650개의 객실을 갖추고 있습니다. 감각적이고 모던한 스타일의 객실과 다양한 레스토랑, 전용 카지노와 함께 부산에서 즐기는 특별한 즐거움이 될 것입니다.</div>
           <div>부산광역시 부산진구 가야대로 772</div>
         </div>
         <div id="map" style="width:100%;height:100%;"></div>
@@ -183,9 +180,57 @@
       
     </div>
     <!-- main_footer -->
-    <%@ include file="/WEB-INF/view/footer.jsp"%>
+    <div class="main_footer">
+      <div class="main_footer_top">
+        <div class="main_footer_top_left">
+          <div><img src="../img/main/footer-logo.png" alt=""></div>
+          <div>
+            <div>㈜호텔롯데 04533, 서울특별시 중구 을지로 30 / +82-2-771-1000</div>
+            <div>대표이사 김태홍 / 사업자등록번호 104-81-25980 /</div>
+            <div>통신판매신고번호 중구02802호</div>
+          </div>
+        </div>
+        <div class="main_footer_top_right">
+          <div class="main_footer_top_right_content">
+            <div>
+              <a href="#">호텔 찾기</a>
+              <a href="#">롯데호텔 소개</a>
+              <a href="#">브랜드 소개</a>
+              <a href="#">수상</a>
+              <a href="#">갤러리</a>
+              <a href="#">Art Experience</a>
+            </div>
+          </div>
+          <div class="main_footer_top_right_content">
+            <div>
+              <a href="#">고객의 소리</a>
+              <a href="#">지점별 연락처</a>
+              <a href="#">신문고(제보)</a>
+              <a href="#">컴플라이언스</a>
+              <a href="#">채용</a>
+            </div>
+          </div>
+          <div class="main_footer_top_right_content">
+            <div>
+              <a href="#">시니어 레지던스 VL</a>
+              <a href="#">신규 개발</a>
+              <a href="#">임직원</a>
+              <a href="#">서비스아카데미</a>
+              <a href="#">사이트맵</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     
-    
+    <div class="main_footer_bottom">
+      <div>
+        <div class="main_footer_bottom_a_border"><a href="#">개인정보처리방침</a></div>
+        <div class="main_footer_bottom_a_border"><a href="#">사이트 이용약관</a></div>
+        <div class="main_footer_bottom_a_border"><a href="#">약관 및 정책</a></div>
+        <div><a href="#">쿠키 설정</a></div>
+      </div>
+    </div>
     
     <!-- Modal -->
 	<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -253,12 +298,8 @@
                 </div>
             </div>
 	    </div>
-<<<<<<< HEAD
-    	
-
-=======
     
->>>>>>> 6794c7fc7e96d0908129d750d255718572dc0156
+
 	  <script type="text/javascript">
 		  var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 		  mapOption = {
@@ -289,7 +330,7 @@
 			
 			      // 인포윈도우로 장소에 대한 설명을 표시합니다
 			      var infowindow = new kakao.maps.InfoWindow({
-			          content: '<div style="width:150px;text-align:center;padding:6px 0;">HOTEL WHEREGO</div>'
+			          content: '<div style="width:150px;text-align:center;padding:6px 0;">롯데호텔 부산</div>'
 			      });
 			      infowindow.open(map, marker);
 			
@@ -298,39 +339,13 @@
 			  } 
 			});    
 			
-			$('document').ready(function() {
-				$('.class').on('click', function() {
-					$('#imgWrapper > img').remove();
-				});
-				
-				$('.main_first_content_info_children').each(function(index, item) {
-					$(item).on('click', function() {
-						let roomNo = $(item).attr('id');
-						getModalImgList(roomNo);
-						
-						$('.modal-header > h5').html($('#roomName' + roomNo).text());
-						$('.acc_detail_div > h3').html($('#roomName' + roomNo).text());
-			            $('.acc_detail_div > div').html($('#roomDetail' + roomNo).text());
-			            $('#modalnRoomView').html($('#roomView' + roomNo).text());
-			            $('#modalInRoomSize').html($('#roomSize' + roomNo).text());
-			            $('#modalInAmenitiesCommon').html($('#amenitiesCommon' + roomNo).html());
-			            $('#modalInAmenitiesBath').html($('#amenitiesBath' + roomNo).html());
-			            $('#modalInAmenitiesEtc').html($('#amenitiesEtc' + roomNo).html());
-					});
-				});
-			});
-			
-			function getModalImgList(roomNo) {
-				$.get('http://localhost:8080/wherego/acc/detail/'+ roomNo, function(data) {
-					console.log(data);
-					data.forEach((data, index) => {
-						$('#imgWrapper').append($('<img id = "imgListView'+ (index + 1) + '" src ="" class="w-100" alt="">'));
-						$('#imgListView' + (index + 1)).attr('src', data)
-					});
-				});
+			$('document').ready() {
+				$
 			}
+			
 			
 	  </script>
   </body>
 
 </html>
+
