@@ -15,7 +15,7 @@
 
 양승리 - 예약 페이지
 
-강중현 - 관리자 페이지
+강중현 - 관리자 페이지 notice, qna
 
 ## 프로젝트 구현 환경
 + Languages: <img src="https://img.shields.io/badge/Java-007396?style=flat-square&logo=Java&logoColor=white"/>
