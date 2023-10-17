@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>롯데호텔::관리자</title>
+<title>호텔::관리자</title>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
@@ -23,37 +23,60 @@
 	<div id="admin-wrapper">
 		<header>
 			<div class="top">
-				<div class="top-text-area">
-					<a href="#"> <span class="top-text col1">WHERE GO</span> <span
-						class="top-text col2">HOTEL & RESORTS</span>
-					</a>
-				</div>
-
+			<div class="top-text-area">
+				<a href="/wherego/main"> <img src="/wherego/img/hotel_logo.PNG"
+					alt="로고" />
+				</a>
+			</div>
+			<div class="top2">
 				<ul class="header2Ul">
-					<li class="header2Li"><a href="acc/list" class="list-item">호텔찾기</a>
-						<span class="li-horizontal-divider"></span></li>
-					<li class="header2Li"><a href="#" class="list-item">멤버십</a> <span
-						class="li-horizontal-divider"></span></li>
-					<li class="header2Li"><a href="#" class="list-item">예약조회</a> <span
-						class="li-horizontal-divider"></span></li>
+					<c:set var="isAdmin" value="${sessionScope.isAdmin}" />
 					<c:choose>
-						<c:when test="${principal == null}">
-							<li><a
-								href="${pageContext.request.contextPath}/member/login2"
-								class="list-item">로그인</a> <span class="li-horizontal-divider"></span></li>
-							<li><a
-								href="${pageContext.request.contextPath}/member/sign-up2"
-								class="list-item">회원가입</a></li>
+						<c:when test="${empty isAdmin || isAdmin == false}">
+							<li class="header2Li"><a
+								href="${pageContext.request.contextPath}/acc/list"
+								class="list-item">호텔찾기</a> <span>|</span>
+							</li>
+							<li class="header2Li"><a
+								href="${pageContext.request.contextPath}/member/my-page"
+								class="list-item">예약조회</a><span>|</span></li>
+
+							<c:choose>
+								<c:when test="${principal == null}">
+									<li class="header2Li"><a
+										href="${pageContext.request.contextPath}/member/login"
+										class="list-item">로그인</a><span>|</span></li>
+									<li class="header2Li"><a
+										href="${pageContext.request.contextPath}/member/sign-up"
+										class="list-item">회원가입</a></li>
+								</c:when>
+								<c:otherwise>
+									<li class="header2Li"><a
+										href="${pageContext.request.contextPath}/member/my-page"
+										class="list-item">마이페이지</a>
+										<span>|</span>
+									</li>
+									<li class="header2Li"><a
+										href="${pageContext.request.contextPath}/member/logout"
+										class="list-item">로그아웃</a>
+									</li>
+								</c:otherwise>
+							</c:choose>
 						</c:when>
-						<c:when test="${principal != null}">
-							<li><a href="#" class="list-item">마이페이지</a> <span
-								class="li-horizontal-divider"></span></li>
-							<li><a
+
+						<c:otherwise>
+							<!-- 관리자일 경우 추가할 메뉴나 처리 -->
+							<li class="header2Li"><a href="/wherego/main"
+								class="list-item">메인 페이지</a>
+								<span>|</span>
+							</li>
+							<li class="header2Li"><a
 								href="${pageContext.request.contextPath}/member/logout"
-								class="list-item">로그아웃</a></li>
-						</c:when>
+								class="list-item">로그아웃</a>
+							</li>
+						</c:otherwise>
 					</c:choose>
 				</ul>
-
 			</div>
+		</div>
 		</header>

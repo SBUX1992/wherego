@@ -1,5 +1,10 @@
 package com.tencoding.wherego.controller.member;
 
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +35,7 @@ import com.tencoding.wherego.utils.Define;
 
 @Controller
 @RequestMapping("/member")
-public class MemberController {
+public class MemberController extends HttpServlet{
 
 	@Autowired
 	private MemberService memberService;
@@ -47,7 +52,7 @@ public class MemberController {
 
 	// 일반 로그인 처리
 	@PostMapping("/login")
-	public String loginProc(LogInFormDto logInFormDto) {
+	public String loginProc(LogInFormDto logInFormDto, HttpServletRequest req) throws ServletException, IOException {
 		System.out.println(logInFormDto);
 		if (logInFormDto.getId().isEmpty() || logInFormDto.getId() == null) {
 			throw new CustomRestfulException("ID를 입력하세요", HttpStatus.BAD_REQUEST);
@@ -64,7 +69,24 @@ public class MemberController {
 
 		session.setAttribute(Define.PRINCIPAL, principal);
 		// 세션에 등록
+		
+		// 10-17 강중현 권한별 표시내용 수정
+		String id = req.getParameter("id");
+		System.out.println("memId : "+id);
 
+		HttpSession session = req.getSession();
+		System.out.println("memId : "+id);
+		
+		if (id != null && id.equals("admin")) {
+		    // userId가 "admin"인 경우에 해당하는 작업을 수행
+			System.out.println("id : "+id);
+			session.setAttribute("isAdmin", true);
+		} else {
+		    // 다른 경우에 대한 처리나 오류 메시지를 보여줄 수 있음
+			System.out.println("admin 아님");
+			session.setAttribute("isAdmin", false);
+		}
+		
 		return "redirect:/main";
 	}
 

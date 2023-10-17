@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 </head>
 
-<header><%@include file="/WEB-INF/view/header2.jsp"%></header>
+<%@include file="/WEB-INF/view/header2.jsp"%>
 <body style="font-family: 'Noto Sans KR', sans-serif">
   <div class="inner">
     <div class="location"><a href="${pageContext.request.contextPath}/main">홈</a> <span>/</span> <span>로그인</span></div>
