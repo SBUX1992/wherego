@@ -12,27 +12,31 @@ function addDiv(list, idx) {
 
 	let row1 = document.createElement("div");
 	row1.className = "listBodyWrapper-data-ele room";
-	row1.textContent = list.room;
+	row1.textContent = list.roomName;
 	newDiv.appendChild(row1);
 
 	let row2 = document.createElement("div");
 	row2.className = "listBodyWrapper-data-ele row2";
-	row2.textContent = list.room;
+	row2.textContent = list.resFromDate + " ~ " + list.resToDate;
 	newDiv.appendChild(row2);
 
 	let row3 = document.createElement("div");
 	row3.className = "listBodyWrapper-data-ele row3";
-	row3.textContent = list.room;
+	row3.textContent = list.payCreatedAt;
 	newDiv.appendChild(row3);
 
 	let row4 = document.createElement("div");
 	row4.className = "listBodyWrapper-data-ele row4";
-	row4.textContent = list.room;
+	if (list.isCompleted == "t") {
+		row4.textContent = "결제 완료";
+	} else {
+		row4.textContent = "결제 실패";
+	}
 	newDiv.appendChild(row4);
 
 	let row5 = document.createElement("div");
 	row5.className = "listBodyWrapper-data-ele row4";
-	row5.textContent = list.room;
+	row5.textContent = list.paidAmount;
 	newDiv.appendChild(row5);
 
 	// 부모 div에 새로운 div를 추가

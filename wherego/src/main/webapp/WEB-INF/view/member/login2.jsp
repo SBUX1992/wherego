@@ -18,7 +18,7 @@
   </div>
   <div>
     <div class="login-box">
-      <h1 class="headline">로그인</h1>
+      <h1 class="mem headline">로그인</h1>
 
       <div class="jb-division-line login"></div>
 

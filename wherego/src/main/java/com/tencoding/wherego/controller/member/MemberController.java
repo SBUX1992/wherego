@@ -35,7 +35,7 @@ import com.tencoding.wherego.utils.Define;
 
 @Controller
 @RequestMapping("/member")
-public class MemberController extends HttpServlet{
+public class MemberController extends HttpServlet {
 	@Autowired
 	private MemberService memberService;
 
@@ -48,11 +48,13 @@ public class MemberController extends HttpServlet{
 		System.out.println("login page");
 		return "member/login2";
 	}
-	/****************************************TEST********************************/
+
+	/**************************************** TEST ********************************/
 	@GetMapping("/main")
-    public String main() {
-        return "main";
-    }
+	public String main() {
+		return "main";
+	}
+
 	// 일반 로그인 처리
 	@PostMapping("/login")
 	public String loginProc(LogInFormDto logInFormDto, HttpServletRequest req) throws ServletException, IOException {
@@ -75,26 +77,23 @@ public class MemberController extends HttpServlet{
 
 		// 10-17 강중현 권한별 표시내용 수정
 		String id = req.getParameter("id");
-		System.out.println("memId : "+id);
+		System.out.println("memId : " + id);
 
 		HttpSession session = req.getSession();
-		System.out.println("memId : "+id);
-		
+		System.out.println("memId : " + id);
+
 		if (id != null && id.equals("admin")) {
-		    // userId가 "admin"인 경우에 해당하는 작업을 수행
-			System.out.println("id : "+id);
+			// userId가 "admin"인 경우에 해당하는 작업을 수행
+			System.out.println("id : " + id);
 			session.setAttribute("isAdmin", true);
 		} else {
-		    // 다른 경우에 대한 처리나 오류 메시지를 보여줄 수 있음
+			// 다른 경우에 대한 처리나 오류 메시지를 보여줄 수 있음
 			System.out.println("admin 아님");
 			session.setAttribute("isAdmin", false);
 		}
-		
-		return "redirect:/main";
+
+		return "redirect:/main/home";
 	}
-
-	
-
 
 	// 회원가입 페이지 진입
 	@GetMapping("/sign-up")
@@ -136,13 +135,12 @@ public class MemberController extends HttpServlet{
 			throw new CustomRestfulException("회원가입에 실패했습니다.", HttpStatus.BAD_REQUEST);
 		}
 
-		return "redirect:/main";
+		return "redirect:/main/home";
 	}
 
 	@GetMapping("/kakao/callback")
 	public String kakaoCallback(@RequestParam String code, Model model) {
 
-		
 		// code = 인가 코드
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Content-type", "application/x-www-form-urlencoded;charset=utf-8");
@@ -190,12 +188,11 @@ public class MemberController extends HttpServlet{
 			session.setAttribute(Define.PRINCIPAL, principal);
 			// 세션에 등록
 
-			return "redirect:/main";
+			return "redirect:/main/home";
 
 		} else { // 로그인 정보가 없다면 회원가입 페이지로
 			model.addAttribute("id", id);
 			model.addAttribute("profile", kakaoProfileDto);
-			
 
 			return "member/kakaoSignUp";
 		}
@@ -238,15 +235,14 @@ public class MemberController extends HttpServlet{
 		}
 	}
 
-
-	// 로그아웃 처리 
+	// 로그아웃 처리
 	// href="${pageContext.request.contextPath}/member/logout"
 
 	@GetMapping("/logout")
 	public String logout() {
 		session.invalidate();
 
-		return "redirect:/main";
+		return "redirect:/main/home";
 	}
 
 	// 마이페이지 출력
@@ -283,6 +279,6 @@ public class MemberController extends HttpServlet{
 			System.out.println("삭제 결과(1이면 성공 0이면 실패) :" + result);
 		}
 
-		return "redirect:/main";
+		return "redirect:/main/home";
 	}
 }

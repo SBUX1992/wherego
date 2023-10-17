@@ -81,21 +81,13 @@ a {
 </style>
 
 </head>
-<<<<<<< HEAD
-<body>
-	<div class="top">
-		<div class="top-text-area">
-			<a href="http://localhost:8080/wherego/main/home"> 
-				<img height="60px" alt="" src="/wherego/img/logo.PNG" style="">
-			</a>
-=======
+
 <header>
 	<!-- 10-17 강중현 권한별 표시내용 수정 -->
 	<body>
 		<div class="top">
 			<div class="top-text-area">
-				<a href="/wherego/main"> <img src="/wherego/img/hotel_logo.PNG"
-					alt="로고" />
+				<a href="/wherego/main/home"> <img height="60px" alt="" src="/wherego/img/logo.PNG" style="">
 				</a>
 			</div>
 			<div class="top2">
@@ -149,7 +141,6 @@ a {
 					</c:choose>
 				</ul>
 			</div>
->>>>>>> 6794c7fc7e96d0908129d750d255718572dc0156
 		</div>
 
 

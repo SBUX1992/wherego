@@ -19,7 +19,7 @@ body {
 	color: #998465;
 }
 
-.headline {
+.mem.headline {
 	text-align: center;
 }
 
@@ -403,19 +403,19 @@ li {
 }
 
 .my-page-item.first {
-	background-image: url('../../img/member/arrow/page_pprev.png');
+	background-image: url('/wherego/img/member/arrow/page_pprev.png');
 }
 
 .my-page-item.prev {
-	background-image: url('../../img/member/arrow/page_prev.png');
+	background-image: url('/wherego/img/member/arrow/page_prev.png');
 }
 
 .my-page-item.next {
-	background-image: url('../../img/member/arrow/page_next.png');
+	background-image: url('/wherego/img/member/arrow/page_next.png');
 }
 
 .my-page-item.last {
-	background-image: url('../../img/member/arrow/page_nnext.png');
+	background-image: url('/wherego/img/member/arrow/page_nnext.png');
 	border-right: 1px solid #666666;
 }
 
