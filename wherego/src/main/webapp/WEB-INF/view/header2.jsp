@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title></title>
 <style type="text/css">
 a {
 	text-decoration: none;
@@ -12,6 +12,7 @@ a {
 }
 
 .header2Ul {
+	width: 335px;
 	box-sizing: border-box;
 	position: absolute;
 	height: 20px;
@@ -20,16 +21,23 @@ a {
 	margin: 0;
 	list-style: none;
 	padding-left: 0px;
-	top: 5px;
 }
 
 .header2Li {
 	float: left;
+	margin: 0;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 .li-horizontal-divider {
 	border-left: 1px solid #666666;;
 	font-size: 10px;
+	margin: 0;
+}
+
+.li-horizontal-divider.last {
+	border-left: none;
 }
 
 .top {
@@ -72,26 +80,24 @@ a {
 <body>
 	<div class="top">
 		<div class="top-text-area">
-			<a href="http://localhost:8080/wherego/main/home"> <span class="top-text col1">WHERE GO</span> <span class="top-text col2">HOTEL & RESORTS</span>
-			</a>
+			<a href="http://localhost:8080/wherego/main/home"> <span class="top-text col1">WHERE GO</span> <span class="top-text col2">HOTEL & RESORTS</span>	
 		</div>
-
-		<%-- <ul class = "header2Ul">
-			<li class = "header2Li"><a href="acc/list" class="list-item">호텔찾기</a> <span class="li-horizontal-divider"></span></li>
-			<li class = "header2Li"><a href="#" class="list-item">멤버십</a> <span class="li-horizontal-divider"></span></li>
-			<li class = "header2Li"><a href="#" class="list-item">예약조회</a> <span class="li-horizontal-divider"></span></li>
-			<c:choose>
-				<c:when test="${principal == null}">
-					<li><a href="${pageContext.request.contextPath}/member/login2" class="list-item">로그인</a> <span class="li-horizontal-divider"></span></li>
-					<li><a href="${pageContext.request.contextPath}/member/sign-up2" class="list-item">회원가입</a></li>
-				</c:when>
-				<c:when test="${principal != null}">
-					<li><a href="#" class="list-item">마이페이지</a> <span class="li-horizontal-divider"></span></li>
-					<li><a href="${pageContext.request.contextPath}/member/logout" class="list-item">로그아웃</a></li>
-				</c:when>
-			</c:choose>
-		</ul> --%>
-
+		<div class="top2">
+			<ul class="header2Ul">
+				<li class="header2Li"><a href="${pageContext.request.contextPath}/acc/list" class="list-item">호텔찾기</a> <span class="li-horizontal-divider"></span></li>
+				<li class="header2Li"><a href="${pageContext.request.contextPath}/member/my-page" class="list-item">예약조회</a> <span class="li-horizontal-divider"></span></li>
+				<c:choose>
+					<c:when test="${principal == null}">
+						<li class="header2Li"><a href="${pageContext.request.contextPath}/member/login" class="list-item">로그인</a> <span class="li-horizontal-divider"></span></li>
+						<li class="header2Li"><a href="${pageContext.request.contextPath}/member/sign-up" class="list-item">회원가입</a> <span class="li-horizontal-divider last"></span></li>
+					</c:when>
+					<c:otherwise>
+						<li class="header2Li"><a href="${pageContext.request.contextPath}/member/my-page" class="list-item">마이페이지</a> <span class="li-horizontal-divider"></span></li>
+						<li class="header2Li"><a href="${pageContext.request.contextPath}/member/logout" class="list-item">로그아웃</a> <span class="li-horizontal-divider last"></span></li> 
+					</c:otherwise>
+				</c:choose>
+			</ul>
+		</div>
 	</div>
 
 

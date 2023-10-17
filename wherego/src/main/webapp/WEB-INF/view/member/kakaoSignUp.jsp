@@ -25,7 +25,10 @@
 			</div>
 			
 			<div class="form-group">
-				<label for="mem_name">성명</label> <input type="text" class="form-control" id="mem_name" placeholder="Enter name" name="name" style="width: 500px" value="${profile.getProperties().getNickname()}" required="required">
+				<label for="mem_name">성명</label> 
+				<input type="text" class="form-control" id="mem_name" 
+				placeholder="Enter name" name="name" style="width: 500px" 
+				value="${profile.getProperties().getNickname()}" required="required">
 			</div>
 			
 
