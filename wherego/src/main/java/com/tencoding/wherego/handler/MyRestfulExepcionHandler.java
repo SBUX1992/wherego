@@ -2,6 +2,7 @@ package com.tencoding.wherego.handler;
 
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.client.HttpClientErrorException;
 
 import com.tencoding.wherego.handler.exception.CustomRestfulException;
 
@@ -21,6 +22,17 @@ public class MyRestfulExepcionHandler {
 		StringBuffer stringBuffer = new StringBuffer();
 		stringBuffer.append("<script>");
 		stringBuffer.append("alert(' " + e.getMessage() + " ');"); // 문자열 안에 반드시 ; 기입
+		stringBuffer.append("history.back();");
+		stringBuffer.append("</script>");
+
+		return stringBuffer.toString();
+	}
+	
+	@ExceptionHandler(HttpClientErrorException.class)
+	public String basicException(HttpClientErrorException e) {
+		StringBuffer stringBuffer = new StringBuffer();
+		stringBuffer.append("<script>");
+		stringBuffer.append("alert(' " + "세션이 만료되었습니다." + " ');"); // 문자열 안에 반드시 ; 기입
 		stringBuffer.append("history.back();");
 		stringBuffer.append("</script>");
 

@@ -113,6 +113,8 @@ public class MemberController {
 
 	@GetMapping("/kakao/callback")
 	public String kakaoCallback(@RequestParam String code, Model model) {
+
+		
 		// code = 인가 코드
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Content-type", "application/x-www-form-urlencoded;charset=utf-8");
@@ -165,8 +167,9 @@ public class MemberController {
 		} else { // 로그인 정보가 없다면 회원가입 페이지로
 			model.addAttribute("id", id);
 			model.addAttribute("profile", kakaoProfileDto);
+			
 
-			return "member/kakaoSignUp2";
+			return "member/kakaoSignUp";
 		}
 
 	}
@@ -207,7 +210,8 @@ public class MemberController {
 		}
 	}
 
-	// 로그아웃 처리 href="${pageContext.request.contextPath}/member/logout"
+	// 로그아웃 처리 
+	// href="${pageContext.request.contextPath}/member/logout"
 	@GetMapping("/logout")
 	public String logout() {
 		session.invalidate();
@@ -243,11 +247,10 @@ public class MemberController {
 		logInFormDto.setId(member.getMemId());
 
 		boolean isPasswordMatched = memberService.passwordChk(logInFormDto);
-		System.out.println("===============매치완료");
 
 		if (isPasswordMatched) {
 			int result = memberService.deleteMember(member.getMemUserNo());
-			System.out.println();
+			System.out.println("삭제 결과(1이면 성공 0이면 실패) :" + result);
 		}
 
 		return "redirect:/main";

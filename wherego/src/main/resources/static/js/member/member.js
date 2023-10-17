@@ -189,7 +189,7 @@ window.addEventListener('scroll', function () {
     // 스크롤 위치를 확인
     const scrollY = window.scrollY;
     // 스크롤 위치에 따라 position 변경
-    if (scrollY > 220) {
+    if (scrollY > 250) {
         fixedElement.style.position = 'relative';
     } else {
         fixedElement.style.position = 'fixed';
