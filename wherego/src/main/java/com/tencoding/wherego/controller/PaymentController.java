@@ -1,8 +1,10 @@
 package com.tencoding.wherego.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,9 +13,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.tencoding.wherego.dto.MemberListDto;
+import com.tencoding.wherego.dto.accommodation.AccommodationDto;
 import com.tencoding.wherego.dto.payment.PaymentDto;
+
+import com.tencoding.wherego.repository.interfaces.accommodation.AccommodationRepository;
+
 import com.tencoding.wherego.repository.interfaces.member.MemberRepository;
+
 import com.tencoding.wherego.repository.interfaces.payment.PaymentRespository;
+import com.tencoding.wherego.service.accommodation.AccommodationService;
 import com.tencoding.wherego.service.payment.PaymentService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -22,6 +30,12 @@ import lombok.extern.slf4j.Slf4j;
 @Controller
 @RequestMapping({"/payment",""})
 public class PaymentController {
+	@Autowired
+	private AccommodationService accommodationService;
+	
+	@Autowired
+	private AccommodationRepository accommodationRepository;
+	
 	
 	@Autowired
 	private PaymentService paymentService;
@@ -31,6 +45,8 @@ public class PaymentController {
 	
 	@Autowired
 	private MemberRepository memberRepository;
+	@Autowired
+	SqlSession session;
 	
 	
 	
@@ -61,6 +77,14 @@ public class PaymentController {
 	/***************** 결제 신청 페이지*********************/
 	@RequestMapping("payment/payment")
 	public String application(@RequestParam HashMap<String, String> param, Model model) {
+		
+		List<AccommodationDto> accDtoList = accommodationService.getAccList();
+		System.out.println("accDtoList");
+
+		model.addAttribute("roomCount",((Model) session).getAttribute("roomCount"));
+		model.addAttribute("accList", accDtoList);
+		
+		// payment
 		log.info("@# Controller: application");
 		PaymentDto party = paymentRespository.getPaymentrInfo(param);
 		model.addAttribute("party", party);

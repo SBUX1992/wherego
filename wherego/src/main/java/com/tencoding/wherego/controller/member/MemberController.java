@@ -36,7 +36,6 @@ import com.tencoding.wherego.utils.Define;
 @Controller
 @RequestMapping("/member")
 public class MemberController extends HttpServlet{
-
 	@Autowired
 	private MemberService memberService;
 
@@ -49,7 +48,11 @@ public class MemberController extends HttpServlet{
 		System.out.println("login page");
 		return "member/login2";
 	}
-
+	/****************************************TEST********************************/
+	@GetMapping("/main")
+    public String main() {
+        return "main";
+    }
 	// 일반 로그인 처리
 	@PostMapping("/login")
 	public String loginProc(LogInFormDto logInFormDto, HttpServletRequest req) throws ServletException, IOException {
@@ -69,7 +72,7 @@ public class MemberController extends HttpServlet{
 
 		session.setAttribute(Define.PRINCIPAL, principal);
 		// 세션에 등록
-		
+
 		// 10-17 강중현 권한별 표시내용 수정
 		String id = req.getParameter("id");
 		System.out.println("memId : "+id);
@@ -89,6 +92,9 @@ public class MemberController extends HttpServlet{
 		
 		return "redirect:/main";
 	}
+
+	
+
 
 	// 회원가입 페이지 진입
 	@GetMapping("/sign-up")

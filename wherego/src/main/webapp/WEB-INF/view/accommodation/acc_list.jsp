@@ -17,7 +17,7 @@
         <!-- iamport.payment.js -->
         <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
     <!-- 포트원 결제 -->
-    <script type="text/javascript" src="../js/payment/payment_js.js" ></script> 
+    <script type="text/javascript" src="../js/payment/pay_js.js" ></script> 
 
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -81,8 +81,10 @@
 						</div>
 					</div>
 					<div class="acc_list_button">
+
 	                   <div class="price">${acc.roomPrice} KRW</div>
 	                </div>
+	                <br>	               	
 				</div>
 			</c:forEach>
 		</div>
