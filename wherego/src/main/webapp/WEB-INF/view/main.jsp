@@ -64,6 +64,7 @@
     </div>
     <div class="container">
 
+
       <!-- main_first_content_info -->
       <div class="main_first_content">
         <div class="main_first_content_title">
@@ -119,6 +120,16 @@
         </div>
         <div id="map" style="width:100%;height:100%;"></div>
       </div>
+
+<script src="js/wherego_main_js.js"></script>
+</head>
+<body>
+	<header>
+		<%@include file="../view/header2.jsp"%>
+	</header>
+	<div class="main-container">
+		<div class="main-content">
+
 
       <!-- main_third_content -->
       <div class="main_third_content">
@@ -234,6 +245,7 @@
 		//지도를 생성합니다    
 		var map = new kakao.maps.Map(mapContainer, mapOption); 
 		
+
 		//주소-좌표 변환 객체를 생성합니다
 		var geocoder = new kakao.maps.services.Geocoder();
 		
@@ -263,3 +275,50 @@
 		});    
   </script>
 </html>
+
+		</div>
+		<!-- If we need pagination 
+		<div class="swiper-pagination"></div>
+-->
+
+		<!-- If we need navigation buttons -->
+		<div class="swiper-button-prev"></div>
+		<div class="swiper-button-next"></div>
+
+
+		<!-- If we need scrollbar -->
+		<div class="swiper-scrollbar"></div>
+	</div>
+	
+
+	<script>
+const swiper = new Swiper('.swiper', {
+  direction: 'horizontal',
+  loop: true,
+  slidesPerView: 4, // 4개의 슬라이드를 동시에 표시
+
+  autoplay: {
+    delay: 3000, // 3초마다 슬라이드를 자동으로 넘김
+    disableOnInteraction: true,
+  },
+  
+  loopedSlides: 3, // 마지막 슬라이드에서 처음 슬라이드로 돌아가기 위한 추가 슬라이드 수
+
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+
+</script>
+</body>
+</html>
+

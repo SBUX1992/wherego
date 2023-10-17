@@ -49,7 +49,7 @@
 									<td>${notice.no}</td>
 									<td>고객 서비스</td>
 									<td><a href="/wherego/admin/cs/notice/view/${notice.no}">${notice.title}</a></td>
-									<td>관리자</td>
+									<td>${notice.memId}</td>
 									<td>${notice.rdate.substring(0, 10)}</td>
 									<td>
 										<a href="/wherego/admin/cs/notice/modify/${notice.no}">[수정]</a>
