@@ -7,7 +7,8 @@
 <meta charset="UTF-8">
 <title></title>
 <title>Insert title here</title>
-
+<!-- css -->
+<link rel="stylesheet" href="/wherego/css/cs/cs.css">
 
 <style type="text/css">
 a {
@@ -82,7 +83,7 @@ a {
 
 </head>
 <header>
-<!-- 10-17 강중현 권한별 표시내용 수정 -->
+	<!-- 10-17 강중현 권한별 표시내용 수정 -->
 	<body>
 		<div class="top">
 			<div class="top-text-area">
@@ -112,9 +113,9 @@ a {
 										class="list-item">회원가입</a></li>
 								</c:when>
 								<c:otherwise>
-									<li class="header2Li"><a href="/wherego/cs/notice"
+									<li class="header2Li"><a href="/wherego/cs/notice/list"
 										class="list-item">공지사항</a><span>|</span></li>
-									<li class="header2Li"><a href="/wherego/cs/qna"
+									<li class="header2Li"><a href="/wherego/cs/qna/list"
 										class="list-item">Q&A</a><span>|</span></li>
 									<li class="header2Li"><a
 										href="${pageContext.request.contextPath}/member/my-page"
@@ -128,6 +129,10 @@ a {
 
 						<c:otherwise>
 							<!-- 관리자일 경우 추가할 메뉴나 처리 -->
+							<li class="header2Li"><a href="/wherego/cs/notice/list"
+								class="list-item">고객 공지사항</a><span>|</span></li>
+							<li class="header2Li"><a href="/wherego/cs/qna/list"
+								class="list-item">고객 Q&A</a><span>|</span></li>
 							<li class="header2Li"><a href="/wherego/admin/index"
 								class="list-item">관리자 페이지</a> <span>|</span></li>
 							<li class="header2Li"><a
