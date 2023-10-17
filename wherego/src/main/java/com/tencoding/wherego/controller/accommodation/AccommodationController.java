@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -63,14 +64,12 @@ public class AccommodationController {
 			 accDtoList.add(accommodationRepository.findAccByRoomNo(e));
 		});
 
-//		List<AccommodationDto> accommodationList = accommodationService.getAccList();
-		
-		//model.addAttribute("accDtoList",accDtoList);
 		model.addAttribute("roomCount",session.getAttribute("roomCount"));
 		model.addAttribute("accList", accDtoList);
 		
 		return "/accommodation/acc_list";
 	}
+
 	
 	@GetMapping("/detail/{roomNo}")
 	@ResponseBody
@@ -79,9 +78,16 @@ public class AccommodationController {
 		
 		return imgList;
 	}
-	
+
 	@GetMapping("/test")
 	public String test() {
 		return "accommodation/test";
 	}
+
+    @GetMapping("/payment")
+	public String payment() {
+    	
+		return "payment/payment";
+	}
+	
 }

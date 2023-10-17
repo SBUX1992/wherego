@@ -58,7 +58,7 @@
 }
 .acc_info {
     height: 120px;
-    margin: 10px 20px;
+    margin: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;

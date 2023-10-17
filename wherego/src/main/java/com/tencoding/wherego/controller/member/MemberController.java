@@ -30,7 +30,9 @@ import com.tencoding.wherego.utils.Define;
 
 @Controller
 
+
 @RequestMapping("/member")
+
 
 
 public class MemberController {
@@ -47,7 +49,11 @@ public class MemberController {
 		System.out.println("login page");
 		return "member/login";
 	}
-
+	/****************************************TEST********************************/
+	@GetMapping("/main")
+    public String main() {
+        return "main";
+    }
 	// 일반 로그인 처리
 	@PostMapping("/login")
 	public String loginProc(LogInFormDto logInFormDto) {
@@ -68,8 +74,12 @@ public class MemberController {
 		session.setAttribute(Define.PRINCIPAL, principal);
 		// 세션에 등록
 
+
 		return "redirect:/main";
+
 	}
+
+	
 
 
 	// 회원가입 페이지 진입

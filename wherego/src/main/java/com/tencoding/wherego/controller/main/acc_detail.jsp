@@ -111,10 +111,10 @@
 							<div class="acc_list_info_div">
 								<div id="roomView${acc.roomNo}">| ${acc.roomView} </div>
 								<div id="roomSize${acc.roomNo}">| 객실면적 ${acc.roomSize } ㎡</div>
-								<input id="roomDetail${acc.roomNo}" type="hidden" value="${acc.roomDetail }">
-								<input id="amenitiesCommon${acc.roomNo}" type="hidden" value="${acc.amenitiesCommon }">
-								<input id="amenitiesBath${acc.roomNo}" type="hidden" value="${acc.amenitiesBath }">
-								<input id="amenitiesEtc${acc.roomNo}" type="hidden" value="${acc.amenitiesEtc }">
+								<div id="roomDetail${acc.roomNo}" style="display: none"> ${acc.roomDetail } </div>
+								<div id="amenitiesCommon${acc.roomNo}" style="display: none"> ${acc.amenitiesCommon } </div>
+								<div id="amenitiesBath${acc.roomNo}" style="display: none"> ${acc.amenitiesBath} </div>
+								<div id="amenitiesEtc${acc.roomNo}" style="display: none"> ${acc.amenitiesEtc} </div>
 							</div>
 							<h5>${acc.roomType }</h5>
 						</div>
@@ -215,14 +215,19 @@
 					    
 			            let roomId = $(element).attr('id').substr(-1);
 			            getModalImgList(roomId);
+			            
+			            console.log("______________________");
+			            console.log(roomId);
+			            console.log("______________________");
+			            
 			            $('.modal-header > h5').html($('#roomName' + (index + 1 )).text());
 			            $('.acc_detail_div > h3').html($('#roomName' + (index + 1 )).text());
 			            $('.acc_detail_div > div').html($('#roomDetail' + (index + 1 )).text());
 			            $('#modalnRoomView').html($('#roomView' + (index + 1 )).text());
 			            $('#modalInRoomSize').html($('#roomSize' + (index + 1 )).text());
-			            $('#modalInAmenitiesCommon').html($('#amenitiesCommon' + (index + 1 )).text());
-			            $('#modalInAmenitiesBath').html($('#amenitiesBath' + (index + 1 )).text());
-			            $('#modalInAmenitiesEtc').html($('#amenitiesEtc' + (index + 1 )).text());
+			            $('#modalInAmenitiesCommon').html($('#amenitiesCommon' + (index + 1 )).html());
+			            $('#modalInAmenitiesBath').html($('#amenitiesBath' + (index + 1 )).html());
+			            $('#modalInAmenitiesEtc').html($('#amenitiesEtc' + (index + 1 )).html());
 			        });
 			    });
 			});

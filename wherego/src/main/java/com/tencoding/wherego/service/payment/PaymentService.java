@@ -1,10 +1,14 @@
+
 package com.tencoding.wherego.service.payment;
+
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.IOException;
+import
+java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
+import
+java.io.OutputStreamWriter;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
@@ -14,14 +18,18 @@ import javax.net.ssl.HttpsURLConnection;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
+import
+org.springframework.beans.factory.annotation.Value;
+import
+org.springframework.stereotype.Service;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-import com.tencoding.wherego.dto.payment.PaymentDto;
+import
+com.tencoding.wherego.dto.payment.PaymentDto;
 import com.tencoding.wherego.repository.interfaces.MemberRepository;
-import com.tencoding.wherego.repository.interfaces.payment.PaymentRespository;
+import
+com.tencoding.wherego.repository.interfaces.payment.PaymentRespository;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -106,3 +114,4 @@ public class PaymentService {
 	}
 
 }
+

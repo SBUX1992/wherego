@@ -21,4 +21,5 @@ public class AccommodationDto {
 	private int roomPrice;
 	private int maxPeople;
 	private String imgUrl;
+	
 }
