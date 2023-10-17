@@ -6,23 +6,20 @@ $('#pay').on('click', function(e) {
 	var a_payment = $("input[type=radio][name=a_payment]:checked").val();
 	if ($("input[type=radio][name=a_payment]:checked").is(':checked')) {
 		//클릭된 버튼에서 number값
-		// var number = event.target.getAttribute('data-number'); 
+		 var number = event.target.getAttribute('data-number'); 
 		// 클릭된 버튼에서 name값
-		//	 var name = event.target.getAttribute('data-name'); 
+			 var name = event.target.getAttribute('data-name'); 
 		// 클릭된 버튼에서 amount값
-		//	 var amount = event.target.getAttribute('data-amount'); 
+			 var amount = event.target.getAttribute('data-amount'); 
 		if (a_payment == '카카오페이') {
 			//가맹점 식별 코드
 			IMP.init('imp73063051');
 			IMP.request_pay({
 				pg: 'kakaopay',
 				pay_method: 'card', //생략 가능
-				merchant_uid: '7',
-				//number, 
-				name: 'test',
-				//name,
-				amount: '14000',
-				// amount,
+				merchant_uid: number, 
+				name: name,
+				amount:  amount,
 				buyer_email: 'iamport@siot.do',
 				buyer_name: '구매자이름',
 				buyer_tel: '010-1234-5678',

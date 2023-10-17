@@ -120,11 +120,11 @@
 						</div>
 					</div>
 					<div class="acc_list_button">
-	                   <a><button type="button"   onclick="kakaopay()"class="price_btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" 
+	                   <a><button type="button"   onclick="pay()"class="price_btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" 
 	                   data-amount="${acc.roomPrice}"
 	                   data-name="${acc.roomName}"
 	                   data-number="${acc.roomNo}">         
-    					${acc.roomPrice} KRW</button>
+    					${acc.roomPrice} KRW 결제하기</button>
 	                	</a>
 	                </div>
 				</div>

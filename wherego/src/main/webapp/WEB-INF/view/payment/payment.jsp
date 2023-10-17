@@ -41,16 +41,6 @@
 	<header>
 		<%@include file="../header.jsp"%>
 	</header>
-	<form id="pay_form" method="post" action="application_process">
-		<input type="hidden" name="mem_id" value="${member.mem_id }">
-		<input type="hidden" name="room_name" value="${acc.room_name }">		
-		<input type="hidden" name="room_price"  value="${acc.room_price }">
-		<c:forEach var="acc" items="${accList}" varStatus="count">
-		<table border="1">
-			<tr>
-				<td>${member.mem_id }</td>
-			</tr>
-		</table>
 		<table>
 			<tr>
 				<td>${acc.room_name }</td>
@@ -77,12 +67,15 @@
 		</table>
 
 		<div class="acc_list_button">
-			<a><button type="button" onclick="pay()" class="price_btn">
+			<a><button type="button" onclick="pay()" class="price_btn"data-bs-toggle="modal" data-bs-target="#staticBackdrop" 
+	                   data-amount="${acc.roomPrice}"
+	                   data-name="${acc.roomName}"
+	                   data-number="${acc.roomNo}">   
 
 
-					결제하기</button> </a>
+					${acc.roomPrice} KRW결제하기</button> </a>
 		</div>
-			</c:forEach>
+		
 	</form>
 </body>
 </html>
