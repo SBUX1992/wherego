@@ -210,11 +210,11 @@ public class MemberController {
 		}
 	}
 
-	// 임시메인컨트롤러
-//	@GetMapping("/main")
-//	public String main() {
-//		return "main";
-//	}
+//	 임시메인컨트롤러
+	@GetMapping("/main")
+	public String main() {
+		return "main";
+	}
 
 	// 제작중인 회원가입 폼
 	@GetMapping("/sign-up2")
