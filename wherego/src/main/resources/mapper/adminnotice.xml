@@ -4,10 +4,26 @@
 <mapper namespace="com.tencoding.wherego.repository.interfaces.admin.AdminCsNoticeRepository"> 
 	
 
+<!-- 	<insert id="insert"> -->
+<!-- 		insert into admin_cs_notice(title, content, rdate) -->
+<!-- 		values(#{title}, #{content}, now()) -->
+<!-- 	</insert> -->
+
 	<insert id="insert">
-		insert into admin_cs_notice(title, content, rdate)
-		values(#{title}, #{content}, now())
+		INSERT INTO `admin_cs_notice` (title, content, rdate, mem_id)
+		VALUES (#{title}, #{content}, NOW(), #{memId});
 	</insert>
+
+<!-- 	<insert id="insert"> -->
+<!-- 		INSERT INTO admin_cs_notice (title, content, mem_id, member_mem_user_no, rdate) -->
+<!-- 		SELECT #{title}, #{content}, #{memId}, #{memUserNo}, NOW() -->
+<!-- 		FROM member -->
+<!-- 		WHERE mem_user_no = #{no} -->
+<!-- 	</insert> -->
+<!-- 	<insert id="insert"> -->
+<!-- 		INSERT INTO admin_cs_notice (title, content, mem_id, member_mem_user_no, rdate) -->
+<!-- 		VALUES (#{title}, #{content}, (SELECT mem_id FROM member WHERE mem_id = #{memId}), (SELECT mem_user_no FROM member WHERE mem_id = #{memId}), NOW()); -->
+<!-- 	</insert> -->
 	
 	<update id="updateByNo">
 		update admin_cs_notice set title = #{title}, content = #{content} where no = #{no} 
