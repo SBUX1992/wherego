@@ -118,7 +118,7 @@
     background-color: #333333;
     border: 0px;
 }
-.price {
+.price_btn {
     width: 180px;
     height: 46px;
     color: white;
@@ -126,9 +126,6 @@
     font-weight: 500;
     background-color: #ad9e87;
     border: 0px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .hidden_div {

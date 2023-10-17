@@ -72,7 +72,7 @@ a {
 <body>
 	<div class="top">
 		<div class="top-text-area">
-			<a href="#"> <span class="top-text col1">WHERE GO</span> <span class="top-text col2">HOTEL & RESORTS</span>
+			<a href="http://localhost:8080/wherego/main/home"> <span class="top-text col1">WHERE GO</span> <span class="top-text col2">HOTEL & RESORTS</span>
 			</a>
 		</div>
 

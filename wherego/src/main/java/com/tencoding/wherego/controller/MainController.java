@@ -1,6 +1,5 @@
 package com.tencoding.wherego.controller;
 
-import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,12 +12,12 @@ import com.tencoding.wherego.dto.accommodation.AccommodationDto;
 import com.tencoding.wherego.repository.interfaces.MainRepository;
 
 @Controller
-@RequestMapping({"/main", ""})
+@RequestMapping("/main")
 public class MainController {
 	@Autowired
 	private MainRepository mainRepository;
 	
-	@GetMapping("")
+	@GetMapping("/home")
 	public String main(Model model) {
 		List<AccommodationDto> findCheapest3AccList = mainRepository.findCheapest3AccList();
 		

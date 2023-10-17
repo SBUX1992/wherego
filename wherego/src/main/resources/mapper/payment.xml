@@ -2,7 +2,32 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.tencoding.wherego.repository.interfaces.PaymentRepository">
-<select id="paymentById"  resultType="com.tencoding.wherego.dto.payment.PaymentDto">
-select *from payment
-</select> 
+<select id="getMemberInfo" parameterType="hashmap" resultType="com.tencoding.wherego.repository.model.Member">
+select*from member
+where mem_id = #{mem_id}
+</select>
+
+
+<insert id="pay_process"  parameterType="hashmap" >
+insert into payment(
+   pay_id 
+  ,mem_id 
+  ,pay_completed 
+  ,imp_uid
+  ,merchat_uid
+  ,paid_amount
+  ,apply_num
+  ,pay_created_at
+  )
+  values(
+   #{pay_id} 
+  ,#{mem_id} 
+  ,#{pay_completed }
+  ,#{imp_uid}
+  ,#{merchat_uid}
+  ,#{paid_amount}
+  ,#{apply_num}
+  ,#{pay_created_at}
+  );
+</insert> 
 </mapper>

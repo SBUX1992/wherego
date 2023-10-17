@@ -1,8 +1,9 @@
 /*************위치 영역************************/
   body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+
+  
+    overflow-y: scroll;
+
 }
 /*
  h2 {
@@ -21,6 +22,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+        overflow-y: scroll;
 }
 
 .main-content {

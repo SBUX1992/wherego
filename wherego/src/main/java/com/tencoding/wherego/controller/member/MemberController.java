@@ -29,7 +29,10 @@ import com.tencoding.wherego.service.member.MemberService;
 import com.tencoding.wherego.utils.Define;
 
 @Controller
-@RequestMapping({"/member",""})
+
+@RequestMapping({ "/member", "" })
+
+
 public class MemberController {
 
 	@Autowired
@@ -64,6 +67,7 @@ public class MemberController {
 
 		session.setAttribute(Define.PRINCIPAL, principal);
 		// 세션에 등록
+
 
 
 		return "redirect:/main";
@@ -211,10 +215,10 @@ public class MemberController {
 	}
 
 //	 임시메인컨트롤러
-	@GetMapping("/main")
-	public String main() {
-		return "main";
-	}
+//	@GetMapping("/main")
+//	public String main() {
+//		return "main";
+//	}
 
 	// 제작중인 회원가입 폼
 	@GetMapping("/sign-up2")
