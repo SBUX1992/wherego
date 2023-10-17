@@ -162,7 +162,7 @@ GRAD@20..48,100..700,0..1,-50..200"
                 <div class="jb-division-line"></div>
 
                 <!-- 주소 -->
-                <div>
+                <div style="margin-bottom:60px">
                     <div class="input-title">
                         <label>주소*</label>
                     </div>

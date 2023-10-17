@@ -17,22 +17,35 @@
 		</div>
 	</div>
 	<div class="headline">
-		<h1>회원 탈퇴</h1>
-		<p class="head-p">외부로부터 고객님의 정보를 안전하게 보호하기 위해 비밀번호를 다시 한 번 확인 합니다.</p>
+		<h1 id="delete-h1">회원 탈퇴</h1>
+		<h2 id="delete-h2">WHERE GO 회원을 탈퇴하시겠습니까?</h2>
+		<p id="delete-p">
+			회원 탈퇴를 신청하시면 롯데호텔 리워즈 회원 자격이 상실됩니다.<br> 고객님의 회원정보가 삭제되면 보유하고 계신 포인트도 함께 소멸됩니다.<br> 해당 아이디는 즉시 탈퇴가 처리되며 영구적으로 사용이 중지되므로 해당 아이디로 재가입이 불가능합니다.
+		</p>
 	</div>
 
 	<div id="delete-form-div">
+		<div class="jb-division-line delete-page topline"></div>
 		<form id="delete-form" action="delete" method="post">
-			<label for="delete-password-chk">비밀번호</label>
-			<div>
-				<input id="delete-password-chk" type="password" name="password" placeholder="비밀번호를 입력하세요">
-			</div>
-			
-			<div class="jb-division-line delete-page"></div>
-			
-			<input id="delete-submit" type="submit">
-		</form>
 
+			<div>
+				<label id="delete-password-chk-label" for="delete-password-chk">아이디</label> <br> <input class="delete-form-input" type="text" disabled="disabled" value="${principal.memId}">
+			</div>
+			<div>
+				<label id="delete-password-chk-label" for="delete-password-chk">보유 포인트</label> <br> <input class="delete-form-input" type="text" disabled="disabled" value="${principal.memPoint}">
+			</div>
+			<div>
+				<label id="delete-password-chk-label" for="delete-password-chk">비밀번호*</label><br>
+				<input id="delete-password-chk" class="delete-form-input" type="password" name="password" placeholder="비밀번호를 입력하세요">
+			</div>
+
+			<div class="jb-division-line delete-page"></div>
+			<div id="delete-submit-area">
+				<button id="delete-cancel" type="button" onclick="history.back()">취소</button>
+				<div id="delete-submit-area-space"></div>
+				<input id="delete-submit" type="submit" value="탈퇴">
+			</div>
+		</form>
 	</div>
 
 

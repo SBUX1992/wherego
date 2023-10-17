@@ -23,9 +23,7 @@ body {
 	text-align: center;
 }
 
-.head-p {
-	color: #666;
-}
+
 
 .li-horizontal-divider.login {
 	border-left: 1px solid #666666;
@@ -60,7 +58,11 @@ input {
 	width: 340px;
 	height: 50px;
 	padding: 10px 20px;
+	font-size: 16px;
+	font-family: 'Noto Sans KR', sans-serif;
 }
+
+
 
 .input-text.focus {
 	box-sizing: border-box;
@@ -69,7 +71,11 @@ input {
 	margin-top: 10px;
 	width: 340px;
 	height: 50px;
-	padding: 10px 19px;
+	padding: 10px 20px;
+}
+
+.input-text:read-only {
+	background-color: #e6e6e6;
 }
 
 input:focus {
@@ -77,7 +83,7 @@ input:focus {
 }
 
 .validation__text {
-	font-size: 12px;
+	font-size: 14px;
 }
 
 .col-box {
@@ -97,12 +103,13 @@ li {
 	margin-top: 10px;
 	margin-left: 10px;
 	height: 50px;
-	width: 130px;
+	width: 170px;
 	border: solid 1px #666666;
 	background-color: #555555;
 	color: white;
-	font-size: 13px;
+	font-size: 16px;
 	cursor: Pointer;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 .input-wrap.col2 {
@@ -444,24 +451,20 @@ li {
 	margin-bottom: 0;
 }
 
-#delete-form {
-	color: #333;
-	font-size: 16px;
-	box-sizing: border-box;
-	-webkit-font-smoothing: antialiased;
-	outline: 0;
-	margin: 0 auto;
-
-
+/* ===============딜리트 페이지================= */
+#delete-h1 {
+	font-weight: 300;
+	font-size: 40px;
+	margin: 60px 0;
 }
 
-#delete-password-chk {
-	height: 50px;
-	width: 690px;
-	padding: 13px 0 13px 20px;
-	box-sizing: border-box;
-	font-size: 16px;
-	margin: 20px 0 40px 0;
+#delete-h2 {
+	font-weight: 300;
+	font-size: 30px;
+}
+
+#delete-p {
+	font-size: 17px;
 }
 
 #delete-form-div {
@@ -470,26 +473,97 @@ li {
 	margin: 0 auto;
 }
 
-.jb-division-line.delete-page {
-	margin: 0;
-	
+#delete-form {
+	display: block;
+	color: #333;
+	font-size: 16px;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	outline: 0;
+	margin: 0 auto;
 }
 
-#delete-submit {
-    display: inline-block;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    outline: 0;
-    cursor: pointer;
-    text-align: center;
-    vertical-align: top;
-    appearance: none;
-    border-color: #ad9e87;
-    background-color: #ad9e87;
-    color: #fff;
-    width: 320px;
-    height: 60px;
-    padding: 10px 10px;
-    font-size: 18px;
-    margin: 0 auto;
+#delete-password-chk-label {
+	font-size: 17px;
 }
+
+.delete-form-input {
+	height: 50px;
+	width: 690px;
+	padding: 13px 0 13px 20px;
+	box-sizing: border-box;
+	font-size: 16px;
+	margin: 10px 0 20px 0;
+}
+
+.delete-form-input:disabled {
+	background-color: #e6e6e6;
+}
+
+.jb-division-line.delete-page {
+	margin: 0;
+}
+
+.jb-division-line.delete-page.topline {
+margin-top: 60px;
+margin-bottom:40px;	
+
+}
+
+#delete-submit-area {
+	width: fit-content;
+	/* 또는 원하는 가로 크기로 조정 */
+	height: fit-content;
+	display: flex;
+	align-items: center;
+	margin: 0 auto;
+	/* 중앙 정렬을 위한 margin 추가 */
+}
+
+
+
+#delete-submit {
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	outline: 0;
+	cursor: pointer;
+	text-align: center;
+	border-color: #ad9e87;
+	background-color: #ad9e87;
+	color: #fff;
+	width: 337px;
+	height: 60px;
+	padding: 10px 10px;
+	font-size: 18px;
+	display: block;
+	/* 블록 요소로 변경 */
+	margin: 20px auto;
+	/* 가운데 정렬 */
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+#delete-cancel {
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	outline: 0;
+	cursor: pointer;
+	text-align: center;
+	border: none;
+	color: #fff;
+	background-color: #333333;
+	width: 337px;
+	height: 60px;
+	padding: 10px 10px;
+	font-size: 18px;
+	display: block;
+	/* 블록 요소로 변경 */
+	margin: 20px auto;
+	/* 가운데 정렬 */
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+#delete-submit-area-space {
+	width: 16px;
+	height: 60px;
+}
+/* ===============딜리트 페이지================= */
