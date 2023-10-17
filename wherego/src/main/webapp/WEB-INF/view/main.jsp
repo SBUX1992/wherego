@@ -22,7 +22,7 @@
 
 <script src="js/wherego_main_js.js"></script>
 </head>
-<body style="overflow-y: scroll; margin: 0 0px;">
+<body>
 	<header>
 		<%@include file="../view/header2.jsp"%>
 	</header>
@@ -104,122 +104,7 @@
 		<div class="swiper-scrollbar"></div>
 	</div>
 	
-	<!-- 테스트용 -->
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
-<div>1</div>
 
-	<!-- 테스트용 -->
 	<script>
 const swiper = new Swiper('.swiper', {
   direction: 'horizontal',

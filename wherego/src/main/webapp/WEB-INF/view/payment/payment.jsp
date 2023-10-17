@@ -6,61 +6,83 @@
 <html>
 <head>
 <!-- 포트원 결제 -->
-    <script src="https://cdn.iamport.kr/v1/iamport.js"></script>
-    <!-- jQuery -->
-  <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
-    <!-- iamport.payment.js -->
-    <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
-   <!-- 포트원 결제 -->
-<script type="text/javascript" src="/js/payment/payment_js.js" ></script> 
+<script src="https://cdn.iamport.kr/v1/iamport.js"></script>
+<!-- jQuery -->
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<!-- iamport.payment.js -->
+<script type="text/javascript"
+	src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+<!-- 포트원 결제 -->
+<script type="text/javascript" src="js/payment/payment_js.js"></script>
 
 <meta charset="UTF-8">
 <title>아임포트</title>
+<style type="text/css">
+ 		table { 
+ 			border-radius: 25px;
+ 			border: 1px solid #FFCA28;
+ 			margin-left:auto; 
+ 			margin-right:auto; 
+			border-left:0;border-right:0;border-bottom:0;border-top:0;
+			text-align: center;
+ 			width : 400px; 
+ 		} 
+ 		tr, td { 
+ 			border: 1px solid #FFCA28;
+ 			border-radius: 25px;
+ 			padding : 10px; 
+ 			margin : 5px;  
+		  }	
+ 		</style>
 </head>
 
 <body>
 	<header>
 		<%@include file="../header.jsp"%>
 	</header>
+	<form id="pay_form" method="post" action="application_process">
+		<input type="hidden" name="mem_id" value="${member.mem_id }">
+		<input type="hidden" name="room_name" value="${acc.room_name }">		
+		<input type="hidden" name="room_price"  value="${acc.room_price }">
+		<c:forEach var="acc" items="${accList}" varStatus="count">
+		<table border="1">
+			<tr>
+				<td>${member.mem_id }</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td>${acc.room_name }</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td>${acc.room_roomNo }</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td>${acc.room_price }</td>
+			</tr>
+		</table>
 
-		    <div class="acc_list">
-        <div class="acc_list_header">
-            <div class="container acc_info">
-                <h4>롯데호텔 부산</h4>
-                <h6>5성급 | 부산광역시 부산진구 가야대로 772 | +82-51-810-1000</h6>
-            </div>
-        </div>
-        <div class="container">
-            <div class="acc_price_info">
-                <div>*100 points = 1$ 가치 &nbsp &nbsp *평균가/1박 (세금, 봉사료 미포함)</div>
-            </div>
-            
-            <c:forEach var="acc" items="${accList}">
-	            <div class="acc_list_contents">
-	                <div class="acc_list_contain" data-toggle="modal" data-target="#staticBackdrop" onclick="getImgList()">
-	                    <div class="acc_image">
-	                        <img src="${acc.imgUrl }" class="img-thumbnail" alt="...">
-	                    </div>
-	                    <div class="acc_list_info">
-	                    	<input type="hidden" value="${acc.roomNo }"></input>
-	                        <h4>${acc.roomName}</h4>
-	                        <h5>| ${acc.roomView} | 객실면적 ${acc.roomSize } ㎡</h5>
-	                        <h5>${acc.roomType }</h5>
-	                    </div>
-	                </div>
-	                <div class="acc_list_button">
-	                   <a><button type="button"   onclick="kakaopay()"class="price_btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" 
-	                   data-amount="${acc.roomPrice}"
-	                   data-name="${acc.roomName}"
-	                   data-number="${acc.roomNo}">         
-    ${acc.roomPrice} KRW</button>
-	                </a>
-	                </div>
-	            </div>
-            </c:forEach>
-            
-        </div>
-    </div>
-		
+		<h2>결제 방법 선택</h2>
+		<table>
+			<tr>
+				<td><label><input type="radio" name="a_payment"
+						value="카카오페이">카카오페이 </label> <label><input type="radio"
+						name="a_payment" value="무통장입금">무통장입금</label></td>
+			</tr>
+		</table>
+
+		<div class="acc_list_button">
+			<a><button type="button" onclick="pay()" class="price_btn">
+
+
+					결제하기</button> </a>
+		</div>
+			</c:forEach>
+	</form>
 </body>
 </html>

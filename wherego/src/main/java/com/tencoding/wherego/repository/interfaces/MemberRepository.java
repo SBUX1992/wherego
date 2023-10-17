@@ -1,5 +1,6 @@
 package com.tencoding.wherego.repository.interfaces;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -37,4 +38,8 @@ public interface MemberRepository {
 	// 닉네임 중복 체크, 사용처 : 회원가입 폼
 	public String nickChk(String nickname);
 
+	/************* 결제 목록 조회 *******************/
+public MemberListDto getMemberInfo(String mem_id);
+public MemberListDto getMemberInfo(HashMap<String,String>param);
+public void application_process(HashMap<String, String> param);
 }
