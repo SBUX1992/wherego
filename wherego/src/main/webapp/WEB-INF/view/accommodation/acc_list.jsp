@@ -49,7 +49,7 @@
 	<div class="acc_list">
 		<div class="acc_list_header">
 			<div class="container acc_info">
-				<h4>롯데호텔 부산</h4>
+				<h4>HOTEL WHEREGO</h4>
 				<h6>5성급 | 부산광역시 부산진구 가야대로 772 | +82-51-810-1000</h6>
 				<input id="from_date" type="hidden" value="${fromDate }"></input>
 				<input id="to_date" type="hidden" value="${toDate }"></input>
@@ -86,6 +86,7 @@
 				</div>
 			</c:forEach>
 		</div>
+		<%@ include file="/WEB-INF/view/footer.jsp"%>
 	</div>
 
 	<!-- Modal -->

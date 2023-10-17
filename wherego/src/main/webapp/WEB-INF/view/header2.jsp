@@ -50,12 +50,11 @@ a {
 	position: relative;
 	border-bottom: 1px solid #AFA18A;
 	width: 100%;
-	min-height: 40px;
-	height: 40px;
+	min-height: 60px;
 	top: 0;
 	left: 0;
 	margin: 0;
-	height: 40px;
+	height: 60px;
 }
 
 .top-text-area {
@@ -82,6 +81,14 @@ a {
 </style>
 
 </head>
+<<<<<<< HEAD
+<body>
+	<div class="top">
+		<div class="top-text-area">
+			<a href="http://localhost:8080/wherego/main/home"> 
+				<img height="60px" alt="" src="/wherego/img/logo.PNG" style="">
+			</a>
+=======
 <header>
 	<!-- 10-17 강중현 권한별 표시내용 수정 -->
 	<body>
@@ -142,6 +149,7 @@ a {
 					</c:choose>
 				</ul>
 			</div>
+>>>>>>> 6794c7fc7e96d0908129d750d255718572dc0156
 		</div>
 
 
