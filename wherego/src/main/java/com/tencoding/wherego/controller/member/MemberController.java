@@ -29,11 +29,9 @@ import com.tencoding.wherego.service.member.MemberService;
 import com.tencoding.wherego.utils.Define;
 
 @Controller
-<<<<<<< HEAD
-@RequestMapping({"/member",""})
-=======
+
 @RequestMapping({ "/member", "" })
->>>>>>> 39f8e074ab12e4716eab09d3b0bcded45b8c6506
+
 
 public class MemberController {
 
@@ -70,13 +68,10 @@ public class MemberController {
 		session.setAttribute(Define.PRINCIPAL, principal);
 		// 세션에 등록
 
-<<<<<<< HEAD
+
 
 		return "redirect:/main";
 
-=======
-		return "redirect:/main";
->>>>>>> 39f8e074ab12e4716eab09d3b0bcded45b8c6506
 	}
 
 	// 회원가입 페이지 진입

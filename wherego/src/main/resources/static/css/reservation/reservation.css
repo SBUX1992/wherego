@@ -15,7 +15,9 @@
 
 #datePickerWrapper,
 #reservationOptionWrapper {
+	margin-left: 20px;
 	border-right: 1px solid white;
+	font-weight: 600;
 }
 
 #datePickerWrapper {
@@ -85,7 +87,11 @@ label {
 
 #fromDate,
 #toDate {
-	margin-top: 10%;
+	margin-top: 10px;
+}
+
+#busan {
+	margin-top: 10px;
 }
 
 #reservationOptionWrapper {
@@ -109,7 +115,7 @@ label {
 }
 
 .reservationDetailBody {
-	padding-top: 15%;
+	padding-top: 10px;
 	color: white;
 	text-align: center;
 }
@@ -127,14 +133,14 @@ label {
 #searchBtn {
 	font-size: larger;
 	width: 50%;
-	height: 50%;
+	height: 65px;
 	border: 2px solid white;
 	background-color: rgb(173, 158, 135);
 	color: white;
 	padding: 10px 20px;
 	cursor: pointer;
 	text-align: center;
-	line-height: 35px;
+	line-height: 40px;
 }
 
 /* #body_header {

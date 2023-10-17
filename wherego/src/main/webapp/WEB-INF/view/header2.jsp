@@ -76,7 +76,7 @@ a {
 			</a>
 		</div>
 
-		<ul class = "header2Ul">
+		<%-- <ul class = "header2Ul">
 			<li class = "header2Li"><a href="acc/list" class="list-item">호텔찾기</a> <span class="li-horizontal-divider"></span></li>
 			<li class = "header2Li"><a href="#" class="list-item">멤버십</a> <span class="li-horizontal-divider"></span></li>
 			<li class = "header2Li"><a href="#" class="list-item">예약조회</a> <span class="li-horizontal-divider"></span></li>
@@ -90,7 +90,7 @@ a {
 					<li><a href="${pageContext.request.contextPath}/member/logout" class="list-item">로그아웃</a></li>
 				</c:when>
 			</c:choose>
-		</ul>
+		</ul> --%>
 
 	</div>
 
