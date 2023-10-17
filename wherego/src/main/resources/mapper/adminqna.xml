@@ -8,6 +8,7 @@
 		INSERT INTO admin_cs_qna(comment, rdate)
 		VALUE(#{comment}, now());
 	</insert>
+
 	
 	<update id="updateByNo">
 		update admin_cs_qna set comment = #{comment} where no = #{no}

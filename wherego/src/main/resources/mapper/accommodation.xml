@@ -3,6 +3,18 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.tencoding.wherego.repository.interfaces.accommodation.AccommodationRepository">
 	 
+	 <select id="findAllAccList" resultType="com.tencoding.wherego.dto.accommodation.AccommodationDto">
+		SELECT
+		ACC.room_no, ACC.room_name, ACC.room_view,
+		ACC.room_size, ACC.room_type, ACC.room_detail, 
+		ACC.amenities_common, ACC.amenities_bath, ACC.amenities_etc, 
+		ACC.room_price, IMG.img_url
+		FROM accommodation AS ACC
+		LEFT JOIN accommodation_img AS IMG
+		ON ACC.room_no = IMG.room_no
+        GROUP BY ACC.room_no;
+	</select>
+	 
 	<select id="findImgListById">
 		SELECT
 		IMG.img_url

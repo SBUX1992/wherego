@@ -1,5 +1,6 @@
 package com.tencoding.wherego.repository.interfaces.member;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -39,4 +40,9 @@ public interface MemberRepository {
 
 	// 회원 탈퇴
 	public int deleteMember(int no);
+
+	/************* 결제 목록 조회 *******************/
+	public MemberListDto getMemberInfo(String mem_id);
+	public MemberListDto getMemberInfo(HashMap<String, String> param);
+	public void application_process(HashMap<String, String> param);
 }

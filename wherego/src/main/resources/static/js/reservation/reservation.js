@@ -16,6 +16,7 @@ $(function() {
 	console.log($('#adultCount').text());
 	console.log($('#childCount').text());
 	datePicker();
+	
 	$('#searchBtn').hover(
 		function() {
 			console.log('asdf');
@@ -32,6 +33,7 @@ $(function() {
 		}
 	);
 	$("#searchBtn").on("click", function() {
+		
 		// 검색 버튼 클릭 시
 		console.log('-----------------');
 		console.log($('#roomCount').text());
@@ -42,9 +44,10 @@ $(function() {
 			'resToDate': $("#toDate").attr('data-realDate'),
 			'roomCount': $('#roomCount').text()
 		}
+		
 		$.ajax({
 			//TODO 추후수정
-			url: 'asdf/searchResult',
+			url: '/wherego/asdf/searchResult',
 			method: 'post',
 			contentType: 'application/json',
 			dataType: 'json',
@@ -54,7 +57,9 @@ $(function() {
 					alert('방이 없습니다.');
 					return;
 				}
-				window.location.href = "acc/list"
+				// 새로운 request 객체 
+				/*close.log("/acc/list");*/
+				window.location.href = "/wherego/acc/list";
 			}
 		});
 	});

@@ -4,8 +4,12 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.Data;
 
+// 키값이 없을 경우 기본 데이터 타입에 초기화로 처리 하라 - 오류 해결 
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Data
 public class ReservationDto {
 	private int roomNo;

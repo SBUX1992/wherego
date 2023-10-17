@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  ul,
+  ol {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+  p {
+    display: inline;
+  }
+
+.main_first_content_title {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main_first_content_title > div {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.main_first_content_a {
+    display: flex;
+    justify-content: end;
+}
+
+.main_first_content_info {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.main_first_content_info_children {
+    margin-right: 22px;
+}
+
+.main_first_content_info_children_img > img {
+    height: 224px;
+    width: 400;
+}
+
+.main_first_content_info_children_div :first-child {
+    margin-top: 10px;
+    background-color: #ad9e87;
+    display: inline-block;
+    padding: 5px;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 600;
+}
+.main_first_content_info_children_div :last-child {
+    color: #333333;
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.main_first_content_info_children_info {
+    margin-top: 30px;
+    padding: 13px 0px;
+    border-top: 1px solid #cdcdcd;
+    border-bottom: 1px solid #cdcdcd;
+}
+.main_first_content_info_children_info :first-child {
+    font-size: 14px;
+}
+.main_first_content_info_children_info_date {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    margin-top: 30px;
+}
+.main_first_content_info_children_info_date > div {
+    display: flex;
+}
+.main_first_content_info_children_info_date > div :first-child {
+    font-weight: 600;
+}
+
+.main_first_content_info_children_price {
+    margin-top: 7px;
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: space-between;
+}
+.main_first_content_info_children_price :last-child {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+}
+.main_first_content_info_children_price :last-child :first-child {
+    margin-right: 7px;
+}
+
+.room_price {
+    font-size: 22px;
+    font-weight: 600;
+    margin-right: 3px;
+}
+
+.main_second_content {
+    margin-top: 150px;
+    height: 470px;
+    display: flex;
+    flex-direction: row;
+}
+
+.main_second_content_info {
+    background-color: #ad9e87;
+    color: #fff;
+    padding: 40px;
+    width: 402px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.main_second_content_info :first-child {
+    font-size: 20px;
+    font-weight: 600;
+}
+.main_second_content_info :last-child {
+    font-size: 15px;
+}
+
+.main_third_content {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #606060;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.main_third_content_info {
+    width: 280px;
+    flex-direction: column;
+}
+.main_third_content_info > div {
+    border-left: 1px solid #606060;
+    padding-left: 20px;
+}
+
+.main_third_content_info > div {
+    display: flex;
+    flex-direction: row;
+}
+.main_third_content_info > div > div {
+    margin-bottom: 3px;
+}
+
+.main_footer {
+    background-color: #000;
+    margin-top: 50px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main_footer_top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.main_footer_top_left {
+    display: flex;
+    flex-direction: column;
+}
+.main_footer_top_left > div > img {
+    color: #fff;
+    margin-bottom: 20px;
+}
+.main_footer_top_left :last-child {
+    color: #A7A7A7;
+}
+
+.main_footer_top_right {
+    color: #A7A7A7;
+    display: flex;
+    flex-direction: row;
+}
+.main_footer_top_right_content {
+    display: flex;
+    flex-direction: column;
+}
+.main_footer_top_right_content > div {
+    border-left: 1px solid #A7A7A7;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    padding-left: 20px;
+}
+.main_footer_top_right_content > div > a {
+	color: #A7A7A7;
+}
+
+.main_footer_bottom {
+    background-color: #000;
+    border-top: 1px solid #A7A7A7;
+}
+.main_footer_bottom > div {
+    display: flex;
+    flex-direction: row;
+    padding: 20px 30px;
+}
+
+.main_footer_bottom_a_border {
+    border-right: 1px solid #A7A7A7;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+.main_footer_bottom_a_border > a {
+	color: #A7A7A7;
+}
+
+.main_footer_bottom > div > div > a {
+	color: #A7A7A7;
+}

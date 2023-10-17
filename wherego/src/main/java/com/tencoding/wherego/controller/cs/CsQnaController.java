@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.tencoding.wherego.dto.cs.CsQnaDto;
 import com.tencoding.wherego.repository.model.cs.CsQna;
 import com.tencoding.wherego.service.cs.CsQnaService;
-import com.tencoding.wherego.utils.Define;
 
 import lombok.extern.log4j.Log4j2;
 /**
@@ -38,7 +37,7 @@ public class CsQnaController {
     @GetMapping("/list")
     public String list(Model model){
     	log.info("cs qna list 페이지 접속");
-    	CsQna csQna = (CsQna)session.getAttribute(Define.PRINCIPAL);
+//    	CsQna csQna = (CsQna)session.getAttribute(Define.PRINCIPAL);
     	
     	List<CsQna> csQnaList = csQnaService.readCsQnaList();
 //    	List<CsQna> csQnaList = csQnaService.readCsQnaList("강**");
@@ -70,8 +69,8 @@ public class CsQnaController {
     @GetMapping("/write")
     public String write(){
     	log.info("cs qna write 페이지 접속");
-    	CsQna csQna = (CsQna)session.getAttribute(Define.PRINCIPAL);
-    	System.out.println("csQna" + csQna);
+//    	CsQna csQna = (CsQna)session.getAttribute(Define.PRINCIPAL);
+//    	System.out.println("csQna" + csQna);
     	
     	
     	return "cs/qna/write";
@@ -79,6 +78,7 @@ public class CsQnaController {
     
     @PostMapping("/write")
     public String writeProc(CsQnaDto csQnaDto) {
+    	
     	System.out.println("csQnaDto" + csQnaDto);
     	log.info("등록 Post 클릭");
 //    	CsQna csQna = (CsQna)session.getAttribute(Define.PRINCIPAL);
