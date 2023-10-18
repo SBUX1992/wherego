@@ -61,7 +61,7 @@
 		</div>
 	</div>
 	
-	<script src="../js/reservation/commonClass.js"></script>
-	<script src="../js/reservation/reservation.js"></script>
+	<script src="/wherego/js/reservation/commonClass.js"></script>
+	<script src="/wherego/js/reservation/reservation.js"></script>
 </body>
 </html>
