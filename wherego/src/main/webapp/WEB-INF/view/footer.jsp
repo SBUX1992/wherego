@@ -85,7 +85,7 @@
 	<div class="main_footer">
       <div class="main_footer_top">
         <div class="main_footer_top_left">
-          <div><img src="../img/main/wherego_logo.png" alt=""></div>
+          <div><img src="/wherego/img/main/wherego_logo.png" alt=""></div>
           <div>
             <div>㈜웨어고 04533, 부산광역시 부산진구 중앙대로 688 / +82-51-912-1000</div>
             <div>대표이사 홍길동 / 사업자등록번호 999-99-9999 /</div>
