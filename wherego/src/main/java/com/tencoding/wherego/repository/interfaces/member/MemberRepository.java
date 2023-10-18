@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.tencoding.wherego.dto.MemberListDto;
 import com.tencoding.wherego.dto.member.LogInFormDto;
+import com.tencoding.wherego.dto.member.MyPapePaymentDto;
 import com.tencoding.wherego.dto.member.SignUpFormDto;
 import com.tencoding.wherego.repository.model.Member;
 
@@ -45,4 +46,7 @@ public interface MemberRepository {
 	public MemberListDto getMemberInfo(String mem_id);
 	public MemberListDto getMemberInfo(HashMap<String, String> param);
 	public void application_process(HashMap<String, String> param);
+	
+	// 결제목록 조회
+	public List<MyPapePaymentDto> selectMyPapePayment(int mem_id);
 }

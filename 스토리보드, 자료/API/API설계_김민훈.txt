@@ -1,0 +1,10 @@
+api설계
+--1차 개발--
+
+member
+로그인		http://localhost:8080/wherego/member/login
+회원가입		http://localhost:8080/wherego/member/sign-up
+마이페이지	http://localhost:8080/wherego/member/my-page
+회원탈퇴		http://localhost:8080/wherego/member/delete
+카카오회원가입	http://localhost:8080/wherego/member/kakao-sign-up
+

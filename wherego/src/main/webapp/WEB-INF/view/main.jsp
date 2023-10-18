@@ -253,12 +253,7 @@
                 </div>
             </div>
 	    </div>
-<<<<<<< HEAD
-    	
 
-=======
-    
->>>>>>> 6794c7fc7e96d0908129d750d255718572dc0156
 	  <script type="text/javascript">
 		  var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 		  mapOption = {

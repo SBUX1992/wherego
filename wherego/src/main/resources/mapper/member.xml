@@ -91,6 +91,16 @@
 		WHERE mem_user_no = #{no}
 	</update>
 
+	<select id="selectMyPapePayment">
+		SELECT p.paid_amount, p.pay_created_at, p.pay_completed, a.room_name, r.res_from_date, r.res_to_date FROM member m
+		JOIN payment p ON m.mem_user_no = p.member_mem_user_no
+		JOIN accommodation a ON a.room_no = p.accommadation_room_no
+		JOIN reservation r On r.res_id = p.res_id
+		WHERE m.mem_user_no = #{id}
+		ORDER BY p.pay_created_at DESC;
+		
+	</select>
+
 
 
 </mapper>
