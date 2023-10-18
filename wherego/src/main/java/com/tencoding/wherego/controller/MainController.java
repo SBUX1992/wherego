@@ -17,7 +17,7 @@ public class MainController {
 	@Autowired
 	private MainRepository mainRepository;
 	
-	@GetMapping("/home")
+	@GetMapping("")
 	public String main(Model model) {
 		List<AccommodationDto> findCheapest3AccList = mainRepository.findCheapest3AccList();
 		

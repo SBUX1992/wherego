@@ -26,7 +26,7 @@ public class AdminCsNoticeService {
 		adminCsNotice.setTitle(adminCsNoticeDto.getTitle());
 		adminCsNotice.setContent(adminCsNoticeDto.getContent());
 		adminCsNotice.setMemId(adminCsNoticeDto.getMemId());
-//		adminCsNotice.setMemId(principalId);	
+//		adminCsNotice.setMemId(principalId);
 		System.out.println("writeNoticeService end..." + adminCsNoticeDto);
 
 		int resultRowCount =  adminCsNoticeRepository.insert(adminCsNotice);
@@ -35,6 +35,10 @@ public class AdminCsNoticeService {
 		return resultRowCount;
 	}
 	
+	public int deleteNotice(Integer no) {
+		int result = adminCsNoticeRepository.deleteByNo(no);
+		return result;
+	}
 	
 	// 공지 목록 보기
 	@Transactional
