@@ -7,9 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<header>
-		<%@include file="../header.jsp"%>
-	</header>
+<%@ include file="/WEB-INF/view/header2.jsp"%>
 	<br>
 	<h1 class="center">신청 완료</h1>
 	<table>

@@ -76,10 +76,12 @@ a {
 }
 </style>
 </head>
+<<<<<<< Updated upstream
 <body>
+=======
+>>>>>>> Stashed changes
 	<header>
 		<!-- 10-17 강중현 권한별 표시내용 수정 -->
-		<body>
 			<div class="top">
 				<div class="top-text-area">
 					<a href="/wherego/main"> <img src="/wherego/img/logo.PNG"
@@ -137,7 +139,11 @@ a {
 						</c:choose>
 					</ul>
 				</div>
+<<<<<<< Updated upstream
 			</div>
 
 	</header>
-</html>
+
+=======
+>>>>>>> Stashed changes
+

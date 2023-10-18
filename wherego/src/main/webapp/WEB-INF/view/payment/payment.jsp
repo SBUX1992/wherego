@@ -40,9 +40,7 @@
 </head>
 
 <body>
-	<header>
-		<%@include file="../header.jsp"%>
-	</header>
+<%@ include file="/WEB-INF/view/header2.jsp"%>
 	
 		    <div class="acc_list">
         <div class="acc_list_header">
