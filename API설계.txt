@@ -1,0 +1,40 @@
+api설계
+--1차 개발--
+
+admin
+메인페이지	http://localhost:8080/wherego/admin/index
+
+noticeList		http://localhost:8080/wherego/admin/cs/notice/list
+noticeView	http://localhost:8080/wherego/admin/cs/notice/view
+noticeWrite	http://localhost:8080/wherego/admin/cs/notice/write
+noticeModify	http://localhost:8080/wherego/admin/cs/notice/modify
+
+qnaList		http://localhost:8080/wherego/admin/cs/qna/list
+qnaView		http://localhost:8080/wherego/admin/cs/qna/view
+
+cs
+noticeList		http://localhost:8080/wherego/cs/notice/list
+noticeView	http://localhost:8080/wherego/cs/notice/view
+
+qnaList		http://localhost:8080/wherego/cs/qna/list
+qnaView		http://localhost:8080/wherego/cs/qna/view
+qnaWrite		http://localhost:8080/wherego/cs/qna/write
+
+
+main
+메인페이지	http://localhost:8080/wherego
+
+acoommodation
+전체 상품 목록	http://localhost:8080/wherego/acc/list 
+구매가능 상품목록	http://localhost:8080/wherego/acc/searchList 
+상세 페이지	http://localhost:8080/wherego/acc/detail/
+
+reservation
+상품 예약		http://localhost:8080/wherego/asdf/searchResult 
+
+member
+로그인		http://localhost:8080/wherego/member/login
+회원가입		http://localhost:8080/wherego/member/sign-up
+마이페이지	http://localhost:8080/wherego/member/my-page
+회원탈퇴		http://localhost:8080/wherego/member/delete
+카카오회원가입	http://localhost:8080/wherego/member/kakao-sign-up
