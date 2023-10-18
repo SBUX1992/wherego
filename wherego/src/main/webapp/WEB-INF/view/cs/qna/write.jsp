@@ -2,6 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@include file="/WEB-INF/view/header2.jsp"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!-- css -->
+<link rel="stylesheet" href="/wherego/css/cs/cs.css">
 <section id="cs">
 	<div class="qna">
 		<nav>
@@ -54,11 +56,6 @@
 		</section>
 	</div>
 </section>
-<footer>
-	<div>
-		<p>Lotte Hotel&Resorts</p>
-	</div>
-</footer>
 <script>
 	/* title textarea 엔터키 금지 */
 	function preventEnterKey(event) {
@@ -68,5 +65,4 @@
 		}
 	}
 </script>
-</body>
-</html>
+<%@ include file="/WEB-INF/view/footer.jsp" %>

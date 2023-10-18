@@ -58,11 +58,7 @@
 				</div>
 			</section>
 		</main>
-		<footer>
-			<div>
-				<p>Lotte Hotel&Resorts</p>
-			</div>
-		</footer>
+<%@ include file="/WEB-INF/view/footer.jsp" %>
 
 		<script>
 			/* title textarea 엔터키 금지 */
@@ -73,6 +69,3 @@
 				}
 			}
 		</script>
-	</div>
-</body>
-</html>

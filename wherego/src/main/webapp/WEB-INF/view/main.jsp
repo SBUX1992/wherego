@@ -11,7 +11,7 @@
     <title>WhereGo</title>
 
     <!-- css -->
-    <link rel="stylesheet" href="../css/main/main.css" />
+    <link rel="stylesheet" href="/wherego/css/main/main.css" />
     
     <!-- bootstrap 4.6v -->
     <link
@@ -48,13 +48,13 @@
     <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active" data-interval="10000">
-          <img src="../img/main/pool_1.jpg" height="400px" style="object-fit: cover" class="d-block w-100" alt="...">
+          <img src="/wherego/img/main/pool_1.jpg" height="400px" style="object-fit: cover" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item" data-interval="2000">
-          <img src="../img/main/pool_2.jpg" height="400px" style="object-fit: cover" class="d-block w-100" alt="...">
+          <img src="/wherego/img/main/pool_2.jpg" height="400px" style="object-fit: cover" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-          <img src="../img/main/pool_3.jpg" height="400px" style="object-fit: cover" class="d-block w-100" alt="...">
+          <img src="/wherego/img/main/pool_3.jpg" height="400px" style="object-fit: cover" class="d-block w-100" alt="...">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-target="#carouselExampleInterval" data-slide="prev">
@@ -253,12 +253,7 @@
                 </div>
             </div>
 	    </div>
-<<<<<<< HEAD
-    	
 
-=======
-    
->>>>>>> 6794c7fc7e96d0908129d750d255718572dc0156
 	  <script type="text/javascript">
 		  var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 		  mapOption = {

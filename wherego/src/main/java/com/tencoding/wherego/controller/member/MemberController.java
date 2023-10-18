@@ -48,11 +48,7 @@ public class MemberController extends HttpServlet{
 		System.out.println("login page");
 		return "member/login2";
 	}
-	/****************************************TEST********************************/
-	@GetMapping("/main")
-    public String main() {
-        return "main";
-    }
+	
 	// 일반 로그인 처리
 	@PostMapping("/login")
 	public String loginProc(LogInFormDto logInFormDto, HttpServletRequest req) throws ServletException, IOException {

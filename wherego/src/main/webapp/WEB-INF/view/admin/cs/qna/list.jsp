@@ -71,11 +71,6 @@
 		</div>
 	</section>
 </main>
-<footer>
-	<div>
-		<p>Lotte Hotel&Resorts</p>
-	</div>
-</footer>
 <script>
 //선택
 $(function(){
@@ -137,6 +132,5 @@ $(function(){
     	}
     });
 </script>
-</div>
-</body>
-</html>
+<%@ include file="/WEB-INF/view/footer.jsp" %>
+
