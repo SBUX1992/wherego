@@ -90,6 +90,57 @@
 </style>
 <footer>
 	<div class="main_footer">
+<<<<<<< HEAD
+      <div class="main_footer_top">
+        <div class="main_footer_top_left">
+          <div><img src="/wherego/img/main/wherego_logo.png" alt=""></div>
+          <div>
+            <div>㈜웨어고 04533, 부산광역시 부산진구 중앙대로 688 / +82-51-912-1000</div>
+            <div>대표이사 홍길동 / 사업자등록번호 999-99-9999 /</div>
+            <div>통신판매신고번호 중구99999호</div>
+          </div>
+        </div>
+        <div class="main_footer_top_right">
+          <div class="main_footer_top_right_content">
+            <div>
+              <a href="#">호텔 찾기</a>
+              <a href="#">롯데호텔 소개</a>
+              <a href="#">브랜드 소개</a>
+              <a href="#">수상</a>
+              <a href="#">갤러리</a>
+              <a href="#">Art Experience</a>
+            </div>
+          </div>
+          <div class="main_footer_top_right_content">
+            <div>
+              <a href="#">고객의 소리</a>
+              <a href="#">지점별 연락처</a>
+              <a href="#">신문고(제보)</a>
+              <a href="#">컴플라이언스</a>
+              <a href="#">채용</a>
+            </div>
+          </div>
+          <div class="main_footer_top_right_content">
+            <div>
+              <a href="#">시니어 레지던스 VL</a>
+              <a href="#">신규 개발</a>
+              <a href="#">임직원</a>
+              <a href="#">서비스아카데미</a>
+              <a href="#">사이트맵</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main_footer_bottom">
+      <div>
+        <div class="main_footer_bottom_a_border"><a href="#">개인정보처리방침</a></div>
+        <div class="main_footer_bottom_a_border"><a href="#">사이트 이용약관</a></div>
+        <div class="main_footer_bottom_a_border"><a href="#">약관 및 정책</a></div>
+        <div><a href="#">쿠키 설정</a></div>
+      </div>
+    </div>
+=======
 		<div class="main_footer_top">
 			<div class="main_footer_top_left">
 				<div>
@@ -141,5 +192,6 @@
 		</div>
 	</div>
 </footer>
+>>>>>>> cca9a5a66fefef4283efccb88f21a1ca71e4b18a
 </body>
 </html>

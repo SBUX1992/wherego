@@ -76,6 +76,14 @@ a {
 }
 </style>
 </head>
+<header>
+	<!-- 10-17 강중현 권한별 표시내용 수정 -->
+	<body>
+		<div class="top">
+			<div class="top-text-area">
+				<a href="/wherego/main"> <img src="/wherego/img/logo.PNG" height="58px" alt="로고" />
+				</a>
+=======
 <body>
 	<header>
 		<!-- 10-17 강중현 권한별 표시내용 수정 -->
@@ -137,7 +145,30 @@ a {
 						</c:choose>
 					</ul>
 				</div>
+>>>>>>> cca9a5a66fefef4283efccb88f21a1ca71e4b18a
 			</div>
 
 	</header>
 
+<<<<<<< HEAD
+						<c:otherwise>
+							<!-- 관리자일 경우 추가할 메뉴나 처리 -->
+							<li class="header2Li"><a href="/wherego/cs/notice/list"
+								class="list-item">고객 공지사항</a><span>|</span></li>
+							<li class="header2Li"><a href="/wherego/cs/qna/list"
+								class="list-item">고객 Q&A</a><span>|</span></li>
+							<li class="header2Li"><a href="/wherego/admin/index"
+								class="list-item">관리자 페이지</a> <span>|</span></li>
+							<li class="header2Li"><a
+								href="${pageContext.request.contextPath}/member/logout"
+								class="list-item">로그아웃</a></li>
+						</c:otherwise>
+					</c:choose>
+				</ul>
+			</div>
+		</div>
+
+
+	</body>
+</header>
+</html>
