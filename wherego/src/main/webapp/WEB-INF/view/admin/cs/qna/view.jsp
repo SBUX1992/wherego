@@ -65,11 +65,4 @@
 				</div>
 			</section>
 		</main>
-		<footer>
-			<div>
-				<p>Lotte Hotel&Resorts</p>
-			</div>
-		</footer>
-	</div>
-</body>
-</html>
+<%@ include file="/WEB-INF/view/footer.jsp" %>
