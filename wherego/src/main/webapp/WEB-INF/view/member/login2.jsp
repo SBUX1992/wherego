@@ -14,7 +14,7 @@
 <%@include file="/WEB-INF/view/header2.jsp"%>
 <body style="font-family: 'Noto Sans KR', sans-serif">
   <div class="inner">
-    <div class="location"><a href="${pageContext.request.contextPath}/main">홈</a> <span>/</span> <span>로그인</span></div>
+    <div class="location"><a href="/wherego/main">홈</a> <span>/</span> <span>로그인</span></div>
   </div>
   <div>
     <div class="login-box">

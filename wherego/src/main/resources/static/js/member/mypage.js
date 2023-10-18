@@ -27,7 +27,7 @@ function addDiv(list, idx) {
 
 	let row4 = document.createElement("div");
 	row4.className = "listBodyWrapper-data-ele row4";
-	if (list.isCompleted == "t") {
+	if (list.payCompleted == "T") {
 		row4.textContent = "결제 완료";
 	} else {
 		row4.textContent = "결제 실패";

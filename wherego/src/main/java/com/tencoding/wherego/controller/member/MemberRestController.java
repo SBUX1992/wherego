@@ -1,6 +1,5 @@
 package com.tencoding.wherego.controller.member;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -29,19 +28,16 @@ public class MemberRestController {
 
 	@Autowired
 	HttpSession session;
-	
+
 	@Autowired
 	MemberRepository memberRepository;
 
 	@GetMapping("member/getData")
 	public List<MyPapePaymentDto> getData() {
 		Member member = (Member) session.getAttribute(Define.PRINCIPAL);
-		System.out.println(member);
-			
-		// 로그인 정보없이 url조작으로 마이페이지 진입했을시
-		List<MyPapePaymentDto> list = memberRepository.selectMyPapePayment(member.getMemUserNo());
-			
 
+		List<MyPapePaymentDto> list = memberRepository.selectMyPapePayment(member.getMemUserNo());
+		
 		return list;
 	}
 
