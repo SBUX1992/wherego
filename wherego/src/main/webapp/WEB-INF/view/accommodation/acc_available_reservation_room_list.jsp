@@ -17,7 +17,7 @@
         <!-- iamport.payment.js -->
         <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
     <!-- 포트원 결제 -->
-    <script type="text/javascript" src="../js/payment/payment_js.js" ></script> 
+    <script type="text/javascript" src="/wherego/js/payment/pay_js.js" ></script> 
 
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,7 +25,7 @@
     <script
         src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- css -->
-    <link rel="stylesheet" href="../css/accommodation/acc_available_reservation_room_list.css" />
+    <link rel="stylesheet" href="/wherego/css/accommodation/acc_available_reservation_room_list.css" />
 
     <!-- bootstrap 4.6v -->
     <link rel="stylesheet"
@@ -82,7 +82,7 @@
 						</div>
 					</div>
 					<div class="acc_list_button">
-	                   <a><button type="button"   onclick="kakaopay()"class="price_btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" 
+	                   <a><button type="button"   onclick="pay()"class="price_btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" 
 	                   data-amount="${acc.roomPrice}"
 	                   data-name="${acc.roomName}"
 	                   data-number="${acc.roomNo}">         

@@ -62,11 +62,11 @@ public class PaymentController {
 		return "payment/payment";
 	}
 	
-	@GetMapping("/list")
-	public String detatil() {
-		System.out.println("detail"); 
-		return "accommodation/acc_list";
-	}
+//	@GetMapping("/list")
+//	public String detatil() {
+//		System.out.println("detail"); 
+//		return "accommodation/acc_list";
+//	}
 	@GetMapping("/cancel")
 	public String cancel(Model model) {
 		List<PaymentDto> paymentList = paymentService.getPayList();

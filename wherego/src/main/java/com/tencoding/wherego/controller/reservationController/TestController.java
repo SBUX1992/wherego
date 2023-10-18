@@ -18,10 +18,10 @@ import com.tencoding.wherego.service.reservationService.ReservationService;
 public class TestController {
 	
 	@Autowired
-	ReservationService reservationService;
+	private ReservationService reservationService;
 	
 	@Autowired
-	ReservationRepository reservationRepository;
+	private ReservationRepository reservationRepository;
 	
 	@Autowired
 	HttpSession session;
