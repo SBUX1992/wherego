@@ -1,6 +1,5 @@
 api설계
 --1차 개발--
 
-reservation
-상품 예약		http://localhost:8080/wherego/asdf/searchResult 
+
 
