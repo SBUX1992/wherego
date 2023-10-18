@@ -21,7 +21,7 @@ GRAD@20..48,100..700,0..1,-50..200"
 <body style="font-family: 'Noto Sans KR', sans-serif">
     <div class="inner">
         <div class="location">
-            <a href="/wherego/main/home">홈</a> <span>/</span> <span>회원가입</span>
+            <a href="/wherego/main">홈</a> <span>/</span> <span>회원가입</span>
         </div>
     </div>
     <div>

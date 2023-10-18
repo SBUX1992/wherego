@@ -13,7 +13,7 @@
 <body style="font-family: 'Noto Sans KR', sans-serif">
 	<div class="inner">
 		<div class="location">
-			<a href="${pageContext.request.contextPath}/main">홈</a> <span>/</span> <span>회원탈퇴</span>
+			<a href="/wherego/main">홈</a> <span>/</span> <span>회원탈퇴</span>
 		</div>
 	</div>
 	<div class="headline">

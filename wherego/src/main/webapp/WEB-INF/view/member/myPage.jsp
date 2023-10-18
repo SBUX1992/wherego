@@ -15,7 +15,7 @@
     <body style="font-family: 'Noto Sans KR', sans-serif">
         <header><%@include file="/WEB-INF/view/header2.jsp"%></header>
         <div class="inner">
-            <div class="location"><a href="#">홈</a> <span>/</span> <span>마이페이지</span></div>
+            <div class="location"><a href="/wherego/main">홈</a> <span>/</span> <span>마이페이지</span></div>
         </div>
 
         <div id="mypage">

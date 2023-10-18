@@ -45,7 +45,11 @@ public class MemberController extends HttpServlet {
 	// 로그인 페이지 진입
 	@GetMapping("/login")
 	public String login() {
-		System.out.println("login page");
+		// 로그인한채로 url조작으로 로그인 시도시
+		if (session.getAttribute(Define.PRINCIPAL) != null) {
+			throw new CustomRestfulException("잘못된 요청입니다.", HttpStatus.BAD_REQUEST);
+		}
+
 		return "member/login2";
 	}
 
@@ -86,12 +90,17 @@ public class MemberController extends HttpServlet {
 			session.setAttribute("isAdmin", false);
 		}
 
-		return "redirect:/main/home";
+		return "redirect:/main";
 	}
 
 	// 회원가입 페이지 진입
 	@GetMapping("/sign-up")
 	public String signUp() {
+		// 로그인한채로 url조작으로 회원가입 시도시
+		if (session.getAttribute(Define.PRINCIPAL) != null) {
+			throw new CustomRestfulException("잘못된 요청입니다.", HttpStatus.BAD_REQUEST);
+		}
+
 		return "member/signUp2";
 	}
 
@@ -129,7 +138,7 @@ public class MemberController extends HttpServlet {
 			throw new CustomRestfulException("회원가입에 실패했습니다.", HttpStatus.BAD_REQUEST);
 		}
 
-		return "redirect:/main/home";
+		return "redirect:/main";
 	}
 
 	@GetMapping("/kakao/callback")
@@ -182,7 +191,7 @@ public class MemberController extends HttpServlet {
 			session.setAttribute(Define.PRINCIPAL, principal);
 			// 세션에 등록
 
-			return "redirect:/main/home";
+			return "redirect:/main";
 
 		} else { // 로그인 정보가 없다면 회원가입 페이지로
 			model.addAttribute("id", id);
@@ -196,6 +205,10 @@ public class MemberController extends HttpServlet {
 	// 카카오 회원가입 처리
 	@PostMapping("/kakao-sign-up")
 	public String kakaoSignUpProc(SignUpFormDto signUpFormDto) {
+		// 로그인한채로 url조작으로 회원가입 시도시
+		if (session.getAttribute(Define.PRINCIPAL) != null) {
+			throw new CustomRestfulException("잘못된 요청입니다.", HttpStatus.BAD_REQUEST);
+		}
 
 		int result = memberService.kakaoSignUp(signUpFormDto);
 
@@ -231,21 +244,25 @@ public class MemberController extends HttpServlet {
 
 	// 로그아웃 처리
 	// href="${pageContext.request.contextPath}/member/logout"
-
 	@GetMapping("/logout")
 	public String logout() {
+		// 로그인 정보없이 url조작으로 로그아웃 시도시
+		if (session.getAttribute(Define.PRINCIPAL) == null) {
+			throw new CustomRestfulException("잘못된 요청입니다.", HttpStatus.BAD_REQUEST);
+		}
+
 		session.invalidate();
 
-		return "redirect:/main/home";
+		return "redirect:/main";
 	}
 
 	// 마이페이지 출력
 	@GetMapping("/my-page")
 	public String myPage() {
 		// 로그인 정보없이 url조작으로 마이페이지 진입했을시
-//		if (session.getAttribute(Define.PRINCIPAL) == null) {
-//			throw new CustomRestfulException("잘못된 요청입니다.", HttpStatus.BAD_REQUEST);
-//		}
+		if (session.getAttribute(Define.PRINCIPAL) == null) {
+			throw new CustomRestfulException("잘못된 요청입니다.", HttpStatus.BAD_REQUEST);
+		}
 
 		return "member/myPage";
 	}
@@ -254,13 +271,14 @@ public class MemberController extends HttpServlet {
 	@GetMapping("/delete")
 	public String delete() {
 		// 로그인 정보없이 url조작으로 회원탈퇴 페이지 진입했을시
-//		if (session.getAttribute(Define.PRINCIPAL) == null) {
-//			throw new CustomRestfulException("잘못된 요청입니다.", HttpStatus.BAD_REQUEST);
-//		}
+		if (session.getAttribute(Define.PRINCIPAL) == null) {
+			throw new CustomRestfulException("잘못된 요청입니다.", HttpStatus.BAD_REQUEST);
+		}
 
 		return "member/delete";
 	}
 
+	// 회원탈퇴 처리
 	@PostMapping("/delete")
 	public String deleteProc(LogInFormDto logInFormDto) {
 		Member member = (Member) session.getAttribute(Define.PRINCIPAL);
@@ -273,6 +291,6 @@ public class MemberController extends HttpServlet {
 			System.out.println("삭제 결과(1이면 성공 0이면 실패) :" + result);
 		}
 
-		return "redirect:/main/home";
+		return "redirect:/main";
 	}
 }
