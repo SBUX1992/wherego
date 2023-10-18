@@ -19,7 +19,7 @@
         </div>
 
         <div id="mypage">
-            <div class="headline">
+            <div class="mem headline">
                 <h1>나의 멤버십 정보</h1>
             </div>
             <div class="mypage-space">

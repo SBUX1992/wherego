@@ -16,7 +16,7 @@
 			<a href="/wherego/main">홈</a> <span>/</span> <span>회원탈퇴</span>
 		</div>
 	</div>
-	<div class="headline">
+	<div class="mem headline">
 		<h1 id="delete-h1">회원 탈퇴</h1>
 		<h2 id="delete-h2">WHERE GO 회원을 탈퇴하시겠습니까?</h2>
 		<p id="delete-p">

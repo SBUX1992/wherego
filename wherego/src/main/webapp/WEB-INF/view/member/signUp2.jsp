@@ -25,7 +25,7 @@ GRAD@20..48,100..700,0..1,-50..200"
         </div>
     </div>
     <div>
-        <div class="headline">
+        <div class="mem headline">
             <h1>회원 정보 입력</h1>
         </div>
 
