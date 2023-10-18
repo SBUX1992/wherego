@@ -59,12 +59,6 @@
 				</div>
 			</section>
 		</main>
-		<footer>
-			<div>
-				<p>Lotte Hotel&Resorts</p>
-			</div>
-		</footer>
-
 		<script>
 			/* title textarea 엔터키 금지 */
 			function preventEnterKey(event) {
@@ -75,6 +69,5 @@
 			}
 		</script>
 
-	</div>
-</body>
-</html>
+
+<%@ include file="/WEB-INF/view/footer.jsp" %>
