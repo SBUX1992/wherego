@@ -20,7 +20,7 @@ import com.tencoding.wherego.repository.interfaces.reservation.ReservationReposi
 public class ReservationService {
 
 	@Autowired
-	ReservationRepository reservationRepository;
+	private ReservationRepository reservationRepository;
 
 	@Transactional
 	public List<Integer> findAllReservationDates(ReservationDto dto) {
