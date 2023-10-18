@@ -75,11 +75,8 @@ a {
 	color: #666666;
 }
 </style>
-
 </head>
-
 <body>
-
 	<header>
 		<!-- 10-17 강중현 권한별 표시내용 수정 -->
 		<body>
@@ -141,4 +138,6 @@ a {
 					</ul>
 				</div>
 			</div>
+
 	</header>
+
