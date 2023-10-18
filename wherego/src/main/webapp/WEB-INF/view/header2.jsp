@@ -76,10 +76,7 @@ a {
 }
 </style>
 </head>
-<<<<<<< Updated upstream
 <body>
-=======
->>>>>>> Stashed changes
 	<header>
 		<!-- 10-17 강중현 권한별 표시내용 수정 -->
 			<div class="top">
@@ -94,19 +91,19 @@ a {
 						<c:choose>
 							<c:when test="${empty isAdmin || isAdmin == false}">
 								<li class="header2Li"><a
-									href="${pageContext.request.contextPath}/acc/list"
+									href="/wherego/acc/list"
 									class="list-item">호텔찾기</a> <span>|</span></li>
 								<li class="header2Li"><a
-									href="${pageContext.request.contextPath}/member/my-page"
+									href="/wherego/member/my-page"
 									class="list-item">예약조회</a><span>|</span></li>
 
 								<c:choose>
 									<c:when test="${principal == null}">
 										<li class="header2Li"><a
-											href="${pageContext.request.contextPath}/member/login"
+											href="/wherego/member/login"
 											class="list-item">로그인</a><span>|</span></li>
 										<li class="header2Li"><a
-											href="${pageContext.request.contextPath}/member/sign-up"
+											href="/wherego/member/sign-up"
 											class="list-item">회원가입</a></li>
 									</c:when>
 									<c:otherwise>
@@ -115,15 +112,14 @@ a {
 										<li class="header2Li"><a href="/wherego/cs/qna/list"
 											class="list-item">Q&A</a><span>|</span></li>
 										<li class="header2Li"><a
-											href="${pageContext.request.contextPath}/member/my-page"
+											href="/wherego/member/my-page"
 											class="list-item">마이페이지</a> <span>|</span></li>
 										<li class="header2Li"><a
-											href="${pageContext.request.contextPath}/member/logout"
+											href="/wherego/member/logout"
 											class="list-item">로그아웃</a></li>
 									</c:otherwise>
 								</c:choose>
 							</c:when>
-
 							<c:otherwise>
 								<!-- 관리자일 경우 추가할 메뉴나 처리 -->
 								<li class="header2Li"><a href="/wherego/cs/notice/list"
@@ -133,17 +129,14 @@ a {
 								<li class="header2Li"><a href="/wherego/admin/index"
 									class="list-item">관리자 페이지</a> <span>|</span></li>
 								<li class="header2Li"><a
-									href="${pageContext.request.contextPath}/member/logout"
+									href="/wherego/member/logout"
 									class="list-item">로그아웃</a></li>
 							</c:otherwise>
 						</c:choose>
 					</ul>
 				</div>
-<<<<<<< Updated upstream
 			</div>
 
 	</header>
 
-=======
->>>>>>> Stashed changes
 

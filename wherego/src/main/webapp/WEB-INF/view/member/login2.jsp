@@ -5,7 +5,7 @@
   <title>WhereGo</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/member/member.css" type="text/css" />
+  <link rel="stylesheet" href="/wherego/css/member/member.css" type="text/css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
@@ -43,34 +43,34 @@
           <span class="li-horizontal-divider login"></span>
           <a class="atext_mem" href="#">비밀번호 찾기</a>
           <span class="li-horizontal-divider login"></span>
-          <a class="atext_mem" href="${pageContext.request.contextPath}/member/sign-up">회원가입</a>
+          <a class="atext_mem" href="/wherego/member/sign-up">회원가입</a>
         </div>
       </div>
       
       <div class="social-login-wrap">
       	<a><img
 			  class="fit-picture"
-			  src="${pageContext.request.contextPath}/img/member/icon-100-apple.png"
+			  src="/wherego/img/member/icon-100-apple.png"
 			  alt="" />
 		</a>
 		<a><img
 			  class="fit-picture"
-			  src="${pageContext.request.contextPath}/img/member/icon-100-google.png"
+			  src="/wherego/img/member/icon-100-google.png"
 			  alt="" />
 		</a>
 		<a href="https://kauth.kakao.com/oauth/authorize?client_id=ae138cb481abfa831e99189dc79e66b1&redirect_uri=http://localhost:8080/wherego/member/kakao/callback&response_type=code"><img
 			  class="fit-picture"
-			  src="${pageContext.request.contextPath}/img/member/icon-100-kakao.png"
+			  src="/wherego/img/member/icon-100-kakao.png"
 			  alt="" />
 		</a>
 		<a><img
 			  class="fit-picture"
-			  src="${pageContext.request.contextPath}/img/member/icon-100-lpoint.png"
+			  src="/wherego/img/member/icon-100-lpoint.png"
 			  alt="" />
 		</a>
 		<a><img
 			  class="fit-picture"
-			  src="${pageContext.request.contextPath}/img/member/icon-100-naver.png"
+			  src="/wherego/img/member/icon-100-naver.png"
 			  alt="" />
 		</a>
       </div>

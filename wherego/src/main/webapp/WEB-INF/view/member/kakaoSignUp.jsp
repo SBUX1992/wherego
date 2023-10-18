@@ -11,7 +11,7 @@
 css2?family=Material+Symbols+Outlined:opsz,wght,FILL,
 GRAD@20..48,100..700,0..1,-50..200"
     />
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/member/member.css" type="text/css" />
+    <link rel="stylesheet" href="/wherego/css/member/member.css" type="text/css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
@@ -21,7 +21,7 @@ GRAD@20..48,100..700,0..1,-50..200"
 <body style="font-family: 'Noto Sans KR', sans-serif">
     <div class="inner">
         <div class="location">
-            <a href="${pageContext.request.contextPath}/main">홈</a> <span>/</span> <span>회원가입</span>
+            <a href="/wherego/main">홈</a> <span>/</span> <span>회원가입</span>
         </div>
     </div>
     <div>
@@ -197,7 +197,7 @@ GRAD@20..48,100..700,0..1,-50..200"
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-    <script src="${pageContext.request.contextPath}/js/member/kakaosignuppage.js"></script>
+    <script src="/wherego/js/member/kakaosignuppage.js"></script>
 </body>
 
 </html>

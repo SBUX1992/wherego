@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '2.7.15'
 	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+	id 'war'
 }
 group = 'com.wherego'
 version = '0.0.1-SNAPSHOT'
@@ -16,6 +17,13 @@ configurations {
 repositories {
 	mavenCentral()
 }
+
+bootWar{			// war 배포 파일명
+	archiveBaseName = 'wherego'
+    archiveFileName = 'wherego.war'
+    archiveVersion = "0.0.0"
+}
+
 dependencies {
 	
 	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
@@ -37,9 +45,15 @@ dependencies {
 	compileOnly 'javax.servlet:javax.servlet-api:4.0.1'
     implementation 'org.apache.tomcat:tomcat-servlet-api:9.0.82'
     implementation 'org.apache.tomcat:tomcat-el-api:9.0.82'
+    
+    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 }
+
+
 
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+
 
