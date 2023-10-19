@@ -209,6 +209,7 @@ function displayReservationOption() {
 	$('#countDetailWrapper').css('display', 'flex');
 	$('#countDetailWrapper').css('justify-content', 'center');
 	$('#countDetailWrapper').css('position', 'absolute');
+	$('#countDetailWrapper').css('z-index', '1');
 	let optionWrapperRect = $('#reservationOptionWrapper').get(0).getBoundingClientRect();
 	console.log(optionWrapperRect)
 	let topValue = optionWrapperRect.bottom;
