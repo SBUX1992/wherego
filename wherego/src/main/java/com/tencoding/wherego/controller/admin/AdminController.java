@@ -63,8 +63,6 @@ public class AdminController {
 //		System.out.println(noticeList.get(0));
         
         return "admin/index";
-    }
-    
+	}
 
-    
 }
